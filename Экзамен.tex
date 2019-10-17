@@ -28,6 +28,7 @@
 \newcommand{\dist}[0]{\mathrm{dist} $\ $}
 \newcommand{\rang}[0]{\mathrm{rang} $\ $}
 \newcommand{\grad}[0]{\mathrm{grad} $\ $}
+\newcommand{\Lin}[0]{\mathrm{Lin} $\ $}
 
 \tableofcontents
 
@@ -103,9 +104,9 @@
             
         \begin{enumerate}
         
-            \item $M \subset \RM$~--- простое $k$-мерное многообразие в $\RM$ (непрерывное), если оно гомеоморфно открытому множеству из $\mathrm{R}^k$.
+            \item $M \subset \RM$~--- простое $k$-мерное многообразие в $\RM$ (непрерывное), если оно гомеоморфно открытому множеству из $\mathbb{R}^k$.
             
-                $\exists O \subset \mathrm{R}^k$ и $\exists \Phi : O \rightarrow M$ такое, что
+                $\exists O \subset \mathbb{R}^k$ и $\exists \Phi : O \rightarrow M$ такое, что
             
                 \begin{itemize}
             
@@ -119,7 +120,7 @@
             
             \item $M \subset \RM$~--- простое, $k$~---мерное, $C^r$~--- гладкое многообразие, если:
             
-                $\exists O \subset \mathrm{R}^k$, $\Phi : O \rightarrow \RM$:
+                $\exists O \subset \mathbb{R}^k$, $\Phi : O \rightarrow \RM$:
                 
                 \begin{itemize}
                 
@@ -137,14 +138,64 @@
     
     \section{Касательное пространство к $k$-мерному многообразию в $\RM$}
     
-        Пусть $\Phi : O \subset \mathrm{R}^k \rightarrow \RM$~---$C^r$-параметризация $U(p) \cap M$, $p \in M$ и $\Phi(t_0) = p$. Тогда $\Phi'(t_0)(\mathrm{R}^k)$~---касательное пространство к $k$-мерному многообразию $M$ в точке $p$.
+        Пусть $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~---$C^r$-параметризация $U(p) \cap M$, $p \in M$ и $\Phi(t_0) = p$. Тогда $\Phi'(t_0)(\mathbb{R}^k)$~---касательное пространство к $k$-мерному многообразию $M$ в точке $p$.
         
     \newpage
     
     \section{Относительный локальный максимум, минимум, экстремум}
     
+        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$,
         
+        $\Phi : E \rightarrow \mathbb{R}^n$,
         
+        $M_{\Phi} = \left\{ x \in \mathbb{R}^{m + n} : \Phi(x) = 0 \right\}$
+        
+        $x_0 \in E$, $\Phi(x_0) = 0$~--- точка относительного локального экстремума $f$, если $\exists u(x_0) : \forall x \in U(x_0) \cap E$ $f(x) \leq f(x_0)$. 
+        
+        Аналогично определяется минимум.
+        
+    \newpage
+    
+    \section{Формулировка достаточного условия относительного экстремума}
+    
+        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$,
+        
+        $\Phi : E \rightarrow \mathbb{R}^n$, $a \in E : \rang \Phi'(a) = n$.
+        
+        \begin{equation*}
+            \begin{cases}
+    
+                f'(a) - \lambda \Phi'(a) = 0 \\
+                
+                \Phi(a) = 0
+                
+            \end{cases}
+        \end{equation*}
+        
+        Если $h = ( h_x, h_y ) \in \mathbb{R}^{m + n}$ удовлетворяет $\Phi'(a) h = 0$, то можно выразить $h_y = \psi(h_x)$.
+        
+        Рассмотрим квадратичную форму $Q(h_x) = d^2 G(a, \left( h_x, \psi (h_x ) \right) )$.
+        
+        $Q$~--- положительно определенная, значит точка локального минимума, если отрицательно определенная~--- точка локального максимума, $Q$~--- неопределенная~--- нет экстремума.
+        
+    \newpage
+    
+    \section{Поточечная сходимость последовательности функций на множестве }
+    
+        $f_n : X \rightarrow \mathbb{R}$, если $\exists f : E \subset X \rightarrow \mathbb{R}$, что для любого $x_0 \in E$ $ \exists \lim\limits_{n \rightarrow +\infty} f_n(x_0) = f(x_0)$, то
+        
+        $f_n \xrightarrow[n \rightarrow +\infty]{} f$ поточечно на $E$.
+        
+    \newpage
+    
+    \section{Равномерная сходимость последовательности функций на множестве }
+    
+        $f_n$~--- равномерно сходится на $E$ к функции $f$ если
+        
+        $M_n := \sup \left| f_n(x) - f(x) \right| \xrightarrow[n \rightarrow +\infty]{} 0$.
+        
+        $f_n \rightrightarrows f$ на множестве $E$.
+    
 \newpage
 
 \part{Теоремы}
@@ -513,4 +564,91 @@
         
             $\Phi$~--- параметризация, значит $\rang \Phi' = k$, значит образ $k$-мерный. Если есть параметризацция $\Phi_2$, можно считать, что существует диффеоморфизм $\psi$, что $\Phi_2 = \Phi \circ \psi$, и при этом $\Phi'_2 = \Phi' \cdot \psi'$, где $\psi'$~--- невырожденный, значит $\Phi'_2$ совпадает с $\Phi'$.
             
+    \newpage
+    
+    \section{Касательное пространство в терминах векторов скорости гладких путей}
+    
+        $M$~--- $k$-мерное гладкое многообразие в $\RM$, $p \in M$, $v \in \RM$.
+        
+        $v \in T_p \left( M \right) \Longleftrightarrow \exists \gamma : [- \varepsilon, \varepsilon] \rightarrow M$ и $\gamma \left( [ -\varepsilon, \varepsilon ] \right) \in M$ такое, что $\gamma(0) = p$ и $\gamma'(0) = v$.
+        
+        \subsection{Доказательство}
+        
+            $\Phi$~--- параметризация в окрестности $P$, $\Phi(t_0) = p$.
+            
+            \begin{itemize}
+            
+                \item $\Leftarrow$
+                
+                    $\phi(t) = \Phi^{-1} ( \gamma (t) )$~--- соответствующий путь в $E$.
+                    
+                    Путь гладкий, значит $\gamma'(t) = \Phi(\phi(t))' = \Phi'(\phi(t)) \cdot \phi'(t)$, $\gamma'(0) = \Phi'(t_0)w$, что и требовалось доказать.
+                    
+                \item $\Rightarrow$
+                
+                    $v \in T_p(M) \rightarrow \exists w \in \mathbb{R}^k : \Phi'(t_0)w = v$.
+                    
+                    Рассмотрим путь $\gamma(t) = \Phi(t_0 + wt)$: $\gamma'(0) = \Phi'(t_0)w$, что и требовалось доказать.
+                
+            \end{itemize}
+            
+    \newpage
+    
+    \section{Касательное пространство к графику функции и к поверхности уровня}
+    
+        
+    \newpage
+    
+    \section{Необходимое условие относительного локального экстремума}
+    
+        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$,
+        
+        $\Phi : E \rightarrow \mathbb{R}^n$, $a \in E$ и $\Phi(a) = 0$~--- точка относительно локального экстремума.
+        
+        $\rang \Phi'(a) = n$, и $f$, $\Phi \in C^1 \left( E \right)$.
+        
+        Тогда $\exists \lambda = (\lambda_1, \ldots, \lambda_n) \in \mathbb{R}^n$, что
+        
+        \begin{equation*}
+            \begin{cases}
+            
+                f'(a) - \lambda \cdot \Phi'(a) = 0 \\
+                
+                \Phi(a) = 0
+                
+            \end{cases}
+        \end{equation*}
+        
+        \subsection{Доказательство}
+        
+            Пусть $\rang \Phi'(a)$ реализован на столбцах $x_{m + 1}$, $\ldots$, $x_{m + n}$
+            
+            $a = (a_1, \ldots, a_m, a_{m + 1}, \ldots, a_{m + n}) = (a_x, a_y)$ и $\left( \frac{\partial \Phi}{\partial y} \right)$~--- невырожденная матрица $n \times n$.
+            
+            По теореме о неявном отображении $\varphi : U(a_x) \rightarrow V(a_y)$ и $\forall x \in U(a_x)$ $\Phi (X, \varphi(X) ) = 0$. Кстати, $U(x) \cap M_{\Phi}$~--- простое $m$-мерное многообразие. Тогда $a_x = (a_1, \ldots, a_m)$~--- точка локального экстремума для функции $g(x) = f(x, \varphi(x))$. Тогда
+            
+            \begin{equation*}
+                \begin{cases}
+                
+                    f'_x(a) + f'_y(a)\varphi'(a_x) = 0 \\
+                    
+                    \Phi'_x(a) + \Phi'_y(a) \cdot \varphi'(a_x) = 0
+                    
+                \end{cases}
+            \end{equation*}
+            
+            $\forall \lambda \in \mathbb{R}^n$ $\lambda \cdot \Phi'_x + \lambda \cdot \Phi'_y \cdot \varphi' = 0$
+            
+            $(f'_x - \lambda \Phi'_x) + (f'_y - \lambda \Phi'_y) \cdot \varphi' = 0$, подставляем $\lambda := f'_y(a) \cdot \left( \Phi'_y (a) \right)^{-1}$.
+            
+    \newpage
+    
+    \section{Вычисление нормы линейного оператора с помощью собственных чисел}
+    
+        $A \in \Lin (\RM, \mathbb{R}^n)$, тогда $\| A \| = \max \sqrt{\lambda}$, где $\lambda$~--- собственные числа $A^T A$.
+        
+        \subsection{Доказательство}
+        
+            $\| A \|^2 = \max | Ax |^2 = \max \left\langle Ax, Ax \right\rangle = \max \left\langle A^T Ax, x \right\rangle$.
+    
 \end{document}
