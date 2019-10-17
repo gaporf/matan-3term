@@ -1,0 +1,516 @@
+\documentclass{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\parindent 0pt
+\parskip 8pt
+\usepackage{setspace}
+\usepackage{etaremune}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[left=2.3cm, right=2.3cm, top=2.7cm, bottom=2.7cm, bindingoffset=0cm]{geometry}
+\usepackage{latexsym}
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\graphicspath{ {./images/} }
+
+\doublespacing
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\newcommand{\RM}[0]{\mathbb{R}^m}
+\newcommand{\dist}[0]{\mathrm{dist} $\ $}
+\newcommand{\rang}[0]{\mathrm{rang} $\ $}
+\newcommand{\grad}[0]{\mathrm{grad} $\ $}
+
+\tableofcontents
+
+\newpage 
+
+\part{Определения}
+
+    \newpage
+
+    \section{Диффеоморфизм}
+    
+        \textit{Область} в $\RM$ --- открытое связное множество.
+        
+        Пусть $f : O \subset \RM \rightarrow \RM$~--- \textit{диффеоморфизм}, где $O$ --- область, если:
+        
+        \begin{enumerate}
+        
+            \item $f$~--- обратима;
+            
+            \item $f$~--- дифференцируема;
+            
+            \item $(f^{-1})$~--- тоже дифференцируема.
+            
+        \end{enumerate}
+        
+    \newpage
+    
+    \section{Формулировка теоремы о локальной обратимости в терминах систем уравнений}
+    
+        \begin{equation*}
+            \begin{cases}
+            
+                f_1(x_1, \ldots, x_m) = y_1 \\
+                
+                \ldots \\
+                
+                f_m(x_1, \ldots, x_m) = y_m
+            
+            \end{cases}
+        \end{equation*}
+        
+        Все $f_i$~--- гладкие.
+        
+        Пусть при $y = (b_1, \ldots, b_m)$ существует единственное решение $x = (a_1, \ldots, a_m)$, что $\det \left( \frac{\partial f_i}{\partial x_j} (a) \right) \neq 0$.
+        
+        Тогда для $y_0$ близких к $(b_1, \ldots, b_m)$ существует решение $(x_1, \ldots, x_m)$ близкое к $(a_1, \ldots, a_m)$ и зависимое от $y$, причём оно гладкое.
+        
+    \newpage
+    
+    \section{Формулировка теоремы о неявном отображении в терминах систем уравнений}
+    
+        \begin{equation*}
+            \begin{cases}
+            
+                f_1(x_1, \ldots, x_m, y_1, \ldots, y_n) = 0 \\
+                
+                \ldots \\
+                
+                f_n(x_1, \ldots, x_m, y_1, \ldots, y_n) = 0
+                
+            \end{cases}
+        \end{equation*}
+        
+        $x = a$ и $y = b$ удовлетворяют системе уравнений, а также $f_i$~--- функции класса $C^r$, также
+        
+        $\det \left( \dfrac{\partial f_i}{\partial y_j} (a, b) \right) \neq 0$. Тогда
+        
+        $\exists U(a)$ и $V(b)$ такое, что $\exists ! \varphi: U(a) \rightarrow V(b)$ класса $C^r$, что $\forall x \in U(a)$ верно $(x, \varphi(x))$~--- решение этой системы.
+        
+    \newpage
+    
+    \section{Простое $k$-мерное гладкое многообразие в $\RM$}
+            
+        \begin{enumerate}
+        
+            \item $M \subset \RM$~--- простое $k$-мерное многообразие в $\RM$ (непрерывное), если оно гомеоморфно открытому множеству из $\mathrm{R}^k$.
+            
+                $\exists O \subset \mathrm{R}^k$ и $\exists \Phi : O \rightarrow M$ такое, что
+            
+                \begin{itemize}
+            
+                    \item $\Phi$~--- сюрьекция;
+                
+                    \item $\Phi$~--- непрерывное;
+                
+                    \item $\Phi$~--- обратимо и $\Phi^{-1}$~--- непрерывно.
+                
+                \end{itemize}
+            
+            \item $M \subset \RM$~--- простое, $k$~---мерное, $C^r$~--- гладкое многообразие, если:
+            
+                $\exists O \subset \mathrm{R}^k$, $\Phi : O \rightarrow \RM$:
+                
+                \begin{itemize}
+                
+                    \item $\Phi(O) = M$, и это гомеоморфизм;
+                    
+                    \item $\Phi \in C^r(O, \RM)$~--- это гладкость;
+                    
+                    \item $\forall t \in O$ верно, что $\rang \Phi'(t) = k$.
+                    
+                \end{itemize}
+        
+        \end{enumerate}
+    
+    \newpage
+    
+    \section{Касательное пространство к $k$-мерному многообразию в $\RM$}
+    
+        Пусть $\Phi : O \subset \mathrm{R}^k \rightarrow \RM$~---$C^r$-параметризация $U(p) \cap M$, $p \in M$ и $\Phi(t_0) = p$. Тогда $\Phi'(t_0)(\mathrm{R}^k)$~---касательное пространство к $k$-мерному многообразию $M$ в точке $p$.
+        
+    \newpage
+    
+    \section{Относительный локальный максимум, минимум, экстремум}
+    
+        
+        
+\newpage
+
+\part{Теоремы}
+
+    \newpage
+    
+    \section{Лемма о ''почти локальной инъективности''}
+    
+        $F : O \subset \RM \rightarrow \RM$ --- дифференцируема в точке $x_0$, 
+        
+        $\det F'(x_0) \neq 0$,
+        
+        $O$ --- область.
+        
+        Тогда $\exists c, \delta > 0 : \forall h : \left| h \right| < \delta : \left| F(x_0 + h) - F(x_0) \right| \geq c \cdot \left| h \right|$
+        
+        \subsection{Доказательство}
+        
+            $\left| F(x_0 + h) - F(x_0) \right| = \left| F'(x_0)h + \alpha(h) \left| h \right| \right| \geq \left| F'(x_0) h \right| - \left| \alpha(h) \right| \left| h \right| \geq (\widetilde{c} - \left| \alpha(h) \right|) \left| h \right| \geq \frac{c}{2} \left| h \right|$
+        
+            Возьмём в качестве $\widetilde{c} = \dfrac{1}{\| (F'(x_0))^{-1} \|}$.
+        
+            Пусть при $|h| < \delta$ будет верно, что $\left| \alpha(h) \right| < \frac{\widetilde{c}}{2}$.
+        
+    \newpage
+    
+    \section{Теорема о сохранении области}
+    
+        $F : O \subset \RM \rightarrow \RM$, где $O$~--- открыто,
+        
+        для любого $x \in O$ выполняется $\det F'(x) \neq 0$. Тогда $F(O)$~--- открыто.
+        
+        \subsection{Доказательство}
+        
+            Пусть $x_0 \in O$ и $y_0 = F(x_0) \in F(O)$, необходимо проверить, что $y_0$~--- внутренняя точка $F(O)$.
+            
+            По лемме о ''почти локальной инъективности'' существуют такие $c$ и $\delta$, что для любого $h \in \overline{B(0, \delta)}$ верно $\left| F(x_0 + h) - F(x_0) \right| \geq c | h |$ (и в частности $F(x_0 + h) \neq F(x_0)$ при $| h | = \delta$).
+            
+            $r := \frac{1}{2} \dist \left( y_0, F(S(x_0, \delta)) \right) > 0$
+            
+            Проверим, что $B(y_0, r) \subset F(O)$. Пусть $y \in B(y_0, r)$ и $g(x) := \left| F(x) - y \right|$~--- функция на $\overline{B(x_0, \delta)}$.
+            
+            \begin{enumerate}
+            
+                \item На $S(x_0, \delta)$ верно, что $\left| F(x) - y \right| \geq r$
+                
+                \item При $x = x_0$ выполняется, что $\left| F(x_0) - y \right| = | y_0 - y | < r$, по теореме Вейерштрасса $g$ достигается минимума внутри шара $B(x_0, \delta)$.
+                
+            \end{enumerate}
+            
+            Пусть $l : x \mapsto \left| F(x) - y \right|^2$~--- достигает минимума таким же образом.
+            
+            Найдём минимум с помощью необходимого условию экстремума, т.е. производная должна быть равна $0$.
+            
+            \begin{equation*}
+                \begin{cases}
+   
+                    l'_{x_1} = 0 & 2 (f_1 (x_1, \ldots, x_m) - y_1) \cdot \frac{\partial f_1}{\partial x_1} + \ldots + 2 (f_m (x_1, \ldots, x_m) - y_m) \cdot \frac{\partial f_m}{\partial x_1} = 0 \\
+                    
+                    \ldots \\
+                    
+                    l'_{x_m} = 0 & 2 (f_1 (x_1, \ldots, x_m) - y_1) \cdot \frac{\partial f_1}{\partial x_m} + \ldots + 2 (f_m (x_1, \ldots, x_m) - y_m) \cdot \dfrac{\partial f_m}{\partial x_m} = 0
+                
+                \end{cases}
+            \end{equation*}
+            
+            Поскольку матрица $F'(x)$ невырожденная по условию, то получаем, что $f_i(x) - y = 0$ для всех $i$.
+            
+    \newpage
+    
+    \section{Следствие о сохранении области для отображений в пространство меньшей размерности}
+    
+        $F : O \subset \RM \rightarrow \mathbb{R}^l$, где:
+        
+        $l < m$,
+        
+        $F \in C^1(O)$,
+        
+        $\rang F'(x) = l$ при всех $x$.
+        
+        Тогда $F(O)$~--- открыто.
+        
+        \subsection{Доказательство}
+        
+            В точке $x_0$ и в окрестности ранг реализован на первых $l$ столбцах. 
+            
+            Пусть $\widetilde{F} = \begin{pmatrix} F \\ x_{l + 1} \\ \ldots \\ x_{m} \end{pmatrix} : O \rightarrow \RM$
+            
+            $(x_1, \ldots, x_m) \mapsto \left( F(x_1, \ldots, x_m), x_{l + 1}, \ldots, x_m \right)$
+            
+            $\det \widetilde{F}(x_0) = \det F(x_0) \neq 0$, а также $\forall x \in U(x_0)$. 
+            
+            Значит $\widetilde{F}(U(x_0))$ открыто в $\RM$, а $F(U(x_0))$~--- проекция на $\mathbb{R}^l$.
+            
+    \newpage
+    
+    \section{Теорема о гладкости обратного отображения}
+    
+        $T \in C^r \left( O, \RM \right)$ ($r = 1$, $2$, $\ldots$, $+\infty$).
+        
+        Пусть $T$~--- обратимо, $\det T'(x) \neq 0$ всюду. Тогда
+        
+        $T^{-1} \in C^r$ и при этом $\left( T^{-1} \right)'(y_0) = \left( T'(x_0) \right)^{-1}$, если $y_0 = T(x_0)$.
+        
+        \subsection{Доказательство}
+        
+            Индукция по $r$:
+            
+            \begin{itemize}
+            
+                \item База $r = 1$:
+                
+                    $S = T^{-1}$~--- обратное отображение, $S$~--- непрерывно (по теореме о сохранении области).
+                    
+                    $O$~--- открытое $\Rightarrow$ $T(O)$~--- открытое, значит $T: \RM_{(1)} \rightarrow \RM_{(2)}$, а $S : \RM_{(2)} \rightarrow \RM_{(1)}$, значит и $S^{-1}$~--- тоже открытое.
+                    
+                    $T(O) = O_1$, $y_0 \in O_1$, верно ли, что $S$~--- дифференцируема в $y_0$? Обозначим $A = T'(x_0)$.
+                    
+                    По лемме о почти локальной инъективности $\exists c, \delta : x \in B(x_0, \delta)$, что $\left| T(x) - T(x_0) \right| \geq c | x - x_0 |$
+                    
+                    По определению дифференцирования $T(x) - T(x_0) = A(x - x_0) + \alpha(x) | x - x_0 |$
+                    
+                    $S(y) - S(y_0) = A^{-1} (y - y_0) + A^{-1} \alpha \left( S(y) \right) \left| S(y) - S(y_0) \right|$.
+                    
+                    Пусть $\beta = A^{-1} \alpha \left( S(y) \right) \left| S(y) - S(y_0) \right|$
+                    
+                    Пусть $y$ близко к $y_0$ : $| x - x_0 | = \left| S(y) - S(y_0) \right| < \delta$~--- по непрерывности $S'$.
+                    
+                    $| \beta(y) | = |x - x_0| \cdot \left| A^{-1} \alpha \left( S(y) \right) \right| \leq \frac{1}{c} \left| T(x) - T(x_0) \right| \cdot \| A^{-1} \| \alpha \left( S(y) \right) | = \dfrac{\| A^{-1} \|}{c} \left| \alpha \left( S(y) \right) \right| |y - y_0| = o(|y - y_0|)$ при $y \rightarrow y_0$.
+                    
+                    $\left| T(x) - T(x_0) \right| \geq c | x - x_0 | \Rightarrow | x - x_0 | \leq \frac{1}{c} \left| T(x) - T(x_0) \right|$.
+                    
+                    $S' : y \xrightarrow{C^1} T^{-1} (y) = x \xrightarrow{C^1} T'(x) \xrightarrow{C^{\infty}} \left(T'(x)\right)^{-1} = S'$.
+                    
+                \item Индукционный переход без доказательства:
+                
+                    $r = 1 \Rightarrow r = 2$, т.е. $T \in C^2 \Rightarrow S \in C^2$, т.е. $S' \in C^1$, а также $T \in C^1$ и $S \in C^1$.
+                    
+            \end{itemize}
+            
+    \newpage
+    
+    \section{Лемма о приближении отображения его линеаризацией}
+    
+        $T \in C^1 \left( O, \RM \right)$, $x_0 \in O$.
+        
+        Тогда $\left| T(x_0 + h) - T(x_0) - T'(x_0) h \right| \geq M \cdot |h|$, где $M = \sup\limits_{z \in [x_0, x_0 + h]} \| T'(z) - T'(x_0) \|$.
+        
+        \subsection{Доказательство}
+        
+            $\left| F(x) - F(x_0) \right| \leq \sup\limits_{z \in [x_0, x]} \| F^{-1} (z) \| \cdot | x - x_0 |$~--- по теореме Лагранжа.
+            
+            $F(x) = T(x) - T'(x_0) \cdot X$
+            
+            $F'(x) = T'(x) - T'(x_0)$
+            
+            $\left| T(x_0 + h) - T(x_0) - T'(x_0) h \right| = \left| F(x_0 + h) - F(x_0) \right| \leq \sup\limits_{z \in [x_0, x_0 + h]} \| F'(z) \| |h|$.
+            
+    \newpage
+    
+    \section{Теорема о локальной обратимости}
+    
+        $T \in C^1 \left( O, \RM \right)$, $x_0 \in O$ и $\det T'(x_0) \neq 0$. Тогда
+        
+        $\exists U(x_0) : T \big|_{U(x_0)}$~--- диффеоморфизм.
+        
+        \subsection{Доказательство}
+        
+            Достаточно доказать, что $\exists U(x_0)$, что $T \big|_{U(x_0)}$~--- обратимо (и для любого $x \in U(x_0)$ $\det T'(x) \neq 0$).
+            
+            $T'(x_0)$~--- обратимо, значит $\exists c > 0 : \forall h$ $\left| T'(x_0) h \right| \geq c |h|$, где $c = \dfrac{1}{\| T'(x_0)^{-1} \|}$.
+            
+            Возьмём $U = B(x_0, r) \subset O$ так, что при $x \in U$ и было верным:
+            
+                $\det T'(x) \neq 0$ и $\| T'(x) - T'(x_0) \| < \frac{c}{4}$.
+                
+            Проверим, что $T \big|_U$~--- взаимно-однозначное отображение.
+            
+            $x, y \in U$ и $y = x + h$
+            
+            $T(y) - T(x) = \left( T(x + h) - T(x) - T'(x) h \right) + \left( T'(x)h - T'(x_0)h \right) + T'(x_0)h$
+        
+            (Здесь и ниже римскими цифрами отображается номер скобки в выражении сверху)
+            
+            $\left| T(y) - T(x) \right| \geq \left| T'(x_0) h \right| - | \mathrm{I} | - | \mathrm{II} | \geq c |h| - \frac{c}{2} |h| - \frac{c}{4} |h| = \frac{c}{4} |h| \neq 0$.
+            
+            $| \mathrm{I} | \geq M |h|$
+            
+            $\left| T(x_0 + h) - T(x_0) - T'(x_0) h     \right| \leq M |h|$
+            
+            $M = \sup \| T'(z) - T'(x_0) \|$, $z \in [x_0, x_0 + h]$
+            
+            $M \leq \frac{c}{2}$.
+            
+    \newpage
+    
+    \section{Теорема о неявном отображении}
+    
+        $F : O \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}^n$, $F \in C^r \left( O, \mathbb{R}^n \right)$,
+        
+        $(a, b) \in O$ и $F(a, b) = 0$,
+        
+        $\det F'_y (a, b) \neq 0$.
+        
+        Тогда:
+        
+        \begin{enumerate}
+        
+            \item Существует открытое $P \in \RM$, $a \in P$ и также существует открытое $Q \in \mathbb{R}^n$, $b \in Q$ такие, что
+            
+                $\exists ! \varphi : P \rightarrow Q$~--- $C^r$-гладкое, такое, что $\forall x \in P$ $F(x, \varphi(x)) = 0$.
+                
+            \item $\varphi'(x) = - \left(F'_y (x, \varphi(x)) \right) \cdot F'_x (x, \varphi(x))$.
+    
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $\Phi : O \rightarrow \mathbb{R}^{m + n}$
+                
+                    $(x, y) \mapsto \left( x, F(x, y) \right)$
+                    
+                    $\Phi' = \begin{pmatrix} \mathbb{E} & \mathrm{0} \\ F'_x & F'_y \end{pmatrix}$, $\det \Phi'(a, b) \neq 0$
+                    
+                    $\exists \widetilde{U}(a, b) : \Phi \big|_{\widetilde{U}}$~--- диффеоморфизм.
+                    
+                    $\widetilde{U} = P_1 \times Q$, где $a \in P_1$, $b \in Q$.
+                    
+                    \begin{enumerate}
+                    
+                        \item $\widetilde{V} = \Phi \left( \widetilde{U} \right)$~--- открыто;
+                        
+                        \item $\exists \psi = \Phi^{-1} : \widetilde{V} \rightarrow \widetilde{U}$;
+                        
+                        \item $\Phi$ не меняет первую координату, значит $\psi$ тоже не меняет,
+                        
+                            $\psi(u, v) = (u, H(u, v) )$, $H : \widetilde{V} \rightarrow \mathbb{R}^n$, $H \in C^r$;
+                            
+                        \item ''ось $x$'' и ''ось $u$'' одно и то же $\RM$,
+                        
+                            $P := \left( \RM \times \left\{ O_n \right\} \right) \cap \widetilde{V}$~--- открыто в $\RM$;
+                            
+                        \item $\psi (x) := H(x, 0) : P \rightarrow Q : F(x, \psi(x) ) = 0$~--- единственно,
+                        
+                            $x \in P$, $y \in Q$ $F(x, y) = 0$, $(x, y) = \psi \left( \Phi (x, Y) \right) = \psi(x, 0) = (x, H(x, 0))$.
+                            
+                    \end{enumerate}
+                    
+                \item $F(x, \varphi(x)) = 0$, $F \circ H = 0$,
+                
+                    $\begin{pmatrix} F'_x & F'_y \end{pmatrix} \begin{pmatrix} E \\ \varphi'(x) \end{pmatrix} = 0 \Rightarrow F'_x + F'_y \varphi'(x) = 0$,
+                    
+                    $F'_y \varphi' = -F'_x$
+                    
+                    $\varphi' = - \left( F'_y \right)^{-1} F'_x$
+                
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Теорема о задании гладкого многообразия системой уравнений}
+            
+            $M \subset \RM$, зафиксируем $1 \leq k < m$ и $1 \leq r \leq +\infty$.
+            
+            Тогда $\forall p \in M$ эквивалентны следующие два утверждения:
+            
+            \begin{enumerate}
+            
+                \item $\exists U \subset \RM$~--- открытое, $p \in U$,
+                
+                    $M \cap U$~--- простое $k$-мерное $C^r$-гладкое многообразие;
+                    
+                \item $\exists \widetilde{U} \subset \RM$~--- открытое, $p \in \widetilde{U}$,
+                
+                    что существуют функции $f_1$, $f_2$, $\ldots$, $f_{m - k} : \widetilde{U} \rightarrow \mathbb{R} \in C^r$ такие, что
+                    
+                    $x \in M \cap \widetilde{U} \Longleftrightarrow$ 
+                        
+                        \begin{equation*}
+                            \begin{cases}
+                            
+                                f_1(x) = 0 \\ f_2(x) = 0 \\ \ldots \\ f_{m - k}(x) = 0
+                                
+                            \end{cases}
+                        \end{equation*}
+                        
+                    и $\grad f_1(p), \ldots, \grad f_{m - k}(p)$~--- ЛНЗ.
+                    
+            \end{enumerate}
+            
+            \subsection{Доказательство}
+            
+                \begin{itemize}
+                
+                    \item $1 \Rightarrow 2$:
+                    
+                        Существует параметризация $\Phi \in C^r \left( O \subset \mathbb{R}^k, \RM \right)$,
+                        
+                        $\varphi_1, \ldots, \varphi_m$~--- координатные функции $\Phi$ и $p = \Phi(t_0)$, $\rang \Phi'(t_0) = k$.
+                        
+                        Можно считать, что $\left( \dfrac{\partial \varphi_i}{\partial t_j} (t_0) \right)$~--- невырождена.
+                        
+                        $\RM = \mathbb{R}^k \times \mathbb{R}^{m - k}$.
+                        
+                        $L : \RM \rightarrow \mathbb{R}^k$~--- проекция, $x \mapsto (x_1, \ldots, x_k)$.
+                        
+                        $L \circ \Phi$ имеет невырожденный производный оператор в точке $t_0$.
+                        
+                        $\exists w(t_0)$~--- окрестность $t_0$, $\exists V \in \mathbb{R}^k$~--- открытое и $L \circ \Phi : w \rightarrow V$~--- диффеоморфизм.
+                        
+                        $L(w) \rightarrow V$~--- взаимно-однозначеное отображение, т.е. $\Phi(w)$~--- график некоторого отображения $H : V \rightarrow \mathbb{R}^{m - k}$.
+                        
+                        Пусть $\psi = \left( L \circ \Phi \right)^{-1} : V \rightarrow w$, $\psi \in C^r$.
+                        
+                        Если $\widetilde{x} \in V$, то $\left( \widetilde{x}, H(\widetilde{x}) \right) = \Phi (w(\widetilde{x})) \Rightarrow H \in C^r$.
+                        
+                        $\Phi(w)$~--- открыто в $M$, $\exists$ открытое $\widetilde{U} \in \RM$ такое, что $\widetilde{U} \cap M = \Phi(w)$ (можно считать, что $\widetilde{U} \subset V \times \mathbb{R}^{m - k}$.
+                        
+                        $f_j : \widetilde{U} \rightarrow \mathbb{R}$, $f_j(x) = H_j \left( L(x) \right) - x_{k + j}$, если $x \in \widetilde{U} \cap M \Leftrightarrow$ все $f_j(x) = 0$.
+                        
+                        $\begin{pmatrix} \dfrac{\partial H_1}{\partial x_1} & \ldots & \dfrac{\partial H_1}{\partial x_k} & -1 & 0 & \ldots & 0 \\ \dfrac{\partial H_2}{\partial x_1} & \ldots & \dfrac{\partial H_2}{\partial x_k} & 0 & -1 & \ldots & 0 \\ \ldots \\ \dfrac{\partial H_{m - k}}{\partial x_1} & \ldots & \dfrac{\partial X_{m - k}}{x_k} & 0 & 0 & \ldots & -1 \end{pmatrix}$, где $m - k$ строчек и все они ЛНЗ.
+                        
+                    \item $2 \Rightarrow 1$:
+                    
+                        Из предыдущего пункта у нас есть система уравнение, для которой верно, что $\grad f_i(p)$~--- ЛНЗ, можно считать, что $\det \left( \dfrac{\partial f_i}{\partial x_{k + j}} (p) \right)_{i, j = 1 .. m - k} \neq 0$.
+                        
+                        По теореме о неявном отображении $\exists H : P \rightarrow Q$, где $P$~--- окрестность ($p_1$, $\ldots$, $p_k$), а $Q$~--- окрестность ($p_{k + 1}$, $\ldots$, $p_m$),
+                        
+                        что $\forall$ ($x_1$, $\ldots$, $x_k$) $\in P$ точка ($x_1$, $\ldots$, $x_k$, $H_1(x_1, \ldots, x_k)$, $H_2(x_1, \ldots, x_k)$, $\ldots$, $H_{m - k}(x_1, \ldots, x_k)$) удовлетворяет системе уравнений.
+                        
+                        $\Phi : P \rightarrow \RM$,
+                        
+                        $u \mapsto (u, H(u))$~--- параметризация нашего многообразия, $\left( P \times Q \right) \cap M$.
+                        
+                \end{itemize}
+                
+    \newpage
+    
+    \section{Следствие о двух параметризациях}
+    
+        $M \subset \RM$~--- $k$-мерное простое $C^r$-гладкое многообразие, $p \in M$, $U$~--- открытое, $p \in U$.
+        
+        $\Phi_1 : O_1 \subset \mathbb{R}^k \rightarrow U \cap M$,
+        
+        $\Phi_2 : O_2 \subset \mathbb{R}^k \rightarrow U \cap M$ (оба отображние ''на'' и даже гомеоморфизм)
+        
+        ($\phi_i \in C^r \left( O_i, \RM \right)$. Тогда существует диффеоморфизм $\psi : O_1 \rightarrow O_2$ и $\Phi_1 = \Phi_2 \circ \psi$.
+        
+        \subsection{Доказательство}
+        
+            Для случая, когда $\rang \Phi'_1(p)$ и $\rang \Phi'_2(p)$ на одном и том же наборе столбцов (во всех точках $O_1$ и $O_2$).
+            
+            Тогда $\Phi_1 \circ L$ и $\Phi_2 \circ L$~--- тоже диффеоморфизмы.
+            
+            Дальше всё очевидно, что $\Phi_1 = \Phi_2 \circ \left( L \circ \Phi_2 \right)^{-1} \circ \left( L \circ \Phi_1 \right)$.
+            
+    \newpage
+    
+    \section{Лемма о корректности определения касательного пространства}
+    
+        $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~--- $C^r$-параметризация $U(p) \cap M$, $p \in M$, $\Phi(t_0) = p$. Тогда образ оператора $\Phi'(t_0) : \mathbb{R}^k \rightarrow \RM$~--- это $k$-мерное подпространство в $\RM$, не зависящее от $\Phi$.
+        
+        \subsection{Доказательство}
+        
+            $\Phi$~--- параметризация, значит $\rang \Phi' = k$, значит образ $k$-мерный. Если есть параметризацция $\Phi_2$, можно считать, что существует диффеоморфизм $\psi$, что $\Phi_2 = \Phi \circ \psi$, и при этом $\Phi'_2 = \Phi' \cdot \psi'$, где $\psi'$~--- невырожденный, значит $\Phi'_2$ совпадает с $\Phi'$.
+            
+\end{document}
