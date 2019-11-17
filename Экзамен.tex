@@ -104,7 +104,7 @@
             
         \begin{enumerate}
         
-            \item $M \subset \RM$~--- простое $k$-мерное многообразие в $\RM$ (непрерывное), если оно гомеоморфно открытому множеству из $\mathbb{R}^k$.
+            \item $M \subset \RM$~--- простое $k$-мерное многообразие в $\RM$ (непрерывное), если оно гомеоморфно открытому множеству из $\mathbb{R}^k$, т.е.:
             
                 $\exists O \subset \mathbb{R}^k$ и $\exists \Phi : O \rightarrow M$ такое, что
             
@@ -138,7 +138,7 @@
     
     \section{Касательное пространство к $k$-мерному многообразию в $\RM$}
     
-        Пусть $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~---$C^r$-параметризация $U(p) \cap M$, $p \in M$ и $\Phi(t_0) = p$. Тогда $\Phi'(t_0)(\mathbb{R}^k)$~---касательное пространство к $k$-мерному многообразию $M$ в точке $p$.
+        Пусть $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~---$C^r$-параметризация $U(p) \cap M$, $p \in M$ и $\Phi(t_0) = p$. Тогда $\Phi'(t_0) : \mathbb{R}^k \rightarrow \RM$~---касательное пространство к $k$-мерному многообразию $M$ в точке $p$.
         
     \newpage
     
@@ -146,11 +146,9 @@
     
         $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$,
         
-        $\Phi : E \rightarrow \mathbb{R}^n$,
+        $\Phi : E \rightarrow \mathbb{R}^n$, тогда
         
-        $M_{\Phi} = \left\{ x \in \mathbb{R}^{m + n} : \Phi(x) = 0 \right\}$
-        
-        $x_0 \in E$, $\Phi(x_0) = 0$~--- точка относительного локального экстремума $f$, если $\exists u(x_0) : \forall x \in U(x_0) \cap E$ $f(x) \leq f(x_0)$. 
+        $x_0 \in E$, $\Phi(x_0) = 0$~--- точка относительного локального максимума $f$, если $\exists U (x_0) : \forall x \in U(x_0) \cap E$ $f(x) \leq f(x_0)$. 
         
         Аналогично определяется минимум.
         
@@ -182,7 +180,7 @@
     
     \section{Поточечная сходимость последовательности функций на множестве }
     
-        $f_n : X \rightarrow \mathbb{R}$, если $\exists f : E \subset X \rightarrow \mathbb{R}$, что для любого $x_0 \in E$ $ \exists \lim\limits_{n \rightarrow +\infty} f_n(x_0) = f(x_0)$, то
+        $f_n : X \rightarrow \mathbb{R}$, если $\exists f : E \subset X \rightarrow \mathbb{R}$, что для любого $x_0 \in E$ существует $\lim\limits_{n \rightarrow +\infty} f_n(x_0) = f(x_0)$, то
         
         $f_n \xrightarrow[n \rightarrow +\infty]{} f$ поточечно на $E$.
         
@@ -190,12 +188,78 @@
     
     \section{Равномерная сходимость последовательности функций на множестве }
     
-        $f_n$~--- равномерно сходится на $E$ к функции $f$ если
+        $f$, $f_n : X \rightarrow \mathbb{R}$, $E \subset \mathbb{R}$, тогда $f_n$~--- равномерно сходится на $E$ к функции $f$ если
         
         $M_n := \sup \left| f_n(x) - f(x) \right| \xrightarrow[n \rightarrow +\infty]{} 0$.
         
-        $f_n \rightrightarrows f$ на множестве $E$.
+        Обозначается как $f_n \rightrightarrows f$ на множестве $E$.
+        
+    \newpage
     
+    \section{Равномерная сходимость функционального ряда}
+    
+        \begin{enumerate}
+        
+            \item Функциональный ряд сходится поточечно на $E$, если для любого $x \in E$
+            
+                $\sum\limits^{+\infty}_{n = 0} u_n(x)$~--- сходится к сумме $S(x)$.
+            
+            \item Функциональный ряд сходится равномерно на $E$ (к сумме $S(x)$), если 
+            
+                $S_n(x) \rightrightarrows S(x)$ на $E$.
+            
+        \end{enumerate}
+        
+    \newpage
+    
+    \section{Формулировка критерия Больцано--Коши для равномерной сходимости}
+    
+        Функциональный ряд $\sum u_n$ равномерно сходится на $E \Longleftrightarrow \forall \varepsilon > 0 : \exists N : \forall m \geq n \geq N, x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$.
+        
+    \newpage
+    
+    \section{Степенной ряд, радиус сходимости степенного ряда, формула Адамара}
+    
+        $a_n \in \mathbb{R}$ ($\mathbb{C}$), $B(z_0, r) \subset \mathbb{R}$ ($\mathbb{C}$), тогда
+        
+        $\sum\limits^{+\infty}_{n = 0} a_n (z - z_0)^n$ называют степенным рядом.
+        
+        Назовём $R$ радиусом сходимости степенного ряда, если:
+        
+            \begin{itemize}
+            
+                \item при $|z - z_0| < R$ ряд абсолютно сходится;
+                
+                \item при $|z - z_0| > R$ ряд расходится.
+                
+            \end{itemize}
+        
+        $R = \dfrac{1}{\overline{\lim\limits_{n \rightarrow +\infty}} \sqrt[n]{a_n}}$~--- формула Адамара.
+    
+    \newpage
+    
+    \section{Кусочно-гладкий путь}
+    
+    \newpage
+    
+    \section{Векторное поле}
+    
+        $V : E \subset \RM \rightarrow \RM$~--- векторное поле, где $E$~--- открытое, (по умолчанию непрерывное), гладкое.
+        
+    \newpage
+    
+    \section{Интеграл векторного поля по кусочно-гладкому пути}
+    
+        $V$~--- векторное поле в $E$, $\gamma$~--- кусочно-гладкий путь в $E$. Тогда
+        
+        $I(V, \gamma) := \int\limits^b_a \langle V \left( \gamma(t) \right), \gamma' (t) \rangle dt$~--- интеграл векторного поля $V$ по кусочно-гладкому пути $\gamma$.
+        
+    \newpage
+    
+    \section{Потенциал, потенциальное векторное поле}
+    
+        $O \subset \RM$~--- область, $V : O \rightarrow \RM$. Тогда $V$~--- потенциальное векторное поле, а $f$~--- его потенциал, если $f \in C^1 \left( O, \mathbb{R} \right)$ и $\grad f = V$ в области $O$.
+        
 \newpage
 
 \part{Теоремы}
@@ -204,7 +268,7 @@
     
     \section{Лемма о ''почти локальной инъективности''}
     
-        $F : O \subset \RM \rightarrow \RM$ --- дифференцируема в точке $x_0$, 
+        $F : O \subset \RM \rightarrow \RM$ --- дифференцируема в точке $x_0 \in O$, 
         
         $\det F'(x_0) \neq 0$,
         
@@ -268,11 +332,7 @@
     
     \section{Следствие о сохранении области для отображений в пространство меньшей размерности}
     
-        $F : O \subset \RM \rightarrow \mathbb{R}^l$, где:
-        
-        $l < m$,
-        
-        $F \in C^1(O)$,
+        $F : O \subset \RM \rightarrow \mathbb{R}^l$, где $l < m$ и $F \in C^1(O)$,
         
         $\rang F'(x) = l$ при всех $x$.
         
@@ -298,7 +358,7 @@
         
         Пусть $T$~--- обратимо, $\det T'(x) \neq 0$ всюду. Тогда
         
-        $T^{-1} \in C^r$ и при этом $\left( T^{-1} \right)'(y_0) = \left( T'(x_0) \right)^{-1}$, если $y_0 = T(x_0)$.
+        $T^{-1} \in C^r$ и при этом $\left( T^{-1} \right)'(y_0) = \left( T'(x_0) \right)^{-1}$ при $y_0 = T(x_0)$.
         
         \subsection{Доказательство}
         
@@ -408,7 +468,7 @@
             
                 $\exists ! \varphi : P \rightarrow Q$~--- $C^r$-гладкое, такое, что $\forall x \in P$ $F(x, \varphi(x)) = 0$.
                 
-            \item $\varphi'(x) = - \left(F'_y (x, \varphi(x)) \right) \cdot F'_x (x, \varphi(x))$.
+            \item $\varphi'(x) = - \left(F'_y (x, \varphi(x)) \right)^{-1} \cdot F'_x (x, \varphi(x))$.
     
         \end{enumerate}
         
@@ -474,17 +534,7 @@
                 
                     что существуют функции $f_1$, $f_2$, $\ldots$, $f_{m - k} : \widetilde{U} \rightarrow \mathbb{R} \in C^r$ такие, что
                     
-                    $x \in M \cap \widetilde{U} \Longleftrightarrow$ 
-                        
-                        \begin{equation*}
-                            \begin{cases}
-                            
-                                f_1(x) = 0 \\ f_2(x) = 0 \\ \ldots \\ f_{m - k}(x) = 0
-                                
-                            \end{cases}
-                        \end{equation*}
-                        
-                    и $\grad f_1(p), \ldots, \grad f_{m - k}(p)$~--- ЛНЗ.
+                    $x \in M \cap \widetilde{U} \Longleftrightarrow f_1(x) = 0$, $f_2(x) = 0$, $\ldots$, $f_{m - k}(x) = 0$ и ($\grad f_1(p)$, $\ldots$, $\grad f_{m - k}(p)$)~--- ЛНЗ.
                     
             \end{enumerate}
             
@@ -538,13 +588,13 @@
     
     \section{Следствие о двух параметризациях}
     
-        $M \subset \RM$~--- $k$-мерное простое $C^r$-гладкое многообразие, $p \in M$, $U$~--- открытое, $p \in U$.
+        $M \subset \RM$~--- $k$-мерное простое $C^r$-гладкое многообразие, $p \in M$, $U$~--- открытое в $M$, $p \in U$.
         
         $\Phi_1 : O_1 \subset \mathbb{R}^k \rightarrow U \cap M$,
         
         $\Phi_2 : O_2 \subset \mathbb{R}^k \rightarrow U \cap M$ (оба отображние ''на'' и даже гомеоморфизм)
         
-        ($\phi_i \in C^r \left( O_i, \RM \right)$. Тогда существует диффеоморфизм $\psi : O_1 \rightarrow O_2$ и $\Phi_1 = \Phi_2 \circ \psi$.
+        ($\phi_i \in C^r \left( O_i, \RM \right)$). Тогда существует диффеоморфизм $\psi : O_1 \rightarrow O_2$ и $\Phi_1 = \Phi_2 \circ \psi$.
         
         \subsection{Доказательство}
         
@@ -558,7 +608,7 @@
     
     \section{Лемма о корректности определения касательного пространства}
     
-        $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~--- $C^r$-параметризация $U(p) \cap M$, $p \in M$, $\Phi(t_0) = p$. Тогда образ оператора $\Phi'(t_0) : \mathbb{R}^k \rightarrow \RM$~--- это $k$-мерное подпространство в $\RM$, не зависящее от $\Phi$.
+        $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~--- $C^r$-параметризация $U(p) \cap M$, $p \in M$, $\Phi(t_0) = p$, $M$~--- простое $k$-мерное гладкое многообразие в $\RM$. Тогда образ оператора $\Phi'(t_0) : \mathbb{R}^k \rightarrow \RM$~--- это $k$-мерное подпространство в $\RM$, не зависящее от $\Phi$.
         
         \subsection{Доказательство}
         
@@ -568,9 +618,7 @@
     
     \section{Касательное пространство в терминах векторов скорости гладких путей}
     
-        $M$~--- $k$-мерное гладкое многообразие в $\RM$, $p \in M$, $v \in \RM$.
-        
-        $v \in T_p \left( M \right) \Longleftrightarrow \exists \gamma : [- \varepsilon, \varepsilon] \rightarrow M$ и $\gamma \left( [ -\varepsilon, \varepsilon ] \right) \in M$ такое, что $\gamma(0) = p$ и $\gamma'(0) = v$.
+        $v \in T_p(M) \subset \RM \Longleftrightarrow$ существует гладкий путь $\gamma_v : [-1, 1] \rightarrow M$, $\gamma'(0) = v$ и $\gamma(0) = p$.
         
         \subsection{Доказательство}
         
@@ -651,4 +699,687 @@
         
             $\| A \|^2 = \max | Ax |^2 = \max \left\langle Ax, Ax \right\rangle = \max \left\langle A^T Ax, x \right\rangle$.
     
+    \newpage
+    
+    \section{Теорема Стокса--Зайдля о непрерывности предельной функций. Следствие для рядов}
+    
+        $f_n$, $f_0 : X \rightarrow \mathbb{R}$, $X$~--- метрическое пространство, $c \in X$, $f_n$~--- непрерывно в точке $c$. $f_n \rightrightarrows f_0$ на $X$. Тогда $f_0$~--- непрерывна в точке $c$.
+        
+        \subsection{Доказательство}
+        
+            $| f_0(x) - f_0(c) | \leq | f_0(x) - f_n(x) | + | f_n(x) - f_n(c) | + | f_n(c) - f_0(c) | < 3 \varepsilon$ (китайский эпсилон), поскольку по непрерывности из условия
+            
+            $\forall \varepsilon > 0 : \exists U(c) : \forall x \in U(c) : | f_0(x) - f_0(c) | < \varepsilon$.
+            
+        \subsection{Следствие для рядов}
+        
+            $u_n : X \rightarrow \mathbb{R}$ непрерывно в $x_0 \in X$, где $X$~--- метрическое пространство/
+            
+            $\sum u_n(x)$~--- равномерно сходится на $X$, $S(x) = \sum u_n(x)$. Тогда $S(x)$ непрерывно в $x_0$.
+            
+            \subsubsection{Доказательство}
+        
+                $S_n(x) \rightrightarrows S(x) \Rightarrow S(x)$~--- непрерывно в $x_0)$.
+            
+    \newpage
+    
+    \section{Метрика в пространстве непрерывных функций на компакте, его полнота}
+    
+        $X$~--- метрическое пространство, комактен. $f_1$, $f_2 : X \rightarrow \mathbb{R}$, $f_1$, $f_2$~--- непрерывен на $X$.
+        
+        $\rho(f_1, f_2) = \max\limits_{x \in X} | f_1(x) - f_2(x) |$~--- метрика в $C(x)$, тогда пространство $(C(x), \rho)$~--- полное.
+        
+        \subsection{Доказательство}
+        
+            $f_n \in C(x)$~--- фундаментальная последовательность
+        
+            $\forall \varepsilon > 0 : \exists N : \forall n, m > N : \max\limits_{x \in X} \left| f_n(x) - f_m(x) \right| < \varepsilon \Rightarrow \forall x \in X$.
+            
+            $f_n(x)$~--- фундаментальная вещественна последовательность, значит $\forall x \in X : \exists \lim\limits_{n \rightarrow +\infty} f_n(x) = f(x)$.
+            
+            $\forall \varepsilon > 0 : \exists N : \forall m, n > N : \forall x | f_n(x) - f_m(x) | < \varepsilon \Rightarrow | f_n - f(x) | < \varepsilon$
+            
+    \newpage
+    
+    \section{Теорема о предельном переходе под знаком интеграла. Следствие для рядов}
+    
+        $f_n \in C[a, b]$
+        
+        $f_n \rightrightarrows f$ на $[a, b]$.
+        
+        Тогда $\int\limits^b_a f_n \rightarrow \int\limits^b_a f$
+        
+        \subsection{Доказательство}
+        
+            $\left| \int\limits^b_a f_n - \int\limits^b_a f \right| \leq \int\limits^b_a | f_n - f | \leq \max\limits_{x \in [a, b]} | f_n(x) - f(x) | \cdot (b - a) \rightarrow 0$ ($a, b \in \mathbb{R}$, не в $\overline{\mathbb{R}}$)
+            
+        \subsection{Следствие для рядов}
+        
+            $u_n \in C[a, b]$
+            
+            $\sum u_n(x)$ равномерно сходится на $[a, b]$
+            
+            $S(x) = \sum\limits^{+\infty}_{n = 1} u_n(x)$, $x \in [a, b]$
+            
+            Тогда $\int\limits^b_a S(x) dx = \sum\limits^{+\infty}_{n = 1} \int\limits^b_a u_n(x) dx$
+            
+            ($\sum u_n$~--- равномерно сходится, $u_n$~--- непрерывно $\Rightarrow$ $S(x)$ непрерывно $\Rightarrow \int S(x)$ имеет смысл)
+            
+            \subsubsection{Доказательство}
+            
+                $\int\limits^b_a S_n(x)dx \rightarrow \int\limits^b_a S(x)dx$ по основной теореме,
+                
+                $\sum\limits^n_{k = 1} \int\limits^b_a u_k(x)dx \rightarrow \sum\limits^{+\infty}_{k = 1} \int\limits^b_a u_k(x)dx$.
+                
+    \newpage
+    
+    \section{Правило Лейбница дифференцирования интеграла по параметру}
+    
+        $f : [a, b] \times [c, d] \rightarrow \mathbb{R}$
+            
+        $f$, $f'_y$~--- непрерывны на $[a, b] \times [c, d]$, $\Phi(y) = \int\limits^b_a f(x, y) dx$
+            
+        $\Phi$~--- дифференцируема на $[c, d]$ и $\Phi'(y) = \int\limits^b_a f'_y (x, y) dx$
+            
+        \subsection{Доказательство} 
+            
+            $\dfrac{\Phi \left( Y + \frac{1}{n} \right) - \Phi(y)}{\frac{1}{n}} = \int\limits^b_a \dfrac{f \left( x, y + \frac{1}{n} \right) - f(x, y)}{\frac{1}{n}} dx = \int\limits^b_a f'_y \left(x, y + \frac{\Theta}{n} \right) dx$, что есть $\int\limits^b_a g_n dx$.
+            
+            $g_n(x, y) \rightrightarrows f'_y (x, y)$ для $x \in [a, b]$.
+            
+            $\Theta = a_x$, $0 \leq a_x \leq 1$.
+            
+    \newpage
+    
+    \section{Теорема о предельном переходе под знаком производной. Дифференцирование функционального ряда}
+    
+        $f_n \in C^1 \langle a, b \rangle$ и $f_n \rightarrow f_0$ топочечно на $\langle a, b \rangle$, $f'_n \rightrightarrows \varphi$ на $\langle a, b \rangle$. Тогда 
+        
+        \begin{enumerate}
+        
+            \item $f_0 \in C^1 \langle a, b \rangle$
+            
+            \item $f'_0 = \varphi$ на $\langle a, b \rangle$
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            $x_0$, $x_1 \in \langle a, b \rangle$, $f'_n \rightrightarrows \varphi$ на $[x_0, x_1]$, $\int\limits^{x_1}_{x_0} f'_n \rightarrow \int\limits^{x_1}_{x_0} \varphi$
+            
+            $f_n(x_0) - f_n(x_0) \xrightarrow[n \rightarrow +\infty]{} \int\limits^{x_1}_{x_0} \varphi$, и $f_n(x_1) - f_n(x_0) \rightarrow f_0(x_1) - f_0(x_0)$, значит
+            
+            $\int\limits^{x_1}_{x_0} \varphi = f_0(x_1) - f_0(x_0)$, $f_0$~--- первообразная для $\varphi$, $\varphi$~--- непрерывна, значит $f') - \varphi$.
+            
+        \subsection{Дифференцирование функционального ряда}
+        
+            $u_n \in C^1 \left( \langle a, b \rangle \right)$
+            
+            \begin{enumerate}
+            
+                \item $\sum u_n(x) = S(x)$ $x \in \langle a, b \rangle$ (поточечная сходимость)
+                
+                \item $\sum u'_n(x) = \varphi(x)$ равномерно сходится при $x \in \langle a, b \rangle$.
+            
+            \end{enumerate}
+            
+            Тогда
+                
+            \begin{enumerate}
+                
+                \item $S(x) \in C^1 \left( \langle a, b \rangle \right)$
+                    
+                \item $S'(x) = \varphi(x)$ при $x \in \langle a, b \rangle$
+                    
+            \end{enumerate}
+                
+            Т.е. $\left( \sum\limits^{+infty}_{n = 1} u_n(x) \right)' = \sum\limits^{+\infty}_{n = 1} u'_n(x)$
+            
+        \subsubsection{Доказательство}
+            
+            Следует из основной теоремы.
+                
+            $f_n \leftrightarrow S_n$ и $f_0 \leftrightarrow S$.
+                
+            $f_n(x) \rightarrow f_0(x)$ и $f'_n \rightrightarrows \varphi$ и $\sum\limits^n_{k = 1} u'_k(x) = \left( \sum\limits^n_{k = 1} u_k(x) \right)' = f'_n$
+                
+    \newpage
+    
+    \section{Признак Вейерштрасса равномерной сходимости функционального ряда}
+    
+        $\sum u_n$ и $u_n : X \rightarrow \mathbb{R}$. Также пусть существует вещественная последовательность $c_n$:
+        
+        \begin{enumerate}
+        
+            \item $| u_n(x) | \leq c_n$ $\forall x \in X$;
+            
+            \item $\sum c_n$ сходится.
+            
+        \end{enumerate}
+        
+        Тогда $\sum u_n(x)$~--- равномерно сходится на $X$
+        
+        \subsection{Доказательство}
+        
+            Равномерно сходится тогда и только тогда $R_n \rightrightarrows 0$
+            
+            $\sup\limits_{x \in X} \left| \sum\limits^{+\infty}_{k = n} u_k(x) \right| \leq \sum\limits^{+\infty}_{k = n} c_k \xrightarrow[n \rightarrow +\infty]{} 0$ как остаток сходящегося ряда.
+        
+    \newpage
+    
+    \section{Дифференцируемость гамма функции}
+    
+        $\Gamma(x)$ бесконечно дифференцируется на $(0, +\infty)$.
+        
+        \subsection{Доказательство}
+        
+            $\dfrac{1}{\Gamma(x)} = x e^{\gamma x} \prod\limits^{+\infty}_{k = 1} \left( 1 + \frac{x}{k} \right) e^{-\frac{x}{k}}$.
+            
+            $-\ln \Gamma(x) = \ln x + \gamma x + \sum\limits^{+\infty}_{k = 1} \left( \ln \left( 1 + \frac{x}{k} \right) - \frac{x}{k} \right)$, обозначим за $u_k = \left( \ln \left( 1 + \frac{x}{k} \right) - \frac{x}{k} \right)$.
+            
+            $u'_k(x) = \frac{1}{x + k} - \frac{1}{k} = -\frac{x}{k(k + x)}$.
+            
+            $| u'_k(x) | \leq \frac{M}{k (k + M)}$, $\sum \frac{M}{k (k + M)}$~--- сходится по признаку Вейерштрасса.
+            
+            $\sum u'_k(x)$ равномерно сходится при $x \in (0, M)$, где $M$~--- какое угодно.
+            
+            $- \dfrac{\Gamma'(x)}{\Gamma(x)} = \frac{1}{x} + \gamma - \sum \frac{x}{k(k + x)}$.
+            
+    \newpage
+    
+    \section{Теорема о предельном переходе в суммах}
+    
+        $u_n : E \subset X \rightarrow \mathbb{R}$, $x_0$~--- предельная точка $E$, $X$~--- метрическое пространство.
+        
+        \begin{enumerate}
+        
+            \item $\forall n : \exists \lim\limits_{x \rightarrow x_0} u_n(x) = a_n$;
+            
+            \item $\sum u_n(x)$ равномерно сходится на $E$.
+        
+        \end{enumerate}
+        
+        Тогда
+        
+        \begin{enumerate}
+        
+            \item $\sum a_n$~--- сходится;
+            
+            \item $\sum a_n = \lim\limits_{x \rightarrow x_0} \left( \sum\limits^{+\infty}_{n = 1} u_n(x) \right)$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $\sum a_n$~--- сходится
+                
+                    $S_n(x) = \sum\limits^n_{k = 1} u_k(x)$, $S^a_n = \sum\limits^n_{k = 1} a_k$.
+                    
+                    Достаточно проверить, что последовательность $S^a_n$ фундаментальная.
+                    
+                    $\left| S^a_{n + p} - S^a_n \right| \leq \left| S^a_{n + p} - S_{n + p} (x) \right| + \left| S_{n + p}(x) - S_n(x) \right| + \left| S_n(x) - S^a_n \right| < \varepsilon$
+                    
+                \item Сводим к предыдущей теореме
+                
+                    $\widetilde{u_n}(x)$ := $\left[
+                        \begin{gathered} 
+                            u_n(x), x \neq x_0, x \in E 
+                            \\ 
+                            a_n, x = x_0 \hfill
+                        \end{gathered}
+                        \right.$
+                    
+                    $\widetilde{u_n}$~--- непрерывна в точке $x_0$. Остаётся только проверить, что $\sum \widetilde{u_n}(x)$ равномерно сходится в $E \cup \left\{ x_0 \right\}$
+                    
+                    $\sup\limits_{x \in E \cup \left\{ x_0 \right\}} \left| \sum\limits^{+\infty}_{k = n} \widetilde{u_k}(x) \right| \leq \sup\limits_{x \in E} \left| \sum\limits^{+\infty}_{k = n} u_k(x) \right| \rightarrow 0$
+                    
+            \end{enumerate}
+        
+    \newpage
+    
+    \section{Теорема о перестановке двух предельных переходов}
+    
+        $f_n : E \subset X \rightarrow \mathbb{R}$, $x_0$~--- предельная точка $E$, и
+        
+        \begin{enumerate}
+        
+            \item $f_n \rightrightarrows S(x)$ при $n \rightarrow +\infty$ на $E$;
+            
+            \item $f_n(x) \xrightarrow[x \rightarrow x_0]{} A_n$
+            
+        \end{enumerate}
+        
+        Тогда
+        
+        \begin{enumerate}
+        
+            \item $\exists \lim\limits_{n \rightarrow +\infty} A_n = A \in \mathbb{R}$
+            
+            \item $S(x) \xrightarrow[x \rightarrow x_0]{} A$
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            $\sum\limits^n_{k = 1} u_k = f_n$, $a_k := A_k - A_{k - 1}$
+            
+            Тогда $\sum a_n$~--- сходится $\Rightarrow \exists \sum \left( A_k - A_{k - 1} \right) \Leftrightarrow \exists \lim\limits_{n \rightarrow +\infty} A_n$
+            
+            $f(x, y) \rightrightarrows f(x)$ при $y \rightarrow y_0$ на множестве $E$, т.е.
+            
+            $\forall \varepsilon > 0 : \exists > 0 : \forall y : 0 < | y - y_0 | < \delta : \forall x \in E : | f(x, y) - f(x, y_0) | < \varepsilon$
+            
+    \newpage
+    
+    \section{Признак Дирихле равномерной сходимости функционального ряда}
+    
+        $\sum a_n(x) b_n(x)$, $x \in X$.
+        
+        \begin{enumerate}
+        
+            \item $\exists C_a : \forall N : \forall x \in X : \left| \sum\limits^N_{n = 1} a_n(x) \right| \leq C_a$, 
+            
+                частичные суммы ряда $\sum a_n(x)$ равномерно ограничены.
+            
+            \item $b_n \rightrightarrows 0$ при $n \rightarrow +\infty$ на множестве $X$, $\forall x : b_n(x)$~--- монотонная. Тогда $\sum a_n(x) b_n(x)$ равномерно сходится на $X$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            $\sum\limits_{N \leq k \leq M} a_k b_k = A_M b_M - A_{N - 1} b_{N - 1} + \sum\limits^{M - 1}_{k = N} (b_k - b_{k + 1}) A_k$
+            
+            $\left| \sum\limits^M_{k = N} a_k b_k \right| \leq |A_M b_M| + |A_{N - 1} b_N| + \left| \sum (b_k - b_{k + 1} ) A_k \right| \leq C_A \left( |b_M| + |b_N| \right) + \sum(b_k - b_{k + 1})A_k \leq C_a \left( | b_M | + | b_N | + \sum^{M - 1}_{k = N} (b_k - b_{k + 1}) \right) \leq C_a \left( |b_M| + |b_N| + |b_M| + |b_N| \right) \rightarrow c$
+            
+            \begin{enumerate}
+            
+                \item $\sum\limits^{+\infty}_{n = 1} a_n(x)$~--- равномерно сходится $x \in X$;
+                
+                \item $\exists C_B : \forall x \forall n : |b_n(x)| \leq C_m$ при каждом $x$ $b_n(x)$ монотонна. $\sum a_n b_n$ равномерно сходится/
+                
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Теорема о круге сходимости степенного ряда}
+    
+        $\sum a_n (z - z_0)^n$, тогда выполнено одно из трёх условий:
+        
+        \begin{enumerate}
+        
+            \item ряд сходится только при $z = z_0$;
+            
+            \item ряд сходится при любых $z \in \mathbb{C}$;
+            
+            \item $\exists R \in (0, +\infty)$ такое, что при $|z - z_0| < R$ абсолютно сходится, при $|z - z_0| > R$ расходится, при $|z - z_0| = R$ может как сходится, так и расходится.
+            
+        \end{enumerate}
+        
+        \subsection{доказательство}
+        
+            Изучим $\sum a_n (z - z_0)^n$ на абсолютная сходимость.
+            
+            $\overline{\lim\limits_{n \rightarrow +\infty}} \sqrt[n]{|a_n||z - z_0|^n} = \overline{\lim} |z - z_0| \sqrt[n]{|a_n|} = |z - z_0| \sqrt[n]{|a_n|}$
+            
+            \begin{enumerate}
+            
+                \item $\overline{\lim} \sqrt[n]{a_n} = +\infty$, тогда при $z = z_0$ ряд абсолютно сходится, при $z \neq z_0$ ряд расходится;
+                
+                \item $\overline{\lim} \sqrt[n]{a_n} = 0$, тогда при любых $z$ ряд сходится абсолютно;
+                
+                \item $\overline{\lim} \sqrt[n]{a_n}$ конечен, тогда при $|z - z_0| < \dfrac{1}{\overline{\lim}\sqrt[n]{a_n}}$~--- сходится, при $|z - z_0| > \dfrac{1}{\overline{\lim}\sqrt[n]{a_n}}$~--- расходится.
+                
+                    Тогда обозначим $R = \dfrac{1}{\overline{\lim}\sqrt[n]{a_n}}$~--- формула Адомара.
+                
+            \end{enumerate}
+            
+            Множество сходимости степенного ряда~--- это открытый круг радиуса $R$ и некоторые точки на окружности.
+            
+    \newpage
+    
+    \section{Теорема о непрерывности степенного ряда}
+    
+        $\sum a_n(z - z_0)^n$, $0 < R \leq +\infty$. Тогда 
+        
+        \begin{enumerate}
+        
+            \item $0 < r < R$~--- тогда ряд равномерно сходится на $\overline{B(z_0, r)}$;
+            
+            \item $f(z) = \sum a_n (z - z_0)^n$~--- непрерывен в $B(z_0, R)$.
+        
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item По признаку Вейерштрасса $\left| a_n (z - z_0)^n \right| \leq | a_n | \cdot r^n$, ряд $\sum | a_n | r^n$~--- абсолютно сходится;
+                
+                \item Очевидно из предыдущего пункта.
+                
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Теорема о дифференцировании степенного ряда. Следствие об интегрировании. Пример}
+    
+        Обозначим за $A$ ряд $\sum\limits^{+\infty}_{n = 0} a_n (z - z_0)^n$ и за $A'$ ряд $\sum\limits^{+\infty}_{n = 1} n a_n (z - z_0)^{n - 1}$, $0 < R \leq +\infty$~--- радиус сходимости для $(A)$. Тогда
+        
+        \begin{enumerate}
+        
+            \item $(A')$ тоже равномерно сходится на $R$;
+            
+            \item Пусть $f(z) = \sum a_n (z - z_0)^n$, $z \in B(z_0, R)$. Тогда $\forall z \in B(z_0, R)$ $f$~--- дифференцируема и $f'(z) = \sum n a_n (z - z_0)^{n - 1}$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $\sum \alpha_n x^n$ и $\sum \alpha_n x^{n + 1}$ имеют одинаковый радиус сходимости, т.к. $x \cdot S_N(x) = \widetilde{S_N(x)}$. Пределы этих сумм существуют для одинаковых $x$, значит и радиус сходимости один и тот же.
+                
+                    $R_{A'} = \dfrac{1}{\overline{\lim}\sqrt[n]{n a_n}} = \dfrac{1}{\overline{\lim}\sqrt[n]{n}\sqrt[n]{a_n}} = R$.
+                    
+                \item $a \in B(z_0, R)$, проверим, что существует $f'(a)$. Возьмём $r < R$ и $a \in B(z_0, r)$. Также пусть $w = z - z_0$ и $w_0 = a - z_0$, $| z - z_0 | < r$ и $| a - z_0 | < r$, тогда
+                
+                    $\lim \frac{f(z) - f(a)}{z - a} = \sum a_n \frac{(z - z_0)^n - (a - z_0)^n}{(z - z_0) - (a - z_0)} = \sum a_n \frac{w^n - w_0^n}{w - w_0}$ и 
+                    
+                    $\left| a_n \frac{w^n - w_0^n}{w - w_0} \right| \leq | a_n | n r^{n - 1}$.
+                    
+                    Заметим, что $\sum n | a_n | r^{n - 1}$ сходится, т.к. ряд $(A')$ при $z = z_0 + r$ сходится абсолютно по признаку Вейерштрасса, ряд равномерно сходится в круге $B(z_0, r)$.
+                    
+                    $\lim\limits_{z \rightarrow a} \frac{f(z) - f(z_0)}{z - z_0} = \lim \sum\limits^{+\infty}_{n = 0} \ldots = \sum\limits^{+\infty}{n = 1} \lim\limits_{z \rightarrow a} \frac{(z - z_0)^n - (a - z_0)^n}{z - a} = \sum\limits^{+\infty}_{n = 1} a_n n (z - z_0)^{n - 1}$.
+                    
+            \end{enumerate}
+            
+        \subsection{Следствие о бесконечной дифференцируемости}
+            
+            $f(z) = \sum a_n (z - z_0)^n$, $0 < R \leq +\infty$. Тогда $f \in C^{+\infty} \left( B(z_0, R) \right)$ и все производные находится с помощью почленного дифференцирования.
+            
+        \subsection{Следствие об интегрировании}
+        
+            $f(x) = \sum a_n (x - x_0)^n$, $a_n \in \mathbb{R}$, $x_0 \in \mathbb{R}$, $x$~--- тоже вещественное и лежит в $(x_0 - R, x_0 + R)$.
+            
+            Тогда при почленном интегрировании $\sum a_n \frac{(x - x_0)^{n + 1}}{n + 1}$~--- ряд имеет тот же радиус сходимости и к тому же $\int\limits^x_{x_0} \left( \sum\limits^{+\infty}_{n = 0} a_n (x - x_0)^n \right) dx = \sum\limits^{+\infty}_{n = 0} \frac{a_n}{n + 1} (x - x_0)^{n + 1}$.
+            
+        \subsection{Пример}
+        
+            Разложить $\arcctg x$ в степенной ряд в окрестности $x_0 = 0$ (это же ряд Тейлора)
+            
+            $(\arcctg x)' = -\frac{1}{1 + x^2} = -(1 - x^2 + x^4 - x^6 + \ldots) = -1 + x^2 - x^4 + x^6 + \ldots$ ($|x| < 1$)
+            
+            $\arcctg x = \frac{\pi}{2}-x + \frac{x^3}{3} - \frac{x^5}{5} + \ldots$. (не забудем, что при возврате к первообразной не надо забывать про константу).
+
+    \newpage
+    
+    \section{Свойства экспоненты}
+    
+        Обозначим $\exp(z) = \sum\limits^{+\infty}_{n = 0} \frac{z^n}{n!}$, $R = +\infty$, сходится при всех $z \in \mathbb{C}$.
+        
+        \begin{enumerate}
+        
+            \item $\exp(0) = 1$;
+            
+            \item $(\exp z)' = \exp z$
+            
+                $\lim\limits_{z \rightarrow 0} \frac{e^z - 1}{z} = (e^z)' \bigg|_{z = 0} = 1$;
+                
+            \item $\overline{\exp(z)} = \exp(\overline{z})$ комплексное, $\overline{\sum \frac{z^n}{n}} = \sum \frac{\overline{z}^n}{n}$;
+            
+            \item $\exp (z + w) = \exp(z) \cdot \exp(w)$
+            
+                $\exp (z + w) = \sum\limits^{+\infty}_{n = 0} \frac{(z + w)^n}{n!} = \sum\limits^{+\infty}_{n = 0} \left( \sum\limits^n_{k = 0} \frac{z^k}{k!} \frac{w^{n - 1}}{(n - k)!} \right) = \left( \sum \frac{z^k}{k!} \right) \left( \sum \frac{w^k}{k!} \right)$
+                
+        \end{enumerate}
+        
+        \subsection{Следствие}
+        
+            $\forall z \in \mathbb{C}$ $\exp(z) \neq 0$.
+            
+    \newpage
+    
+    \section{Метод Абеля суммирования рядов. Следствие}
+    
+        $\sum c_n$~--- сходящийся ряд, $f(x) = \sum c_n x^n$, $-1 < x < 1$ ($\Leftrightarrow R \geq 1$). Тогда $\sum c_n = \lim\limits_{x \rightarrow 1 - 0} f(x)$.
+            
+        \subsection{Доказательство}
+        
+            При $x \in (0, 1)$, $\sum c_n x^n$~--- сходится по признаку Абеля,
+            
+            $\sum a_n b_n$, $\sum a_n$~--- сходится, $b_n$~--- монотонно ограниченная, что чему сопоставить очевидно. Осталось проверить, что $\sum c_n x^n$ непрерывен на $[0, 1]$, т.е. равномерную сходимость $\sum c_n x^n$ на $[0, 1]$.
+            
+            $\sum a_n(x)$~--- равномерно сходится, $b_n$~--- монотонная при каждом фиксированном $x$, $\exists C_b : \forall n : \forall x : | b_n(x) | \leq C_b$.
+            
+        \subsection{Следствие}
+        
+            $\sum a_n = A$, $\sum b_n = B$, $c_n := a_0 b_n + a_1 b_{n - 1} + \ldots + a_n b_0$, известно, что $\sum c_n = C$. Тогда $A \cdot B = C$.
+            
+            \subsubsection{Доказательство}
+            
+                $f(x) = \sum a_n x^n$, $g(x) = \sum b_n x^n$, $h(x) = \sum c_n x^n$, $x \in [0, 1]$.
+                
+                $x < 1$ ряды для $f$ и $g$ абсолютно сходится, значит $f(x) \cdot g(x) = h(x)$ при $x \rightarrow 1$.
+                
+    \newpage
+    
+    \section{Единственность разложения функции в ряд}
+    
+        $f$ единственным образом раскладывается в степенной ряд в окрестности $x_0$ (если можно, конечно, разложить его).
+        
+        \subsection{Доказательство}
+        
+            Потому что $a_n := \dfrac{f^{(n)}(x_0)}{n!}$
+            
+            $f(x) = a_0 + a_1(x - x_0) + a_2(x - x_0)^2 + \ldots \Rightarrow f \in C^{+\infty} \left( U(x_0) \right)$.
+            
+            $x := x_0 \Rightarrow a_0 = f(x_0)$.
+            
+            $f'(x) = a_1 + 2 a_2 (x - x_0) + 3 a_3 (x - x_0)^2 + \ldots$, $x := x_0 \Rightarrow a_1 = f'(x_0)$ и $a_2 = \frac{f''(x_0)}{2!}$ и т.д.
+            
+    \newpage
+    
+    \section{Разложение бинома в ряд Тейлора}
+    
+        $\sigma \in \mathbb{R}$, тогда при $|x| < 1$
+        
+        $(1 + x)^{\sigma} = 1 + \sigma x + \frac{\sigma (\sigma - 1)}{2}x^2 + \ldots + \frac{\sigma (\sigma - 1) \ldots (\sigma - n + 1)}{n!} x^n + \ldots$.
+        
+        \subsection{Доказательство}
+        
+            $S'(x)(1 + x) = \sigma S(x)$
+            
+            $f(x) = \dfrac{S(x)}{(1 + x)^{\sigma}} = const$
+            
+            $f' = \dfrac{S'(x)}{(1 + x)^{\sigma}} - \dfrac{\sigma S(x)}{(1 + x)^{\sigma + 1}} = \dfrac{0}{(1 + x)^{\sigma + 1}} \Rightarrow \dfrac{S(x)}{(1 + x)^{\sigma}} = const$
+            
+            $f(0) = 1 \rightarrow S(x) = (1 + x)^{\sigma}$.
+            
+    \newpage
+    
+    \section{Теорема о разложимости функции в ряд Тейлора}
+    
+        $f \in C^{\infty} \left( [x_0 - h, x_0 + h] \right)$. Тогда эквивалентны следующие утверждения:
+        
+        \begin{enumerate}
+        
+            \item $f$ раскладывается в ряд Тейлора в окрестности $x_0$;
+            
+            \item $\exists \delta, C, A > 0 : \forall n : \left| f^{(n)}(x) \right| < C \cdot A^n \cdot n!$ при $|x - x_0| < \delta$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $1 \Leftarrow 2$
+                
+                    Оценим остаток в форме Лагранжа $f(x) = \sum\limits^{n - 1}_{k = 0} \dfrac{f^{(k)}(x_0)}{k!} (x - x_0)^k + \dfrac{f^{(n)}(\overline{x})}{n!} (x - x_0)^n$
+                    
+                    $\left| \dfrac{f^{(n)}(\overline{x})}{n!} (x - x_0)^n \right| \leq \dfrac{C A^n n!}{n!} |x - x_0|^n \rightarrow 0$ при $|A(x - x_0)| < 1$ и $|x - x_0| < \frac{1}{n}$. 
+                    
+                    Таким образом, $|x - x_0| < \min \left( \frac{1}{A}, \delta \right)$, $r_n \rightarrow 0$.
+                    
+                \item $1 \Rightarrow 2$
+                
+                    $f(x) = \sum\limits^{+\infty}_{n = 0} \dfrac{f^{(n)}(x_0)}{n!} (x - x_0)^n$. Пусть при $x = x_1 \neq x_0$ ряд сходится.
+                    
+                    $\dfrac{f^{(n)}(x_0)}{n!} (x_1 - x_0)^n \rightarrow 0$, т.е. меньше $C_1$ по модулю.
+                    
+                    $\left| f^{(n)}(x_0) \right| \leq C_1 \cdot n! \cdot \dfrac{1}{| x_1 - x_0 |^n} B^n$
+                    
+                    $f^{(m)}(x) = \sum\limits^{+\infty}_{n = m} \dfrac{f^{(n)}(x_0)}{(n - m)!} (x_0) (x - x_0)^{n - m}$
+                    
+                    $\left| f^{(m)}(x) \right| \leq \sum\limits^{+\infty}_{n = m} \dfrac{|f^{(n)}(x_0)}{(n - m)!} |x - x_0|^{n - m} \leq \sum \dfrac{C_1 B^n n!}{(n - m)!} |x - x_0|^{n - m} = C_1 B^n \sum\limits^{+\infty}_{n = m} n (n - 1) \ldots (n - m + 1) \left| B(x - x_0) \right|^{n - m} = C_1 \cdot \dfrac{m! B^m}{| 1 - \left( B(x - x_0) \right)}^{(m + 1)} \leq C_1 m! B^m 2^{m + 1} = (2 C_1) m! (2 B)^m$.
+                    
+            \end{itemize}
+            
+    \newpage
+    
+    \section{Теорема Коши о перманентности метода средних арифметических}
+        
+        \subsection{Дополнительное определение}
+        
+            $\sum\limits^{+\infty}_{n = 0} a_n$, $S_n = a_0 + a_1 + \ldots + a_n$.
+            
+            $\sigma_n = \frac{1}{n + 1} \left( S_0 + S_1 + \ldots + S_n \right)$.
+            
+            Если существует $\lim\limits_{n \rightarrow +\infty} \sigma_n = S$, то $S$ называется суммой ряда $\sum a_n$ в смысле метода средних арифметических (или по Чезаро).
+        
+        \subsection{Формулировка}
+        
+            $\sum a_n = S \Rightarrow \sum a_n = S$ в смысле метода средних арифметических.
+        
+        \subsection{Доказательство}
+        
+            $\forall \varepsilon > 0 : \exists N_1 > 0 : \forall n > N_1 : \left| S_n - S \right| < \varepsilon$
+            
+            $\sigma_n - S = \frac{1}{n + 1} \sum\limits^n_{i = 0} \left( S_i - S \right)$, $\left| \sigma_n - S \right| \leq \frac{1}{n + 1} \sum\limits^n_{i = 0} \left| S_i - S \right| = \dfrac{\sum\limits^{N_1}_{i = 0} \left( S_i - S \right)}{n + 1} + \dfrac{\sum\limits^n_{i = N_1 + 1} \left| S_i - S \right|}{n + 1} < 2 \varepsilon$.
+            
+    \newpage
+    
+    \section{Простейшие свойства интеграла векторного поля по кусочно-гладкому пути}
+    
+        \begin{enumerate}
+        
+            \item Линейность по полю:
+            
+                $\forall \alpha, \beta \in \mathbb{R}$, $U$, $V$~--- векторные поля, тогда
+                
+                $I \left( \alpha U + \beta V, \gamma \right) = \alpha I \left(U, \gamma \right) + \beta T \left( V, \gamma \right)$.
+                
+            \item Аддитивность при дроблении пути:
+            
+                $\gamma : [a, b] \rightarrow \RM$, $a < c < b$,
+                
+                $\gamma_1 := \gamma \bigg|_{[a, c]}$, $\gamma_2 := \gamma \bigg|_{[c, b]}$ и
+                
+                $I \left( V, \gamma \right) = I \left( V, \gamma_1 \right) + I \left( V, \gamma_2 \right)$.
+                
+            \item Замена параметра:
+            
+                $\varphi : [p, q] \rightarrow [a, b]$, сюрьекция, $\varphi \in C^1 \left( [p, q] \right)$, $\varphi(p) = a$, $\varphi(q) = b$,
+                
+                $\gamma : [a, b] \rightarrow \RM$, $\widetilde{\gamma} = \gamma \circ \varphi$, $\widetilde{\gamma}(s) = \gamma (\varphi(s))$.
+                
+            \item $\gamma_1 : [a, b] \rightarrow \RM$ $\gamma_2 : [c, d] \rightarrow \RM$~--- гладкие пути,
+            
+                $\gamma_1(b) = \gamma_2(c) \Rightarrow \gamma = \gamma_2 \gamma_1$~--- кусочно-гладкий путь (в точке $b$ путь $\gamma$ может быть и не гладким).
+                
+                $\gamma(t) = \begin{cases}
+                    \gamma_1(t), t \in [a, b] \\
+                    \gamma_2(t - b + c), t \in [b, b + d - c]
+                \end{cases}$
+                
+                Тогда $I \left( V, \gamma \right) = I \left( V, \gamma_1 \right) + I \left( V, \gamma_2 \right)$.
+            
+            \item $\gamma : [a, b] \rightarrow \RM$,
+            
+                $\gamma^- (t) = \gamma(a + b - t)$, $t \in [a, b]$. Тогда $I \left( V, \gamma^- \right) = - I \left( V, \gamma \right)$.
+                
+            \item Оценка интеграла по пути:
+            
+                $\gamma : [a, b] \rightarrow \RM$, $L := \gamma \left( [a, b] \right)$~--- носитель пути. Тогда
+                
+                $\left| I \left( V, \gamma \right) \right| \leq \max\limits{x \in L} \left| V(x) \right| \cdot l (\gamma)$.
+                
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item Из определения в силу линейности скалярного произведения;
+                
+                \item $\int\limits^b_a = \int\limits^c_a + \int\limits^b_c$;
+                
+                \item $I \left( V, \gamma \right) = \int\limits^b_a V_1 \left( \gamma(t) \right) \gamma'_1 + \ldots + V_m \left( \gamma (t) \right) \gamma'_m dt = \int\limits^q_p \left( V_1 \left( \widetilde{\gamma}(s) \right) \gamma'_1 \left( \varphi(s) \right) + \ldots + V_m \left( \widetilde{\gamma}(s) \right) \gamma'_m \left( \varphi(s) \right) \right) \varphi'(s) ds = I \left( V, \widetilde{\gamma} \right)$;
+                
+                \item $\int\limits^{b + d - c}_{a} \langle V (\gamma(t)), \gamma'(t) \rangle dt = \int\limits^b_a + \int\limits^{b + d - c}_b = \int\limits^b_a + \int\limits^d_c \langle V (\gamma_2 (\tau) ), \gamma'_2(\tau) \rangle d \tau$;
+                
+                \item $I \left(V, \gamma^- \right) = \int\limits^b_a \langle V \left( \gamma(a + b - t) \right) \cdot \left( - \gamma'(a + b - t) \right) \rangle dt = - \int\limits^b_a \langle V, \left( \gamma(\tau) \right), \gamma'(\tau) (-d \tau) \rangle = -I \left(v, \gamma \right)$;
+                
+                \item $\left| \int\limits^b_a \langle V(\gamma), \gamma' \rangle dt \right| \leq \int\limits^b_a \left| \langle V, \gamma' \rangle \right| dt \leq \int\limits^b_a \left| V \left( \gamma(t) \right) \right| | \gamma'(t) | dt \leq \max\limits-{x \in L} \left| V(x) \right| \cdot \int\limits^b_a | \gamma'(t) | dt$.
+                
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Обобщенная формула Ньютона--Лейбница}
+    
+        $V : O \subset \RM \rightarrow \RM$, потенциальное векторное поле, $f$~--- потенциал, $\gamma [a, b] \rightarrow O$~--- кусочно-гладкий путь, $\gamma(a) = A$, $\gamma(b) = B$. Тогда
+        
+        $\int\limits_{\gamma} V_1 dx_1 + \ldots + V_m dx_m = f(B) - f(A)$.
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $\gamma$~--- гладкий, $\phi(t) = f(\gamma(t))$, $\phi' = f' \gamma' = \langle \grad f, \gamma' \rangle = \langle V \left( \gamma(t) \right), \gamma'(t) \rangle = f(B) - f(A)$.
+                
+                \item кусочно-гладкий
+                
+                    $I \left( V, \gamma \right) = \sum\limits^n_{k = 1} \int\limits^{t_k}_{t_{k - 1}} \ldots = \sum\limits^n_{k = 1} f \left( \gamma (t_k) \right) - f \left( \gamma ( t_{k - 1} ) \right) = f(\gamma(t_n)) - f(\gamma(t_0)) = f(B) - f(A)$.
+                    
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Характеризация потенциальных векторных полей в терминах интегралов}
+    
+        $V$~--- векторное поле в $O$. Тогда эквивалентны следующие утверждения:
+        
+        \begin{enumerate}
+        
+            \item $V$~--- потенциальное;
+            
+            \item Итеграл $\int\limits_{\gamma} v_1 dx_1 + \ldots + v_m dx_m$ не зависит от пути в $O$;
+            
+            \item Для любого кусочно-гладкого замкнутого пути верно, что $\int\limits_{\gamma} v_1 dx_1 + \ldots + v_m dx_m = 0$.
+            
+        \end{enumerate}
+            
+        \subsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $1 \Rightarrow 2$~--- формула Ньютона-Лейбница;
+                
+                \item $2 \Rightarrow 3$~--- очевидно;
+                
+                \item $3 \Rightarrow 2$~--- очевидно;
+                
+                \item $2 \Rightarrow 1$ фиксируем $A \in O$, $\forall x \in O$ фиксируем кусочно-гладкий путь $\gamma_x$, $f(x) := \int\limits_{\gamma_x} V_1 dx_1 + \ldots + V_m dx_m$. Надо проверить, что $f$~--- потенциал.
+                
+                    Достаточно проверить, что $f'_{x_1}(x) = V_1(x)$ при всех $x$.
+                    
+                    $\gamma'_0 = (h, 0, \ldots, 0)$
+                    
+                    $f(x + he_1) - f(x) = \int\limits_{\gamma_0} V_ dx_1 + \ldots + V_m dx_m = \int\limits^1_0 V_1(x_1 + th, \ldots, x_m) h dt = V_1(x_1 + \alpha h, x_2, \ldots, x_m) h (1 - \alpha) \rightarrow V_1(x_1, \ldots, x_m)$.
+                    
+            \end{itemize}
+            
 \end{document}
