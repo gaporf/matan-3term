@@ -58,7 +58,7 @@
     
     \section{Формулировка теоремы о локальной обратимости в терминах систем уравнений}
     
-        \begin{equation*}
+    $
             \begin{cases}
             
                 f_1(x_1, \ldots, x_m) = y_1 \\
@@ -68,7 +68,7 @@
                 f_m(x_1, \ldots, x_m) = y_m
             
             \end{cases}
-        \end{equation*}
+    $
         
         Все $f_i$~--- гладкие.
         
@@ -80,7 +80,7 @@
     
     \section{Формулировка теоремы о неявном отображении в терминах систем уравнений}
     
-        \begin{equation*}
+    $
             \begin{cases}
             
                 f_1(x_1, \ldots, x_m, y_1, \ldots, y_n) = 0 \\
@@ -90,7 +90,7 @@
                 f_n(x_1, \ldots, x_m, y_1, \ldots, y_n) = 0
                 
             \end{cases}
-        \end{equation*}
+    $
         
         $x = a$ и $y = b$ удовлетворяют системе уравнений, а также $f_i$~--- функции класса $C^r$, также
         
@@ -124,7 +124,7 @@
                 
                 \begin{itemize}
                 
-                    \item $\Phi(O) = M$, и это гомеоморфизм;
+                    \item $\Phi$~--- гомеоморфизм;
                     
                     \item $\Phi \in C^r(O, \RM)$~--- это гладкость;
                     
@@ -138,7 +138,7 @@
     
     \section{Касательное пространство к $k$-мерному многообразию в $\RM$}
     
-        Пусть $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~---$C^r$-параметризация $U(p) \cap M$, $p \in M$ и $\Phi(t_0) = p$. Тогда $\Phi'(t_0) : \mathbb{R}^k \rightarrow \RM$~---касательное пространство к $k$-мерному многообразию $M$ в точке $p$.
+        $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~--- $C^r$-параметризация $U(p) \cap M$, $p \in M$, $\Phi(t_0) = p$. Тогда $\Phi'(t_0) \left( \mathbb{R}^k \right)$ называется касательным пространством к $k$-мерному многообразию $M$ в точке $p$. Обозначается $Tp(M) = \left\{ \Phi'(t_0) h, h \in \mathbb{R}^k \right\}$.
         
     \newpage
     
@@ -148,7 +148,7 @@
         
         $\Phi : E \rightarrow \mathbb{R}^n$, тогда
         
-        $x_0 \in E$, $\Phi(x_0) = 0$~--- точка относительного локального максимума $f$, если $\exists U (x_0) : \forall x \in U(x_0) \cap E$ $f(x) \leq f(x_0)$. 
+        $x_0 \in E$, $\Phi(x_0) = 0$~--- точка относительного локального максимума $f$, если $\exists U (x_0) : \forall x \in U(x_0) \cap E, \Phi(x) = 0$ $f(x) \leq f(x_0)$. 
         
         Аналогично определяется минимум.
         
@@ -156,11 +156,13 @@
     
     \section{Формулировка достаточного условия относительного экстремума}
     
-        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$,
+        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$, $\Phi : E \rightarrow \mathbb{R}^n$, $f$, $\Phi \in C^1$, 
         
-        $\Phi : E \rightarrow \mathbb{R}^n$, $a \in E : \rang \Phi'(a) = n$.
+        $a \in E : \rang \Phi'(a) = n$,
         
-        \begin{equation*}
+        $\lambda \in \mathbb{R}^n$ и верно
+        
+        $
             \begin{cases}
     
                 f'(a) - \lambda \Phi'(a) = 0 \\
@@ -168,13 +170,13 @@
                 \Phi(a) = 0
                 
             \end{cases}
-        \end{equation*}
+        $
         
         Если $h = ( h_x, h_y ) \in \mathbb{R}^{m + n}$ удовлетворяет $\Phi'(a) h = 0$, то можно выразить $h_y = \psi(h_x)$.
         
-        Рассмотрим квадратичную форму $Q(h_x) = d^2 G(a, \left( h_x, \psi (h_x ) \right) )$.
+        Рассмотрим квадратичную форму $Q(h_x) = d^2 G(a, \left( h_x, \psi (h_x ) \right) )$, где $G = f - \lambda \Phi$ (форма Лагранжа).
         
-        $Q$~--- положительно определенная, значит точка локального минимума, если отрицательно определенная~--- точка локального максимума, $Q$~--- неопределенная~--- нет экстремума.
+        $Q$~--- положительно определенная, значит точка локального минимума, если отрицательно определенная~--- точка локального максимума, $Q$~--- неопределенная~--- нет экстремума, в остальных случаях непонятно.
         
     \newpage
     
@@ -188,9 +190,9 @@
     
     \section{Равномерная сходимость последовательности функций на множестве }
     
-        $f$, $f_n : X \rightarrow \mathbb{R}$, $E \subset \mathbb{R}$, тогда $f_n$~--- равномерно сходится на $E$ к функции $f$ если
+        $f$, $f_n : X \rightarrow \mathbb{R}$, $E \subset X$, тогда $f_n$~--- равномерно сходится на $E$ к функции $f$ если
         
-        $M_n := \sup \left| f_n(x) - f(x) \right| \xrightarrow[n \rightarrow +\infty]{} 0$.
+        $M_n := \sup\limits_{x \in E} \left| f_n(x) - f(x) \right| \xrightarrow[n \rightarrow +\infty]{} 0$.
         
         Обозначается как $f_n \rightrightarrows f$ на множестве $E$.
         
@@ -214,7 +216,7 @@
     
     \section{Формулировка критерия Больцано--Коши для равномерной сходимости}
     
-        Функциональный ряд $\sum u_n$ равномерно сходится на $E \Longleftrightarrow \forall \varepsilon > 0 : \exists N : \forall m \geq n \geq N, x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$.
+        Функциональный ряд $\sum u_n$ равномерно сходится на $E \Longleftrightarrow \forall \varepsilon > 0 : \exists N : \forall m \geq n \geq N, \forall x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$.
         
     \newpage
     
@@ -334,7 +336,7 @@
     
         $F : O \subset \RM \rightarrow \mathbb{R}^l$, где $l < m$ и $F \in C^1(O)$,
         
-        $\rang F'(x) = l$ при всех $x$.
+        $\rang F'(x) = l$ при всех $x \in O$.
         
         Тогда $F(O)$~--- открыто.
         
@@ -356,7 +358,7 @@
     
         $T \in C^r \left( O, \RM \right)$ ($r = 1$, $2$, $\ldots$, $+\infty$).
         
-        Пусть $T$~--- обратимо, $\det T'(x) \neq 0$ всюду. Тогда
+        Пусть $T$~--- обратимо, $\det T'(x) \neq 0$ при $x \in O$. Тогда
         
         $T^{-1} \in C^r$ и при этом $\left( T^{-1} \right)'(y_0) = \left( T'(x_0) \right)^{-1}$ при $y_0 = T(x_0)$.
         
@@ -402,7 +404,7 @@
     
         $T \in C^1 \left( O, \RM \right)$, $x_0 \in O$.
         
-        Тогда $\left| T(x_0 + h) - T(x_0) - T'(x_0) h \right| \geq M \cdot |h|$, где $M = \sup\limits_{z \in [x_0, x_0 + h]} \| T'(z) - T'(x_0) \|$.
+        Тогда для любого $h$ $\left| T(x_0 + h) - T(x_0) - T'(x_0) h \right| \leq M \cdot |h|$, где $M = \sup\limits_{z \in [x_0, x_0 + h]} \| T'(z) - T'(x_0) \|$.
         
         \subsection{Доказательство}
         
@@ -618,7 +620,7 @@
     
     \section{Касательное пространство в терминах векторов скорости гладких путей}
     
-        $v \in T_p(M) \subset \RM \Longleftrightarrow$ существует гладкий путь $\gamma_v : [-1, 1] \rightarrow M$, $\gamma'(0) = v$ и $\gamma(0) = p$.
+        $v \in Tp(M) \subset \RM \Longleftrightarrow$ существует гладкий путь $\gamma_v : [-1, 1] \rightarrow M$, $\gamma'(0) = v$ и $\gamma(0) = p$.
         
         \subsection{Доказательство}
         
@@ -644,6 +646,13 @@
     
     \section{Касательное пространство к графику функции и к поверхности уровня}
     
+        Касательное пространство к графику $f : O \subset \RM \rightarrow \mathbb{R}$, где $f \in C^1$ в точке $p = (x_0, f(x_0))$ задаётся уравнением
+        
+        $y - f(x_0) = f'_1(x_1) (x - x_1) + \ldots + f'm(x_m)(x - x_m)$.
+        
+        Касательное пространство к поверхности уровня функции $f : \mathbb{R}^3 \rightarrow \mathbb{R}$ задаётся уравнением
+        
+        $f'_x(x_0)(x - x_0) + f'_y(y_0)(y - y_0) + f'_z(z_0)(z - z_0) = 0$.
         
     \newpage
     
@@ -657,7 +666,7 @@
         
         Тогда $\exists \lambda = (\lambda_1, \ldots, \lambda_n) \in \mathbb{R}^n$, что
         
-        \begin{equation*}
+        $
             \begin{cases}
             
                 f'(a) - \lambda \cdot \Phi'(a) = 0 \\
@@ -665,7 +674,7 @@
                 \Phi(a) = 0
                 
             \end{cases}
-        \end{equation*}
+        $
         
         \subsection{Доказательство}
         
@@ -779,7 +788,7 @@
             
         $f$, $f'_y$~--- непрерывны на $[a, b] \times [c, d]$, $\Phi(y) = \int\limits^b_a f(x, y) dx$
             
-        $\Phi$~--- дифференцируема на $[c, d]$ и $\Phi'(y) = \int\limits^b_a f'_y (x, y) dx$
+        Тогда $\Phi$~--- дифференцируема на $[c, d]$ и $\Phi'(y) = \int\limits^b_a f'_y (x, y) dx$
             
         \subsection{Доказательство} 
             
@@ -793,7 +802,7 @@
     
     \section{Теорема о предельном переходе под знаком производной. Дифференцирование функционального ряда}
     
-        $f_n \in C^1 \langle a, b \rangle$ и $f_n \rightarrow f_0$ топочечно на $\langle a, b \rangle$, $f'_n \rightrightarrows \varphi$ на $\langle a, b \rangle$. Тогда 
+        $f_n \in C^1 \langle a, b \rangle$ и $f_n \rightarrow f_0$ поточечно на $\langle a, b \rangle$, $f'_n \rightrightarrows \varphi$ на $\langle a, b \rangle$. Тогда 
         
         \begin{enumerate}
         
@@ -833,7 +842,7 @@
                     
             \end{enumerate}
                 
-            Т.е. $\left( \sum\limits^{+infty}_{n = 1} u_n(x) \right)' = \sum\limits^{+\infty}_{n = 1} u'_n(x)$
+            Т.е. $\left( \sum\limits^{+\infty}_{n = 1} u_n(x) \right)' = \sum\limits^{+\infty}_{n = 1} u'_n(x)$
             
         \subsubsection{Доказательство}
             
