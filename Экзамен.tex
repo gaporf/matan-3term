@@ -216,7 +216,7 @@
     
     \section{Формулировка критерия Больцано--Коши для равномерной сходимости}
     
-        Функциональный ряд $\sum u_n$ равномерно сходится на $E \Longleftrightarrow \forall \varepsilon > 0 : \exists N : \forall m \geq n \geq N, \forall x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$.
+        Функциональный ряд $\sum u_n$ равномерно сходится на $E \Longleftrightarrow \forall \varepsilon > 0 : \exists N : \forall m \geq n \geq N$ и $\forall x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$.
         
     \newpage
     
@@ -242,25 +242,163 @@
     
     \section{Кусочно-гладкий путь}
     
+        $\gamma$~--- кусочно-гладкий путь, если существует такое дробление $a = t_0 < t_1 < \ldots < t_n = b$, что для любого $i$ пусть $\gamma \big|_{[t_{i - 1}, t_i]}$~--- гладкий (в точка $t_{i - 1}$ и $t_i$ есть односторонние производные).
+        
     \newpage
     
     \section{Векторное поле}
     
-        $V : E \subset \RM \rightarrow \RM$~--- векторное поле, где $E$~--- открытое, (по умолчанию непрерывное), гладкое.
+        $V : E \subset \RM \rightarrow \RM$~--- векторное поле.
         
     \newpage
     
     \section{Интеграл векторного поля по кусочно-гладкому пути}
     
-        $V$~--- векторное поле в $E$, $\gamma$~--- кусочно-гладкий путь в $E$. Тогда
+        $V$~--- векторное поле в $E$, $E$~--- непрерывное, $\gamma$~--- кусочно-гладкий путь в $E$. Тогда
         
-        $I(V, \gamma) := \int\limits^b_a \langle V \left( \gamma(t) \right), \gamma' (t) \rangle dt$~--- интеграл векторного поля $V$ по кусочно-гладкому пути $\gamma$.
+        $$I(V, \gamma) := \int\limits^b_a \langle V \left( \gamma(t) \right), \gamma' (t) \rangle dt$$
+        
+        интеграл векторного поля $V$ по кусочно-гладкому пути $\gamma$.
         
     \newpage
     
     \section{Потенциал, потенциальное векторное поле}
     
         $O \subset \RM$~--- область, $V : O \rightarrow \RM$. Тогда $V$~--- потенциальное векторное поле, а $f$~--- его потенциал, если $f \in C^1 \left( O, \mathbb{R} \right)$ и $\grad f = V$ в области $O$.
+        
+    \newpage
+    
+    \section{Локально потенциальное векторное поле}
+    
+        $V : O \subset \RM \rightarrow \RM$~--- локально потенциальное векторное поле, если $O$~--- область, а $\forall x \in O : \exists U(x)$~--- открытое, что $U(x)$~--- потенциальное поле.
+        
+    \newpage
+    
+    \section{Похожие пути}
+    
+        $V$~--- локально потенциальное векторное поле, $\gamma$, $\overline{\gamma} : [a, b] \rightarrow O$~--- непрерывны. Тогда $\gamma$ и $\overline{\gamma}$~--- похожи, если у этих путей имеется одинаковая $V$-гусеница, т.е. существует такие дробления $t_0$, $t_1$, $\ldots$, $t_n$ и $\overline{t_0}$, $\overline{t_1}$, $\ldots$, $\overline{t_n}$, что $a = t_0 = \overline{t_0}$ и $b = t_n = \overline{t_n}$ и шары $B_1$, $B_2$, $\ldots$, $B_k$, а также $\gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$ и $\overline{\gamma} \big|_{[\overline{t_{k - 1}}, \overline{t_k}]} \subset B_k$.
+        
+    \newpage
+    
+    \section{Интеграл локально-потенциального векторного поля по произвольному пути}
+    
+        $I(V, \gamma) = I(V, \overline{\gamma}) = \int\limits^b_a \langle V \left( \overline{\gamma}(t) \right), \overline{\gamma}'(t) \rangle dt$~--- интеграл локально векторное поля $V$ по произвольному пути $\gamma$, где $\overline{\gamma}$~--- похожий на $\gamma$ кусочно-гладкий путь. В условиях соответствующей леммы такой всегда существует.
+        
+    \newpage
+    
+    \section{Гомотопия путей связанная и петельная}
+    
+        $\gamma_0$, $\gamma_1 : [a, b] \rightarrow O$, тогда гомотопия~--- это отображение $\Gamma : [a, b] \times [0, 1] \rightarrow O$~--- непрерывное, такое что $\Gamma(\cdot, 0) = \gamma_0(\cdot)$ и $\Gamma(\cdot, 1) = \gamma_1(\cdot)$.
+        
+        \textit{Гомотопия связанная}: $\gamma_0(a) = \gamma_1(a)$, $\gamma_0(b) = \gamma_1(b)$ и $\forall u \in [0, 1]$ $\Gamma(a, u) = \gamma_0(a)$ и $\Gamma(b, u) = \gamma_0(b)$.
+        
+        \textit{Гомотопия петельная}: $\gamma_0(a) = \gamma_0(b)$, $\gamma_1(a) = \gamma_1(b)$ и $\forall u \in [0, 1]$ $\Gamma(a, u) = \Gamma(b, u)$.
+        
+    \newpage
+    
+    \section{Односвязная область}
+    
+        $O \subset \RM$~--- односвязная область, если $O$~--- область и любой замкнутый путь гомотопен постоянному.
+        
+    \newpage
+    
+    \section{Полукольцо, алгебра, сигма-алгебра}
+    
+        $X$~--- множество, $\mathcal{P} \subset 2^X$~--- \textit{полукольцо} если:
+        
+        \begin{enumerate}
+        
+            \item $\varnothing \in \mathcal{P}$;
+            
+            \item $\forall A$, $B \in \mathcal{P} \Rightarrow A \cap B \in \mathcal{P}$;
+            
+            \item $\forall A_1$, $A_2 \in \mathcal{P}$ существует конечное число $B_1$, $B_2$, $\ldots$, $B_k \in \mathcal{P}$, что $A_1 \setminus A_2 =  \bigsqcup\limits^k_{i = 1} B_i$.
+            
+        \end{enumerate}
+    
+        $\mathcal{A}$~--- \textit{алгебра} подмножеств $X$, если:
+        
+        \begin{enumerate}
+        
+            \item $A$, $B \in \mathcal{A} \Rightarrow A \setminus B \in \mathcal{A}$;
+            
+            \item $X \in \mathcal{A}$.
+            
+        \end{enumerate}
+        
+        $\sigma$-\textit{алгебра} $\mathcal{A}$, если это \textit{алгебра} и ещё выполнено третье свойство:
+        
+            $\forall A_1$, $A_2$, $A_3$, $\ldots \in \mathcal{A} \Rightarrow \bigcup\limits_{i = 1}^{+\infty} A_i \in \mathcal{A}$.
+            
+        \textit{Можно вместо объединения потребовать пересечение, поскольку из одного следует другое}
+        
+    \newpage
+    
+    \section{Объем}
+    
+        $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$~--- \textit{аддитивная}, если:
+        
+        \begin{enumerate}
+        
+            \item $\mu$ не принимает одновременно бесконечности разных знаков;
+            
+            \item $\mu(\varnothing) = 0$;
+            
+            \item $\forall A_1$, $A_2$, $\ldots$, $A_n \in \mathcal{P}$~--- дизъюнкты, если $A = \bigsqcup A_n \in \mathcal{P}$, тогда $\mu A = \mu A_1 + \mu A_2 + \ldots + \mu A_n$.
+        
+        \end{enumerate}
+        
+        $\mu$~--- \textit{объём}, если:
+        
+        \begin{enumerate}
+        
+            \item $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$;
+            
+            \item $\mu \geq 0$;
+            
+            \item $\mu$~--- аддитивная.
+            
+        \end{enumerate}
+        
+    \newpage
+    
+    \section{Ячейка}
+    
+        $a, b \in \RM$, $[a, b) = \left\{ x \in \RM : \forall i : a_i \leq x_i < b_i \right\}$~--- ячейка.
+        
+    \newpage
+    
+    \section{Классический объем в $\RM$}
+    
+        $\mu [a, b) = \prod\limits^m_{i = 1} (b_i - a_i)$.
+        
+    \newpage
+    
+    \section{Мера, пространство с мерой}
+            
+        $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$~--- мера, если $\mu$~--- \textit{объём}, а также выполнено свойство \textit{счётной аддитивности}, т.е.:
+        
+        $\forall A$, $A_1$, $A_2$, $\ldots$, где $A_i$~--- дизъюнкты и $A = \bigsqcup\limits^{+\infty}_{i = 1} A_i \Rightarrow \mu A = \sum\limits^{+\infty}_{i = 1} \mu A_i$.
+        
+        $(X, \mathcal{A}, \mu)$~--- пространство с мерой, если $\mathcal{A}$~--- $\sigma$-алгебра на множестве $X$, а $\mu$~--- мера на $\mathcal{A}$.
+        
+    \newpage
+    
+    \section{Полная мера}
+    
+        $(X, \mathcal{A}, \mu)$, $\mu$~--- полная мера, если $\forall E \in \mathcal{A}$ и $\mu E = 0$ верно, что $\forall e \in E$, $e \in \mathcal{A}$ и $\mu e = 0$.
+        
+    \newpage
+    
+    \section{Сигма-конечная мера}
+    
+        $(X, \mathcal{P}, \mu)$, $\mu$~--- $\sigma$-конечная, если можно представить $X = \bigcup\limits^{+\infty}_{k = 1} B_k$, где $\mu B_k < +\infty$.
+        
+    \newpage
+    
+    \section{Дискретная мера}
+    
+        $X$~--- множество, $A_1$, $A_2$, $\ldots$~--- точки множества $X$, $h_1$, $h_2$, $\ldots \geq 0$, $\mathcal{P} = 2^X$, и для любого $B \subset \mathcal{P}$ $\mu B = \sum\limits_{i : A_i \in B} h_i$.
         
 \newpage
 
@@ -1078,7 +1216,7 @@
         
         \begin{enumerate}
         
-            \item $(A')$ тоже равномерно сходится на $R$;
+            \item $(A')$ имеет тот же радиус сходимости $R$;
             
             \item Пусть $f(z) = \sum a_n (z - z_0)^n$, $z \in B(z_0, R)$. Тогда $\forall z \in B(z_0, R)$ $f$~--- дифференцируема и $f'(z) = \sum n a_n (z - z_0)^{n - 1}$.
             
@@ -1103,10 +1241,6 @@
                     $\lim\limits_{z \rightarrow a} \frac{f(z) - f(z_0)}{z - z_0} = \lim \sum\limits^{+\infty}_{n = 0} \ldots = \sum\limits^{+\infty}{n = 1} \lim\limits_{z \rightarrow a} \frac{(z - z_0)^n - (a - z_0)^n}{z - a} = \sum\limits^{+\infty}_{n = 1} a_n n (z - z_0)^{n - 1}$.
                     
             \end{enumerate}
-            
-        \subsection{Следствие о бесконечной дифференцируемости}
-            
-            $f(z) = \sum a_n (z - z_0)^n$, $0 < R \leq +\infty$. Тогда $f \in C^{+\infty} \left( B(z_0, R) \right)$ и все производные находится с помощью почленного дифференцирования.
             
         \subsection{Следствие об интегрировании}
         
@@ -1284,7 +1418,7 @@
             
                 $\gamma : [a, b] \rightarrow \RM$, $a < c < b$,
                 
-                $\gamma_1 := \gamma \bigg|_{[a, c]}$, $\gamma_2 := \gamma \bigg|_{[c, b]}$ и
+                $\gamma_1 := \gamma \big|_{[a, c]}$, $\gamma_2 := \gamma \big|_{[c, b]}$ и
                 
                 $I \left( V, \gamma \right) = I \left( V, \gamma_1 \right) + I \left( V, \gamma_2 \right)$.
                 
@@ -1293,6 +1427,8 @@
                 $\varphi : [p, q] \rightarrow [a, b]$, сюрьекция, $\varphi \in C^1 \left( [p, q] \right)$, $\varphi(p) = a$, $\varphi(q) = b$,
                 
                 $\gamma : [a, b] \rightarrow \RM$, $\widetilde{\gamma} = \gamma \circ \varphi$, $\widetilde{\gamma}(s) = \gamma (\varphi(s))$.
+                
+                $I \left( V, \gamma \right) = I \left( V, \overline{\gamma} \right)$.
                 
             \item $\gamma_1 : [a, b] \rightarrow \RM$ $\gamma_2 : [c, d] \rightarrow \RM$~--- гладкие пути,
             
@@ -1313,7 +1449,7 @@
             
                 $\gamma : [a, b] \rightarrow \RM$, $L := \gamma \left( [a, b] \right)$~--- носитель пути. Тогда
                 
-                $\left| I \left( V, \gamma \right) \right| \leq \max\limits{x \in L} \left| V(x) \right| \cdot l (\gamma)$.
+                $\left| I \left( V, \gamma \right) \right| \leq \max\limits_{x \in L} \left| V(x) \right| \cdot l (\gamma)$.
                 
         \end{enumerate}
         
@@ -1365,7 +1501,7 @@
         
             \item $V$~--- потенциальное;
             
-            \item Итеграл $\int\limits_{\gamma} v_1 dx_1 + \ldots + v_m dx_m$ не зависит от пути в $O$;
+            \item Интеграл $\int\limits_{\gamma} v_1 dx_1 + \ldots + v_m dx_m$ не зависит от пути в $O$;
             
             \item Для любого кусочно-гладкого замкнутого пути верно, что $\int\limits_{\gamma} v_1 dx_1 + \ldots + v_m dx_m = 0$.
             
@@ -1388,6 +1524,253 @@
                     $\gamma'_0 = (h, 0, \ldots, 0)$
                     
                     $f(x + he_1) - f(x) = \int\limits_{\gamma_0} V_ dx_1 + \ldots + V_m dx_m = \int\limits^1_0 V_1(x_1 + th, \ldots, x_m) h dt = V_1(x_1 + \alpha h, x_2, \ldots, x_m) h (1 - \alpha) \rightarrow V_1(x_1, \ldots, x_m)$.
+                    
+            \end{itemize}
+            
+    \newpage
+    
+    \section{Необходимое условие потенциальности гладкого поля. Лемма Пуанкаре}
+    
+        \subsection{Необходимое условие потенциальности гладкого поля}
+        
+            $V$~--- гладкое потенциальное векторное поле в $O \subset \RM$, тогда $\forall x \in O$ и $\forall k, j$ $(1 \leq k, j \leq m)$ верно $\frac{\partial v_k}{\partial x_j} = \frac{\partial v_j}{\partial x_k}$.
+            
+        \subsection{Лемма Пуанкаре}
+        
+            $O \subset \RM$~--- выпуклое, $V : O \rightarrow \RM$, $V \in C^1(O)$ и верно $\forall k$, $l : \frac{\partial v_k}{\partial x_l} = \frac{\partial v_l}{\partial x_k}$. Тогда $V$~--- потенциально.
+            
+            \subsubsection{Доказательство}
+            
+                $A \in O$, $\gamma_x : [0, 1] \rightarrow O$, $\gamma_v(t) = A + t(x - A)$, $(\gamma_x)' = x - A$.
+                
+                $f(x) := \int\limits_{\gamma_x} \sum v_i dx_i = \int\limits^1_0 \sum v_i \left( A + t \left( x - A \right) \right) \left( x_i - A_i \right) dt$, $I(x) = \int\limits^b_a f(c, x)dt$ и $I'(x) = \int\limits^b_a f'_x dt$.
+                
+                $\frac{\partial f}{\partial x_i} = \int\limits^1_0 v_i \left( A + t \left( x - A \right) \right) + \sum \frac{\partial v_i}{\partial x_j} \left( A + t \left( x - A \right) \right) t \left( x_i - A_i \right) dt = \int\limits^1_0 \left( t v_j \left( A + t \left( x - A \right) \right) \right)'_t dt - t v_j \left( A + t \left( x - A \right) \right) \bigg|^{t = 1}_{t = 0} = v_j(x)$.
+        
+        \subsection{Следствие к лемме Пуанкаре}
+        
+            $O$~--- открытое множество в $\RM$, $V \in C^1(O)$ и верное $\forall k$, $l : \frac{\partial v_k}{\partial x_l} = \frac{\partial v_l}{\partial x_k}$, тогда оно локально-потенциальное.
+            
+            \subsubsection{Доказательство}
+            
+                $I(v, \gamma) = \int\limits^b_a \langle V \left( \gamma(t) \right), \gamma'(t) \rangle dt$.
+    \newpage
+    
+    \section{Лемма о гусенице}
+    
+        $O \subset \RM$, $\forall x \in O$ задана окрестность $U(x)$ и $\gamma : [a, b] \rightarrow O$~--- непрерывный путь. Тогда существует дробление $a = t_0 < t_1 < t_2 < \ldots < t_n = b$ и шары $B_k = B_k(z_k, r_k) \subset U(z_k)$, $\forall k = 1..n : \gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$.
+        
+        \subsection{Доказательство}
+        
+            $\forall c \in [a, b]$ фиксируем $B_c = B \left( \gamma(c), r_c \right) \subset U \left( \gamma (c) \right)$.
+            
+            $\overline{\alpha}_c = \inf \left( \alpha \in [a, b] : \gamma \bigg|_{[a, c]} \subset B_c \right)$,
+            
+            $\overline{\beta}_c = \sup \left( \beta \in [a, b] : \gamma \bigg|_{[c, b]} \subset B_c \right)$.
+            
+            Заузим $\overline{\alpha}_c < \alpha_c < c < \beta_c < \overline{\beta}_c$, $\bigcup ( \alpha_c, \beta_c )$~--- открытое покрытие $[a, b]$.
+            
+            В точке $c = a$ $\alpha_c = a$, в точке $c = b$ $\beta_c = b$, $[a, b] \subset \bigcup\limits_{finite} \left( \alpha_c, \beta_c \right)$. 
+            
+            Удалим лишние наложение, т.е. удалим такие пары $(\alpha_i, \beta_i) \subset \bigcup\limits_{i \neq j} (\alpha_j, \beta_j)$. Тогда $\forall (\alpha_c, \beta_c)$ существует уникальная точка $d_c \in (\alpha_c, \beta_c$ и $\gamma \bigg|_{[t_{k - 1}, t_k]} \subset B_{C_k}$.
+            
+    \newpage
+    
+    \section{Лемма о равенстве интегралов по похожим путям}
+    
+        $V : O \rightarrow \RM$~--- локально потенциальное векторное поле, $\gamma$, $\overline{\gamma}$~--- похожие, кусочно гладкие пути, $\gamma(a) = \overline{\gamma}(a)$ и $\gamma(b) = \overline{\gamma}(b)$, тогда
+        
+        $\int\limits_{\gamma} \sum V_i dx_i = \int\limits_{\overline{\gamma}} \sum V_i dx_i$.
+        
+        \subsection{Доказательство}
+        
+            Берём $V$-гусеницу, $f_k$~--- потенциал в $B_k$, необходимо согласовать потенциалы, $f_k = f_{k + 1}$ на $B_k \cap B_{k + 1}$,
+            
+            $\int\limits_{\gamma} \sum v_i dx_i = \sum\limits^n_{k = 1} \int \left( v_1 dx_1 + \ldots + v_m dx_m \right) = \sum f_k \left( \gamma(t_k) \right) - f_k \left( \gamma (t_{k - 1}) \right) = f \left( \gamma(b) \right) - f \left( \gamma(a) \right)$.
+            
+    \newpage
+    
+    \section{Лемма о похожести путей, близких к данному}
+    
+        $\gamma : [a, b] \rightarrow O \subset \RM$. Тогда $\exists \delta > 0$, если $\overline{\gamma}$ и $\overline{\overline{\gamma}} : [a, b] \rightarrow 0$, таковы, что $\forall t \in [a, b]$ $|\gamma(t) - \overline{\gamma(t)}| < \delta$ и $|\gamma(t) - \overline{\overline{\gamma}}(t)| < \delta$,
+        
+        то $\gamma$, $\overline{\gamma}$ и $\overline{\overline{\gamma}}$~--- похожи.
+        
+        \subsection{Доказательство}
+        
+            Берём $V$-гусеницу для $\gamma$, тогда $\gamma \left( [t_{k - 1}, t_k ] \right)$~--- компактное множество в $B_k$, тогда $\exists \delta_k$~--- окрестность этого компакта в $B_k$, возьмём $\delta := \min\limits_{1 \leq k \leq n} \delta_k$.
+            
+    \newpage
+    
+    \section{Равенство интегралов по гомотопным путям}
+    
+        $V$~--- локально потенциальное векторное поле в $O \subset \RM$, $\gamma_0$ и $\gamma_1$~--- гомотопно связанные, тогда $I(V, \gamma_0) = I(V, \gamma_1)$.
+        
+        \subsection{Доказательство}
+        
+            $\Gamma$~--- гопотопия, $\gamma_u(t) = \Gamma(t, u)$, $t \in [a, b]$ и $u \in [0, 1]$. $\Phi(u) = I(V, \gamma_1)$. Проверим $\Phi$~--- локально постоянно, т.е. $\forall u_0 : \exists w(u) : \forall u \in w(u_0) \cap [0, 1]$ верно $\Phi(u) = \Phi(u_0)$. $\Gamma$~--- равномерное непрерывно, тогда
+            
+            $\forall \delta > 0 : \exists \sigma > 0 : \forall t, t' : | t - t' | < \sigma$ и $\forall u, u' : | u - u' | < \sigma$ выполнено $\left| \Gamma(t, u) - \Gamma(t', u') \right|  \frac{\delta}{2}$.
+            
+            Берём $\delta$ из предыдущей леммы для пути $\gamma_{u_0}$ и $(u - u_0) < t$ для любого $t \in [a, b]$, $\left| \Gamma(t, u) - \Gamma(t, u_0) \right| < \frac{\delta}{2}$ и $\left| \gamma_u(t) - \gamma_{u_0}(t) \right| < \frac{\delta}{2} \Rightarrow \gamma_u$ и $\gamma_{u_0}$~--- похожи. Подберём $\overline{\gamma}_u$ и $\overline{\gamma}_{u_0}$~--- кусочно гладкие, $\frac{\delta}{4}$ близко к $\gamma_u$ и $\gamma_{u_0}$, $\forall t : | \gamma(t) - \overline{\gamma}(t) | < \delta$, значит $\overline{\gamma}_u$ и $\overline{\gamma}_{u_0}$~--- похожи.
+            
+            $I(V, \gamma_u) = I(V, \overline{\gamma}_{u_0}) = I(V, \overline{\gamma}_{u_0}) = I(V, \gamma_0)$.
+    
+    \newpage
+    
+    \section{Теорема о  резиночке}
+    
+        $O = \mathbb{R}^2 \setminus \left\{ (0, 0) \right\}$, $\gamma : [0, 2 \pi] \rightarrow O$, $t \rightarrow (\cos{t}, \sin{t})$~--- петля. Тогда эта петля нестягиваема.
+        
+        \subsection{Доказательство}
+        
+            $V(x, y) := \left( \dfrac{-y}{x^2 + y^2}, \dfrac{x}{x^2 + y^2} \right)$, $\dfrac{\partial v_1}{x} = \dfrac{\partial v^2}{y} \rightarrow V$~--- локально потенциальное,
+            
+            $I(V, \gamma) = \int\limits^{2 \pi}_0 \dfrac{-\sin{t}}{\cos^2{t} + \sin^2{t}} (-\sin{t}) + V_1(\gamma(t))\gamma'_1(t) + \dfrac{\cos{t}}{1} \cos{t}dt = 2 \pi \neq 0$.
+            
+    \newpage
+    
+    \section{Теорема Пуанкаре для односвязной области}
+    
+        $O$~--- односвязная область в $\RM$, $V$~--- локально потенциальное векторное поле в $O$. Тогда $V$~--- потенциально в $O$.
+        
+        \subsection{Доказательство}
+        
+            $\gamma_0$~--- кусочно-гладкий замкнутый путь, значит гомотопен постоянному пути, значит $I(V, \gamma_0) = I(V,$ постоянному пути $) = 0$. т.е. выполняется критерий потенциальности вектроного поля.
+            
+    \newpage
+    
+    \section{Свойства объема: усиленная монотонность, конечная полуаддитивность}
+    
+        $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$. Тогда
+        
+        \begin{enumerate}
+        
+            \item Усиленная монотонность: $\forall A$, $A_1$, $A_2$, $\ldots$, $A_n \in \mathcal{P}$, все $A_i$~--- дизъюнкты и $\bigcup\limits^n_{i = 1}A_i \subset A$, тогда
+            
+                $\sum\limits^n_{i = 1} \mu A_i \leq \mu A$;
+                
+            \item Конечная полуаддитивность: $\forall A$, $A_1$, $A_2$, $\ldots$, $A_n \in \mathcal{P}$, все $A_i$~--- дизъюнкты и $A \subset \bigcup\limits^n_{i = 1} A_i$, тогда
+            
+                $\mu A \leq \sum\limits^n_{i = 1} \mu A_i$;
+                
+            \item $A$, $B$, $A \setminus B \in \mathcal{P}$, $\mu B < +\infty \Rightarrow \mu \left( A \setminus B \right) \geq \mu A - \mu B$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $A \setminus \bigsqcup\limits^n_{i = 1} A_i = \bigsqcup\limits_{finite} B_l$, $B_l \in \mathcal{P}$, $A = \bigsqcup\limits^n_{i = 1} A_i \sqcup \bigsqcup\limits_{finite} B_k$, $\mu A = \sum \mu A_i + \sum \mu B_l \geq \sum \mu A_i$.
+                
+                \item $B_k = A \cap A_k \in \mathcal{P}$, $A = \bigcup\limits^n_{k = 1} B_k$~--- сделаем это объединением дизъюнктов, $C_1 := B_1$, $C_2 := B_2 \setminus B_1$ и т.д., $A = \bigsqcup\limits_{k, j} D_{kj}$, $\mu A = \sum \mu D_{kj}$, фиксируем $k$ и получаем $\sum \mu D_{kj} = \mu C_k \leq \mu B_k \leq \mu A_k$ и получаем $\mu A \leq \sum \mu A_k$;
+                
+                \item
+                    
+                    \begin{itemize}
+                    
+                        \item $B \subset A$ и $\mu \left( A \setminus B \right) + \mu B = \mu A$;
+                        
+                        \item $B \not\subset A$, $A \setminus B = A \setminus (A \cap B)$, причём $A \cap B \in \mathcal{P}$, и
+                        
+                            $\mu \left( A \setminus B \right) = \mu A - \mu \left( A \cap B \right) \geq \mu A - \mu B$.
+                            
+                    \end{itemize}
+                    
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Теорема об эквивалентности счетной аддитивности и счетной полуаддитивности}
+    
+        $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$, объём. Тогда эквивалентны:
+        
+        \begin{enumerate}
+        
+            \item $\mu$~--- счётная аддитивная (т.е. $\mu$~--- мера);
+            
+            \item $\mu$~--- счётная полуаддитивность : $A$, $A_1$, $A_2$, $\ldots \in \mathcal{P}$ и $A \subset \bigcup\limits^{+\infty}_{i = 1} A_i \Rightarrow \mu A \leq \sum \mu A_i$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $1 \Rightarrow 2$
+                
+                    $5$ формул $A = \bigcup A_k$ (будут написаны позже)
+                    
+                \item $2 \Rightarrow 1$
+                
+                    $A = \bigsqcup A_i$, надо проверить $\mu A = \sum \mu A_i$, усиленная монотонность: $\mu A \geq \sum\limits^n_{i = 1} \mu A_i$, по условию $\mu A \leq \sum\limits^{+\infty}_{i = 1} \mu A_i \Rightarrow \mu A = \sum \mu A_i$.
+                        
+            \end{itemize}
+            
+    \newpage
+    
+    \section{Теорема о непрерывности снизу}
+    
+        $\mathcal{A}$~--- алгебра, $\mu : \mathcal{A} \rightarrow \overline{\mathbb{R}}$~--- объём. Тогда эквивалентны следующие утверждения:
+        
+        \begin{enumerate}
+        
+            \item $\mu$~--- мера, т.е. выполняется счётная аддитивность;
+            
+            \item $\mu$~--- непрерывна снизу, т.е. $A$, $A_1$, $A_2$, $\ldots \in \mathcal{A}$, $A_1 \subset A_2 \subset A_3 \subset \ldots$, $A = \bigcup\limits^{+\infty}_{i = 1} A_i$ и $\mu A = \lim\limits_{i \rightarrow +\infty} \mu A_i$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $1 \Rightarrow 2$
+                    
+                    $B_1 := A_1$, $\ldots$, $B_k = := A_k \setminus \bigcup\limits^{k - 1}_{i = 1} A_i$, тогда $B_i$~--- дизъюнкты, тогда $A_k = \bigsqcup\limits^k_{i = 1} B_i$ и $a = \bigsqcup\limits^{+\infty}_{i = 1} B_i$, $\mu A = \sum\limits^{+\infty}_{i = 1} \mu B_i = \lim\limits_{n \rightarrow +\infty} \sum\limits^n_{i = 1} \mu B_i$.
+                    
+                \item $2 \Rightarrow 1$
+                
+                    $C = \bigsqcup C_i$, верно ли, что $\mu C = \sum\limits^{+\infty}_{i = 1} \mu C_i$, $A_k = \bigsqcup\limits^k_{i = 1} C_i$, $A_1 \subset A_2 \subset A_3 \subset \ldots$ и $\bigcup A_i = A$,
+                    
+                    $\mu A = \lim\limits_{N \rightarrow +\infty} \mu A_N = \lim \sum\limits^N_{i = 1} \mu C_i = \sum\limits^{+\infty}_{i = 1} \mu C_i$.
+                    
+            \end{itemize}
+            
+    \newpage
+    
+    \section{Теоремы о непрерывности сверху}
+    
+        $\mathcal{A}$~--- алгебра, $\mu : \mathcal{A} \rightarrow \overline{\mathbb{R}}$~--- конечный объём ($\mu X < +\infty$), тогда эквивалентны следующие утверждения:
+        
+        \begin{enumerate}
+        
+            \item $\mu$~--- мера, т.е. выполняется счётная аддитивность;
+            
+            \item $\mu$~--- непрерывна сверху, т.е. $A$, $A_1$, $A_2$, $\ldots \in \mathcal{A}$, $A_1 \supset A_2 \supset \ldots$, $A = \bigcap\limits^{+\infty}_{i = 1} A_i$, $\mu A = \lim\limits_{N \rightarrow +\infty} \mu A_N$;
+            
+            \item $\mu$~--- непрерывна сверху на пустом множестве, т.е. $A_1$, $\ldots$, $A_n$, $\ldots \in \mathcal{A}$, $A_1 \supset A_2 \supset A_3 \supset \ldots$, $\bigcap\limits^{+\infty}_{i = 1} A_i = \varnothing$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{itemize}
+            
+                \item $1 \Rightarrow 2$
+                
+                    $B = A_1 \setminus A$, $B_k := A_1 \setminus A_k$, тогда $B_1 \subset B_2 \subset B_3 \subset \ldots$ и $\bigcup B_k = B$, $\mu B = \lim\limits_{k \rightarrow +\infty} \mu B_k$, $\mu A_1 - \mu A = \lim\limits_{k \rightarrow +\infty} \left( \mu A_1 - \mu A_k \right) \Rightarrow \mu A = \lim\limits_{k \rightarrow +\infty} \mu A_k$.
+                    
+                \item $2 \Rightarrow 3$
+                
+                    Очевидно.
+                    
+                \item $3 \Rightarrow 1$
+                
+                    $C = \bigsqcup C_i$, проверить, что $\mu C = \sum \mu C_i$, $A_1 \supset A_2 \supset A_3 \supset \ldots$, $A_k = \bigsqcup\limits^{+\infty}_{i = k + 1} C_i = C \setminus \left( \bigsqcup\limits^k_{i = 1} C_i \right) \Rightarrow A_k \in \mathcal{A}$.
+                    
+                    $\bigcap A_k = \varnothing \Rightarrow \mu A_k \rightarrow 0$, $C = \bigsqcup\limits^k_{i = 1} C_i \sqcup A_k$ и $\mu C = \sum\limits^k_{i = 1} \mu C_i + \mu A_k$, $k \rightarrow +\infty \Rightarrow \mu C = \sum \mu C_i$.
                     
             \end{itemize}
             
