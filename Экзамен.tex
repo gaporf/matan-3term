@@ -182,9 +182,9 @@
     
     \section{Поточечная сходимость последовательности функций на множестве }
     
-        $f_n : X \rightarrow \mathbb{R}$, если $\exists f : E \subset X \rightarrow \mathbb{R}$, что для любого $x_0 \in E$ существует $\lim\limits_{n \rightarrow +\infty} f_n(x_0) = f(x_0)$, то
+        $f_n : X \rightarrow \mathbb{R}$, если $\exists f : E \subset X \rightarrow \mathbb{R}$, что для любого $x_0 \in E$ предел $\lim\limits_{n \rightarrow +\infty} f_n(x_0) = f(x_0)$, то
         
-        $f_n \xrightarrow[n \rightarrow +\infty]{} f$ поточечно на $E$.
+        $f_n \xrightarrow[n \rightarrow +\infty]{} f$ сходится поточечно на $E$.
         
     \newpage
     
@@ -202,13 +202,9 @@
     
         \begin{enumerate}
         
-            \item Функциональный ряд сходится поточечно на $E$, если для любого $x \in E$
+            \item Функциональный ряд сходится поточечно на $E$, если для любого $x \in E$ сумма $\sum\limits^{+\infty}_{n = 0} u_n(x)$~--- сходится к сумме $S(x)$;
             
-                $\sum\limits^{+\infty}_{n = 0} u_n(x)$~--- сходится к сумме $S(x)$.
-            
-            \item Функциональный ряд сходится равномерно на $E$ (к сумме $S(x)$), если 
-            
-                $S_n(x) \rightrightarrows S(x)$ на $E$.
+            \item Функциональный ряд сходится равномерно на $E$ (к сумме $S(x)$), если $S_n(x) \rightrightarrows S(x)$ на $E$, где $S_n(x)$~--- последовательность частичных сумм.
             
         \end{enumerate}
         
@@ -216,13 +212,15 @@
     
     \section{Формулировка критерия Больцано--Коши для равномерной сходимости}
     
-        Функциональный ряд $\sum u_n$ равномерно сходится на $E \Longleftrightarrow \forall \varepsilon > 0 : \exists N : \forall m \geq n \geq N$ и $\forall x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$.
+        Функциональный ряд $\sum u_n$ равномерно сходится на $E$ эквивалентно следующему утверждению:
+        
+        $$\forall \varepsilon > 0 : \exists N : \forall m \geq n \geq N \ \textrm{и} \ \forall x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$$
         
     \newpage
     
     \section{Степенной ряд, радиус сходимости степенного ряда, формула Адамара}
     
-        $a_n \in \mathbb{R}$ или $\mathbb{C}$, $B(z_0, r) \subset \mathbb{R}$ или $\mathbb{C}$, тогда $\sum\limits^{+\infty}_{n = 0} a_n (z - z_0)^n$ называют степенным рядом.
+        $a_n \in \mathbb{R}$ или $\mathbb{C}$, $B(z_0, r) \subset \mathbb{R}$ или $\mathbb{C}$, тогда $\sum\limits^{+\infty}_{n = 0} a_n (z - z_0)^n$ называют \textbf{степенным рядом}.
         
         Назовём $R$ \textbf{радиусом сходимости} степенного ряда, если:
         
@@ -240,21 +238,21 @@
     
     \section{Кусочно-гладкий путь}
     
-        $\gamma$~--- кусочно-гладкий путь, если существует такое дробление $a = t_0 < t_1 < \ldots < t_n = b$, что для любого $i$ пусть $\gamma \big|_{[t_{i - 1}, t_i]}$~--- гладкий (в точка $t_{i - 1}$ и $t_i$ есть односторонние производные).
+        $\gamma : [a, b] \rightarrow \RM$~--- кусочно-гладкий путь, если существует такое дробление $a = t_0 < t_1 < \ldots < t_n = b$, что для любого $i \in [1, n]$ путь $\gamma \big|_{[t_{i - 1}, t_i]}$~--- гладкий (в точка $t_{i - 1}$ и $t_i$ есть односторонние производные).
         
     \newpage
     
     \section{Векторное поле}
     
-        $V : E \subset \RM \rightarrow \RM$~--- векторное поле.
+        $V : E \subset \RM \rightarrow \RM$~--- векторное поле. По умолчанию считается, что $V$~--- непрерывное.
         
     \newpage
     
     \section{Интеграл векторного поля по кусочно-гладкому пути}
     
-        $V$~--- векторное поле в $E$, $E$~--- непрерывное, $\gamma$~--- кусочно-гладкий путь в $E$. Тогда
+        $V$~--- векторное поле в $E$, $E$~--- открытое, $\gamma$~--- кусочно-гладкий путь в $E$. Тогда
         
-        $$I(V, \gamma) := \int\limits^b_a \langle V \left( \gamma(t) \right), \gamma' (t) \rangle dt$$
+        $$I(V, \gamma) := \int\limits^b_a \langle V \left( \gamma(t) \right), \gamma' (t) \rangle dt = \int\limits^b_a V_1 \left( \gamma(t) \right) \gamma'_1(t) + \ldots + V_m \left( \gamma(t) \right) \gamma'_m(t) dt$$
         
         интеграл векторного поля $V$ по кусочно-гладкому пути $\gamma$.
         
@@ -268,13 +266,13 @@
     
     \section{Локально потенциальное векторное поле}
     
-        $V : O \subset \RM \rightarrow \RM$~--- локально потенциальное векторное поле, если $O$~--- область, а $\forall x \in O : \exists U(x)$~--- открытое, что $U(x)$~--- потенциальное поле.
+        $V : O \subset \RM \rightarrow \RM$~--- локально потенциальное векторное поле, если $O$~--- область, а $\forall x \in O : \exists U(x)$, что $V$ в $U(x)$~--- потенциальное поле.
         
     \newpage
     
     \section{Похожие пути}
     
-        $V$~--- локально потенциальное векторное поле, $\gamma$, $\overline{\gamma} : [a, b] \rightarrow O$~--- непрерывны. Тогда $\gamma$ и $\overline{\gamma}$~--- похожи, если у этих путей имеется одинаковая $V$-гусеница, т.е. существует такие дробления $t_0$, $t_1$, $\ldots$, $t_n$ и $\overline{t_0}$, $\overline{t_1}$, $\ldots$, $\overline{t_n}$, что $a = t_0 = \overline{t_0}$ и $b = t_n = \overline{t_n}$ и шары $B_1$, $B_2$, $\ldots$, $B_k$, а также $\gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$ и $\overline{\gamma} \big|_{[\overline{t_{k - 1}}, \overline{t_k}]} \subset B_k$.
+        $V$~--- локально потенциальное векторное поле, $\gamma$, $\overline{\gamma} : [a, b] \rightarrow O$~--- непрерывны. Тогда $\gamma$ и $\overline{\gamma}$~--- похожи, если у этих путей имеется одинаковая $V$-гусеница, т.е. существует такие дробления $t_0$, $t_1$, $\ldots$, $t_n$ и $\overline{t_0}$, $\overline{t_1}$, $\ldots$, $\overline{t_n}$, что $a = t_0 = \overline{t_0}$ и $b = t_n = \overline{t_n}$, и шары $B_1$, $B_2$, $\ldots$, $B_k$, а также $\gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$ и $\overline{\gamma} \big|_{[\overline{t_{k - 1}}, \overline{t_k}]} \subset B_k$.
         
     \newpage
     
@@ -384,7 +382,7 @@
     
     \section{Полная мера}
     
-        $(X, \mathcal{A}, \mu)$, $\mu$~--- полная мера, если $\forall E \in \mathcal{A}$ и $\mu E = 0$ верно, что $\forall e \in E$, $e \in \mathcal{A}$ и $\mu e = 0$.
+        $(X, \mathcal{A}, \mu)$, $\mu$~--- полная мера, если $\forall E \in \mathcal{A}$ и $\mu E = 0$ верно, что $\forall e \in E : e \in \mathcal{A}$ и $\mu e = 0$.
         
     \newpage
     
