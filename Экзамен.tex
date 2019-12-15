@@ -1408,7 +1408,7 @@
             
                 $\forall \alpha, \beta \in \mathbb{R}$, $U$, $V$~--- векторные поля, тогда
                 
-                $I \left( \alpha U + \beta V, \gamma \right) = \alpha I \left(U, \gamma \right) + \beta T \left( V, \gamma \right)$.
+                $I \left( \alpha U + \beta V, \gamma \right) = \alpha I \left(U, \gamma \right) + \beta I \left( V, \gamma \right)$.
                 
             \item Аддитивность при дроблении пути:
             
@@ -1497,9 +1497,9 @@
         
             \item $V$~--- потенциальное;
             
-            \item Интеграл $\int\limits_{\gamma} v_1 dx_1 + \ldots + v_m dx_m$ не зависит от пути в $O$;
+            \item Интеграл $\int\limits_{\gamma} V_1 dx_1 + \ldots + V_m dx_m$ не зависит от пути в $O$;
             
-            \item Для любого кусочно-гладкого замкнутого пути верно, что $\int\limits_{\gamma} v_1 dx_1 + \ldots + v_m dx_m = 0$.
+            \item Для любого кусочно-гладкого замкнутого пути верно, что $\int\limits_{\gamma} V_1 dx_1 + \ldots + V_m dx_m = 0$.
             
         \end{enumerate}
             
@@ -1554,7 +1554,7 @@
     
     \section{Лемма о гусенице}
     
-        $O \subset \RM$, $\forall x \in O$ задана окрестность $U(x)$ и $\gamma : [a, b] \rightarrow O$~--- непрерывный путь. Тогда существует дробление $a = t_0 < t_1 < t_2 < \ldots < t_n = b$ и шары $B_k = B_k(z_k, r_k) \subset U(z_k)$, $\forall k = 1..n : \gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$.
+        $O \subset \RM$, $\forall x \in O$ задана окрестность $U(x)$ и $\gamma : [a, b] \rightarrow O$~--- непрерывный путь. Тогда существует дробление $a = t_0 < t_1 < t_2 < \ldots < t_n = b$ и шары $B_k \subset O$, $\forall k \in [1, n] : \gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$.
         
         \subsection{Доказательство}
         
@@ -1616,7 +1616,7 @@
     
     \section{Теорема о  резиночке}
     
-        $O = \mathbb{R}^2 \setminus \left\{ (0, 0) \right\}$, $\gamma : [0, 2 \pi] \rightarrow O$, $t \rightarrow (\cos{t}, \sin{t})$~--- петля. Тогда эта петля нестягиваема.
+        $O = \mathbb{R}^2 \setminus \left\{ (0, 0) \right\}$, $\gamma : [0, 2 \pi] \rightarrow O$, $\gamma(t) \rightarrow (\cos{t}, \sin{t})$~--- петля. Тогда эта петля нестягиваема.
         
         \subsection{Доказательство}
         
@@ -1650,7 +1650,7 @@
             
                 $\mu A \leq \sum\limits^n_{i = 1} \mu A_i$;
                 
-            \item $A$, $B$, $A \setminus B \in \mathcal{P}$, $\mu B < +\infty \Rightarrow \mu \left( A \setminus B \right) \geq \mu A - \mu B$.
+            \item $A$, $B$, $\left( A \setminus B \right) \in \mathcal{P}$, $\mu B < +\infty \Rightarrow \mu \left( A \setminus B \right) \geq \mu A - \mu B$.
             
         \end{enumerate}
         
