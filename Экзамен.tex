@@ -24,6 +24,7 @@
 
 \begin{document}
 
+\newcommand{\R}[0]{\mathbb{R}}
 \newcommand{\RM}[0]{\mathbb{R}^m}
 \newcommand{\dist}[0]{\mathrm{dist} $\ $}
 \newcommand{\rang}[0]{\mathrm{rang} $\ $}
@@ -42,7 +43,7 @@
     
         \textit{Область} в $\RM$ --- открытое связное множество.
         
-        Пусть $f : O \subset \RM \rightarrow \RM$~--- \textit{диффеоморфизм}, где $O$ --- область, если:
+        $f : \underset{\text{обл.}}{O} \subset \RM \rightarrow \RM$~--- \textit{диффеоморфизм}, если:
         
         \begin{enumerate}
         
@@ -59,18 +60,16 @@
     \section{Формулировка теоремы о локальной обратимости в терминах систем уравнений}
     
     $
-            \begin{cases}
+        \begin{cases}
             
-                f_1(x_1, \ldots, x_m) = y_1 \\
+            f_1(x_1, \ldots, x_m) = y_1 \\
                 
-                \ldots \\
+            \ldots \\
                 
-                f_m(x_1, \ldots, x_m) = y_m
+            f_m(x_1, \ldots, x_m) = y_m
             
-            \end{cases}
-    $
-        
-        Все $f_i$~--- гладкие.
+        \end{cases}
+    $ все $f_i : \RM \rightarrow \R$ и $f_i \in C^1$.
         
         Пусть при $y = (b_1, \ldots, b_m)$ существует единственное решение $x = (a_1, \ldots, a_m)$, что $\det \left( \frac{\partial f_i}{\partial x_j} (a) \right) \neq 0$.
         
@@ -90,13 +89,11 @@
                 f_n(x_1, \ldots, x_m, y_1, \ldots, y_n) = 0
                 
             \end{cases}
-    $
+    $ $f_i \in C^r \left( \underset{\text{откр.}}{O} \subset \mathbb{R}^{m + n}, \R \right)$.
         
-        $x = a$ и $y = b$ удовлетворяют системе уравнений, а также $f_i$~--- функции класса $C^r$, также
+        $x = a$ и $y = b$ удовлетворяют системе уравнений, а также $\det \left( \dfrac{\partial f_i}{\partial y_j} (a, b) \right) \neq 0$. Тогда
         
-        $\det \left( \dfrac{\partial f_i}{\partial y_j} (a, b) \right) \neq 0$. Тогда
-        
-        $\exists U(a)$ и $V(b)$ такое, что $\exists ! \varphi: U(a) \rightarrow V(b)$ класса $C^r$, что $\forall x \in U(a)$ верно $(x, \varphi(x))$~--- решение этой системы.
+        $\exists U(a)$ и $\exists V(b)$ такие, что $\exists ! \varphi: U(a) \rightarrow V(b)$ класса $C^r$, что $\forall x \in U(a)$ верно $(x, \varphi(x))$~--- решение этой системы.
         
     \newpage
     
@@ -104,9 +101,9 @@
             
         \begin{enumerate}
         
-            \item $M \subset \RM$~--- простое $k$-мерное многообразие в $\RM$ (непрерывное), если оно гомеоморфно открытому множеству из $\mathbb{R}^k$, т.е.:
+            \item $M \subset \RM$~--- \textit{простое $k$-мерное многообразие} в $\RM$ (непрерывное), если оно \textit{гомеоморфно} открытому множеству из $\mathbb{R}^k$, т.е.:
             
-                $\exists O \subset \mathbb{R}^k$ и $\exists \Phi : O \rightarrow M$ такое, что
+                $\exists \underset{\text{откр.}}{O} \subset \mathbb{R}^{k \leqslant m}$ и $\exists \Phi : O \rightarrow M$ такое, что
             
                 \begin{itemize}
             
@@ -118,17 +115,17 @@
                 
                 \end{itemize}
             
-            \item $M \subset \RM$~--- простое, $k$~---мерное, $C^r$~--- гладкое многообразие, если:
+            \item $M \subset \RM$~--- \textit{простое $k$-мерное $C^r$-гладкое многообразие}, если:
             
-                $\exists O \subset \mathbb{R}^k$, $\Phi : O \rightarrow \RM$:
+                $\exists \underset{\text{откр.}}{O} \subset \mathbb{R}^{k \leqslant m}$, $\Phi : O \rightarrow M$:
                 
                 \begin{itemize}
                 
                     \item $\Phi$~--- гомеоморфизм;
                     
-                    \item $\Phi \in C^r(O, \RM)$~--- это гладкость;
+                    \item $\Phi \in C^r(O, \RM)$~--- гладкость;
                     
-                    \item $\forall t \in O$ верно, что $\rang \Phi'(t) = k$.
+                    \item $\forall t \in O$ верно, что $\rang \Phi'(t) = k$~--- невырожденность.
                     
                 \end{itemize}
         
@@ -138,7 +135,11 @@
     
     \section{Касательное пространство к $k$-мерному многообразию в $\RM$}
     
-        $\Phi : O \subset \mathbb{R}^k \rightarrow \RM$~--- $C^r$-параметризация $U(p) \cap M$, $p \in M$, $\Phi(t_0) = p$. Тогда $\Phi'(t_0) \left( \mathbb{R}^k \right)$ называется касательным пространством к $k$-мерному многообразию $M$ в точке $p$. Обозначается $Tp(M) = \left\{ \Phi'(t_0) h, h \in \mathbb{R}^k \right\}$.
+        $M \subset \RM$~--- $k$-мерное многообразие, $p \in M$ и $\Phi : \mathbb{R}^k \rightarrow \RM$~--- параметризация, $\Phi(t_0) = p$. Тогда 
+        
+        $\Phi'(t_0) \left( \mathbb{R}^k \right)$ называется \textit{касательным пространством} к $k$-мерному многообразию $M$ в точке $p$. 
+        
+        Обозначается $Tp(M) = \left\{ \Phi'(t_0) h, \ h \in \mathbb{R}^k \right\}$.
         
     \newpage
     
@@ -272,7 +273,7 @@
     
     \section{Похожие пути}
     
-        $V$~--- локально потенциальное векторное поле, $\gamma$, $\overline{\gamma} : [a, b] \rightarrow O$~--- непрерывны. Тогда $\gamma$ и $\overline{\gamma}$~--- похожи, если у этих путей имеется одинаковая $V$-гусеница, т.е. существует такие дробления $t_0$, $t_1$, $\ldots$, $t_n$ и $\overline{t_0}$, $\overline{t_1}$, $\ldots$, $\overline{t_n}$, что $a = t_0 = \overline{t_0}$ и $b = t_n = \overline{t_n}$, и шары $B_1$, $B_2$, $\ldots$, $B_k$, а также $\gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$ и $\overline{\gamma} \big|_{[\overline{t_{k - 1}}, \overline{t_k}]} \subset B_k$.
+        $V$~--- локально потенциальное векторное поле, $\gamma$, $\overline{\gamma} : [a, b] \rightarrow O$~--- непрерывны. Тогда $\gamma$ и $\overline{\gamma}$~--- похожи, если у этих путей имеется одинаковая $V$-гусеница, т.е. существует такие дробления $t_0$, $t_1$, $\ldots$, $t_n$ и $\overline{t_0}$, $\overline{t_1}$, $\ldots$, $\overline{t_n}$, что $a = t_0 = \overline{t_0}$ и $b = t_n = \overline{t_n}$, и шары $B_1$, $B_2$, $\ldots$, $B_n$, а также для любого $k \in [1, n]$ $\gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$ и $\overline{\gamma} \big|_{[\overline{t_{k - 1}}, \overline{t_k}]} \subset B_k$.
         
     \newpage
     
@@ -1266,7 +1267,7 @@
             
                 $\lim\limits_{z \rightarrow 0} \frac{e^z - 1}{z} = (e^z)' \bigg|_{z = 0} = 1$;
                 
-            \item $\overline{\exp(z)} = \exp(\overline{z})$ комплексное, $\overline{\sum \frac{z^n}{n}} = \sum \frac{\overline{z}^n}{n}$;
+            \item $\overline{\exp(z)} = \exp(\overline{z})$ комплексное, $\overline{\sum \frac{z^n}{n!}} = \sum \frac{\overline{z}^n}{n!}$;
             
             \item $\exp (z + w) = \exp(z) \cdot \exp(w)$
             
@@ -1588,7 +1589,7 @@
     
     \section{Лемма о похожести путей, близких к данному}
     
-        $\gamma : [a, b] \rightarrow O \subset \RM$. Тогда $\exists \delta > 0$, если $\overline{\gamma}$ и $\overline{\overline{\gamma}} : [a, b] \rightarrow 0$, таковы, что $\forall t \in [a, b]$ $|\gamma(t) - \overline{\gamma(t)}| < \delta$ и $|\gamma(t) - \overline{\overline{\gamma}}(t)| < \delta$,
+        $\gamma : [a, b] \rightarrow O \subset \RM$. Тогда $\exists \delta > 0$, если $\overline{\gamma}$ и $\overline{\overline{\gamma}} : [a, b] \rightarrow O$, таковы, что $\forall t \in [a, b]$ $|\gamma(t) - \overline{\gamma(t)}| < \delta$ и $|\gamma(t) - \overline{\overline{\gamma}}(t)| < \delta$,
         
         то $\gamma$, $\overline{\gamma}$ и $\overline{\overline{\gamma}}$~--- похожи.
         
@@ -1638,7 +1639,7 @@
     
     \section{Свойства объема: усиленная монотонность, конечная полуаддитивность}
     
-        $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$. Тогда
+        $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$~--- объем. Тогда
         
         \begin{enumerate}
         
@@ -1680,7 +1681,7 @@
     
     \section{Теорема об эквивалентности счетной аддитивности и счетной полуаддитивности}
     
-        $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$, объём. Тогда эквивалентны:
+        $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$~--- объём. Тогда эквивалентны:
         
         \begin{enumerate}
         
@@ -1744,7 +1745,7 @@
         
             \item $\mu$~--- мера, т.е. выполняется счётная аддитивность;
             
-            \item $\mu$~--- непрерывна сверху, т.е. $A$, $A_1$, $A_2$, $\ldots \in \mathcal{A}$, $A_1 \supset A_2 \supset \ldots$, $A = \bigcap\limits^{+\infty}_{i = 1} A_i$, $\mu A = \lim\limits_{N \rightarrow +\infty} \mu A_N$;
+            \item $\mu$~--- непрерывна сверху, т.е. $A$, $A_1$, $A_2$, $\ldots \in \mathcal{A}$, $A_1 \supset A_2 \supset \ldots$, $A = \bigcap\limits^{+\infty}_{i = 1} A_i$, $\mu A = \lim\limits_{i \rightarrow +\infty} \mu A_i$;
             
             \item $\mu$~--- непрерывна сверху на пустом множестве, т.е. $A_1$, $\ldots$, $A_n$, $\ldots \in \mathcal{A}$, $A_1 \supset A_2 \supset A_3 \supset \ldots$, $\bigcap\limits^{+\infty}_{i = 1} A_i = \varnothing$.
             
