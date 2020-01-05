@@ -145,11 +145,11 @@
     
     \section{Относительный локальный максимум, минимум, экстремум}
     
-        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$,
+        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$, $\Phi : E \rightarrow \mathbb{R}^n$. Тогда
         
-        $\Phi : E \rightarrow \mathbb{R}^n$, тогда
+        $x_0 \in E$, $\Phi(x_0) = 0$~--- точка \textit{относительного локального максимума} $f$, если 
         
-        $x_0 \in E$, $\Phi(x_0) = 0$~--- точка относительного локального максимума $f$, если $\exists U (x_0) : \forall x \in U(x_0) \cap E, \Phi(x) = 0$ $f(x) \leq f(x_0)$. 
+        $\exists U (x_0) : \forall x \in U(x_0) \cap E$ и $\Phi(x) = 0$ верно $f(x) \leqslant f(x_0)$. 
         
         Аналогично определяется минимум.
         
@@ -157,11 +157,9 @@
     
     \section{Формулировка достаточного условия относительного экстремума}
     
-        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$, $\Phi : E \rightarrow \mathbb{R}^n$, $f$, $\Phi \in C^1$, 
+        $f : E \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}$, $\Phi : E \rightarrow \mathbb{R}^n$, $f$, $\Phi \in C^1$.
         
-        $a \in E : \rang \Phi'(a) = n$,
-        
-        $\lambda \in \mathbb{R}^n$ и верно
+        Пусть $a \in E : \rang \Phi'(a) = n$ и $\lambda \in \mathbb{R}^n$ и верно
         
         $
             \begin{cases}
@@ -175,9 +173,19 @@
         
         Если $h = ( h_x, h_y ) \in \mathbb{R}^{m + n}$ удовлетворяет $\Phi'(a) h = 0$, то можно выразить $h_y = \psi(h_x)$.
         
-        Рассмотрим квадратичную форму $Q(h_x) = d^2 G(a, \left( h_x, \psi (h_x ) \right) )$, где $G = f - \lambda \Phi$ (форма Лагранжа).
+        Рассмотрим квадратичную форму $Q(h_x) = d^2 G(a, \left( h_x, \psi (h_x ) \right) )$, где $G = f - \lambda \Phi$ (форма Лагранжа). Тогда в зависимости от квадратичной формы можно узнать информацию о самой точке $a$:
         
-        $Q$~--- положительно определенная, значит точка локального минимума, если отрицательно определенная~--- точка локального максимума, $Q$~--- неопределенная~--- нет экстремума, в остальных случаях непонятно.
+        \begin{itemize}
+        
+            \item $Q$~--- положительно определенная~--- точка локального минимума;
+            
+            \item $Q$~--- отрицательно определенная~--- точка локального максимума;
+            
+            \item $Q$~--- неопределенная~--- нет экстремума;
+            
+            \item в остальных случаях недостаточно информации.
+        
+        \end{itemize}
         
     \newpage
     
@@ -185,13 +193,13 @@
     
         $f_n : X \rightarrow \mathbb{R}$, если $\exists f : E \subset X \rightarrow \mathbb{R}$, что для любого $x_0 \in E$ предел $\lim\limits_{n \rightarrow +\infty} f_n(x_0) = f(x_0)$, то
         
-        $f_n \xrightarrow[n \rightarrow +\infty]{} f$ сходится поточечно на $E$.
+        $f_n \xrightarrow[n \rightarrow +\infty]{} f$ \textit{сходится поточечно} на $E$.
         
     \newpage
     
     \section{Равномерная сходимость последовательности функций на множестве }
     
-        $f$, $f_n : X \rightarrow \mathbb{R}$, $E \subset X$, тогда $f_n$~--- равномерно сходится на $E$ к функции $f$ если
+        $f$, $f_n : X \rightarrow \mathbb{R}$, $E \subset X$, тогда $f_n$~--- \textit{равномерно сходится} на $E$ к функции $f$ если
         
         $M_n := \sup\limits_{x \in E} \left| f_n(x) - f(x) \right| \xrightarrow[n \rightarrow +\infty]{} 0$.
         
@@ -203,9 +211,9 @@
     
         \begin{enumerate}
         
-            \item Функциональный ряд сходится поточечно на $E$, если для любого $x \in E$ сумма $\sum\limits^{+\infty}_{n = 0} u_n(x)$~--- сходится к сумме $S(x)$;
+            \item Функциональный ряд \textit{сходится поточечно} на $E$, если для любого $x \in E$ сумма $\sum\limits^{+\infty}_{n = 0} u_n(x)$~--- сходится к сумме $S(x)$;
             
-            \item Функциональный ряд сходится равномерно на $E$ (к сумме $S(x)$), если $S_n(x) \rightrightarrows S(x)$ на $E$, где $S_n(x)$~--- последовательность частичных сумм.
+            \item Функциональный ряд \textit{сходится равномерно} на $E$ (к сумме $S(x)$), если $S_n(x) \rightrightarrows S(x)$ на $E$, где $S_n(x)$~--- последовательность частичных сумм.
             
         \end{enumerate}
         
@@ -215,15 +223,15 @@
     
         Функциональный ряд $\sum u_n$ равномерно сходится на $E$ эквивалентно следующему утверждению:
         
-        $$\forall \varepsilon > 0 : \exists N : \forall m \geq n \geq N \ \textrm{и} \ \forall x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$$
+        $$\forall \varepsilon > 0 : \exists N : \forall m \geqslant n \geqslant N \ \textrm{и} \ \forall x \in E : \left| \sum\limits^m_{k = n} u_k(x) \right| < \varepsilon$$
         
     \newpage
     
     \section{Степенной ряд, радиус сходимости степенного ряда, формула Адамара}
     
-        $a_n \in \mathbb{R}$ или $\mathbb{C}$, $B(z_0, r) \subset \mathbb{R}$ или $\mathbb{C}$, тогда $\sum\limits^{+\infty}_{n = 0} a_n (z - z_0)^n$ называют \textbf{степенным рядом}.
+        $a_n \in \mathbb{R}$ (или $\mathbb{C}$), $B(z_0, r) \subset \mathbb{R}$ (или $\mathbb{C}$), тогда $\sum\limits^{+\infty}_{n = 0} a_n (z - z_0)^n$ называют \textit{степенным рядом}.
         
-        Назовём $R$ \textbf{радиусом сходимости} степенного ряда, если:
+        Назовём $R$ \textit{радиусом сходимости} степенного ряда, если:
         
             \begin{itemize}
             
@@ -233,7 +241,7 @@
                 
             \end{itemize}
         
-        $R = \dfrac{1}{\overline{\lim\limits_{n \rightarrow +\infty}} \sqrt[n]{|a_n|}}$~--- формула Адамара.
+        $R = \dfrac{1}{\overline{\lim\limits_{n \rightarrow +\infty}} \sqrt[n]{|a_n|}}$~--- \textit{формула Адамара}.
     
     \newpage
     
