@@ -503,21 +503,15 @@
     
     \section{Лемма о ''почти локальной инъективности''}
     
-        $F : O \subset \RM \rightarrow \RM$ --- дифференцируема в точке $x_0 \in O$, 
+        $F : \underset{\text{обл.}}{O} \subset \RM \rightarrow \RM$ --- дифференцируема в точке $x_0 \in O$,  $\det F'(x_0) \neq 0$.
         
-        $\det F'(x_0) \neq 0$,
-        
-        $O$ --- область.
-        
-        Тогда $\exists c, \delta > 0 : \forall h : \left| h \right| < \delta : \left| F(x_0 + h) - F(x_0) \right| \geq c \cdot \left| h \right|$
+        Тогда $\exists c, \delta > 0 : \forall h : \left| h \right| < \delta : \left| F(x_0 + h) - F(x_0) \right| \geqslant c \cdot \left| h \right|$
         
         \subsection{Доказательство}
         
-            $\left| F(x_0 + h) - F(x_0) \right| = \left| F'(x_0)h + \alpha(h) \left| h \right| \right| \geq \left| F'(x_0) h \right| - \left| \alpha(h) \right| \left| h \right| \geq (\widetilde{c} - \left| \alpha(h) \right|) \left| h \right| \geq \frac{c}{2} \left| h \right|$
+            $\left| F(x_0 + h) - F(x_0) \right| = \left| F'(x_0)h + \alpha(h) \left| h \right| \right| \geqslant \left| F'(x_0) h \right| - \left| \alpha(h) \right| \left| h \right| \geqslant (\widetilde{c} - \left| \alpha(h) \right|) \left| h \right| \geqslant \frac{\widetilde{c}}{2} \left| h \right|$, пусть при $|h| < \delta$ будет верно, что $\left| \alpha(h) \right| < \frac{\widetilde{c}}{2}$.
         
             Возьмём в качестве $\widetilde{c} = \dfrac{1}{\| (F'(x_0))^{-1} \|}$.
-        
-            Пусть при $|h| < \delta$ будет верно, что $\left| \alpha(h) \right| < \frac{\widetilde{c}}{2}$.
         
     \newpage
     
