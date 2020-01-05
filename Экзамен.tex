@@ -247,53 +247,55 @@
     
     \section{Кусочно-гладкий путь}
     
-        $\gamma : [a, b] \rightarrow \RM$~--- кусочно-гладкий путь, если существует такое дробление $a = t_0 < t_1 < \ldots < t_n = b$, что для любого $i \in [1, n]$ путь $\gamma \big|_{[t_{i - 1}, t_i]}$~--- гладкий (в точка $t_{i - 1}$ и $t_i$ есть односторонние производные).
+        $\gamma : [a, b] \rightarrow \RM$~--- \textit{кусочно-гладкий путь}, если существует такое дробление $a = t_0 < t_1 < \ldots < t_n = b$, что для любого $i \in [1, n]$ путь $\gamma \big|_{[t_{i - 1}, t_i]}$~--- гладкий (в точках $t_{i - 1}$ и $t_i$ есть односторонние производные).
         
     \newpage
     
     \section{Векторное поле}
     
-        $V : E \subset \RM \rightarrow \RM$~--- векторное поле. По умолчанию считается, что $V$~--- непрерывное.
+        $V : E \subset \RM \rightarrow \RM$~--- \textit{векторное поле}. По умолчанию считается, что $V$~--- непрерывное.
         
     \newpage
     
     \section{Интеграл векторного поля по кусочно-гладкому пути}
     
-        $V$~--- векторное поле в $E$, $E$~--- открытое, $\gamma$~--- кусочно-гладкий путь в $E$. Тогда
+        $V$~--- векторное поле в $E$, $E$~--- открытое, $\gamma$~--- кусочно-гладкий путь в $E$. Тогда \textit{интеграл векторного поля $V$ по кусочно-гладкому пути $\gamma$} равен
         
-        $$I(V, \gamma) := \int\limits^b_a \langle V \left( \gamma(t) \right), \gamma' (t) \rangle dt = \int\limits^b_a V_1 \left( \gamma(t) \right) \gamma'_1(t) + \ldots + V_m \left( \gamma(t) \right) \gamma'_m(t) dt$$
-        
-        интеграл векторного поля $V$ по кусочно-гладкому пути $\gamma$.
+        $$I(V, \gamma) := \int\limits^b_a \langle V \left( \gamma(t) \right), \gamma' (t) \rangle dt = \int\limits^b_a V_1 \left( \gamma(t) \right) \gamma'_1(t) + \ldots + V_m \left( \gamma(t) \right) \gamma'_m(t) dt$$.
         
     \newpage
     
     \section{Потенциал, потенциальное векторное поле}
     
-        $O \subset \RM$~--- область, $V : O \rightarrow \RM$. Тогда $V$~--- потенциальное векторное поле, а $f$~--- его потенциал, если $f \in C^1 \left( O, \mathbb{R} \right)$ и $\grad f = V$ в области $O$.
+        $V : \underset{\text{обл.}}{O} \subset \RM \rightarrow \RM$~--- \textit{потенциальное векторное поле}, а $f$~--- его \textit{потенциал}, если 
+        
+        $f \in C^1 \left( O, \mathbb{R} \right)$ и $\grad f = V$ в области $O$.
         
     \newpage
     
     \section{Локально потенциальное векторное поле}
     
-        $V : O \subset \RM \rightarrow \RM$~--- локально потенциальное векторное поле, если $O$~--- область, а $\forall x \in O : \exists U(x)$, что $V$ в $U(x)$~--- потенциальное поле.
+        $V : \underset{\text{обл.}}{O} \subset \RM \rightarrow \RM$~--- \textit{локально потенциальное векторное поле} в $O$, если для любого $x \in O$ существует окрестность $U(x)$, что $V$ в $U(x)$~--- потенциальное поле.
         
     \newpage
     
     \section{Похожие пути}
     
-        $V$~--- локально потенциальное векторное поле, $\gamma$, $\overline{\gamma} : [a, b] \rightarrow O$~--- непрерывны. Тогда $\gamma$ и $\overline{\gamma}$~--- похожи, если у этих путей имеется одинаковая $V$-гусеница, т.е. существует такие дробления $t_0$, $t_1$, $\ldots$, $t_n$ и $\overline{t_0}$, $\overline{t_1}$, $\ldots$, $\overline{t_n}$, что $a = t_0 = \overline{t_0}$ и $b = t_n = \overline{t_n}$, и шары $B_1$, $B_2$, $\ldots$, $B_n$, а также для любого $k \in [1, n]$ $\gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$ и $\overline{\gamma} \big|_{[\overline{t_{k - 1}}, \overline{t_k}]} \subset B_k$.
+        $V$~--- локально потенциальное векторное поле, $\gamma$, $\overline{\gamma} : [a, b] \rightarrow O$~--- непрерывны. Тогда 
+        
+        $\gamma$ и $\overline{\gamma}$~--- \textit{похожие пути}, если у них имеется одинаковая $V$-гусеница, т.е. существуют такие шары $B_1$, $B_2$, $\ldots$, $B_n$ и такие дробления $t_0$, $t_1$, $\ldots$, $t_n$ и $\overline{t_0}$, $\overline{t_1}$, $\ldots$, $\overline{t_n}$, что $a = t_0 = \overline{t_0}$, $b = t_n = \overline{t_n}$, что для любого $k \in [1, n]$ $\gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$ и $\overline{\gamma} \big|_{[\overline{t_{k - 1}}, \overline{t_k}]} \subset B_k$.
         
     \newpage
     
     \section{Интеграл локально-потенциального векторного поля по произвольному пути}
     
-        $I(V, \gamma) = I(V, \overline{\gamma}) = \int\limits^b_a \langle V \left( \overline{\gamma}(t) \right), \overline{\gamma}'(t) \rangle dt$~--- интеграл локально векторное поля $V$ по произвольному пути $\gamma$, где $\overline{\gamma}$~--- похожий на $\gamma$ кусочно-гладкий путь. В условиях соответствующей леммы такой всегда существует.
+        $I(V, \gamma) = I(V, \overline{\gamma})$, где $\overline{\gamma}$~--- похожий на $\gamma$ кусочно-гладкий путь. В условиях соответствующей леммы такой всегда существует.
         
     \newpage
     
     \section{Гомотопия путей связанная и петельная}
     
-        $\gamma_0$, $\gamma_1 : [a, b] \rightarrow O$, тогда гомотопия~--- это отображение $\Gamma : [a, b] \times [0, 1] \rightarrow O$~--- непрерывное, такое что $\Gamma(\cdot, 0) = \gamma_0(\cdot)$ и $\Gamma(\cdot, 1) = \gamma_1(\cdot)$.
+        $\gamma_0$, $\gamma_1 : [a, b] \rightarrow O$, тогда \textit{гомотопия}~--- это отображение $\Gamma : [a, b] \times [0, 1] \rightarrow O$~--- непрерывное, такое что $\Gamma(\cdot, 0) = \gamma_0(\cdot)$ и $\Gamma(\cdot, 1) = \gamma_1(\cdot)$.
         
         \textit{Гомотопия связанная}: $\gamma_0(a) = \gamma_1(a)$, $\gamma_0(b) = \gamma_1(b)$ и $\forall u \in [0, 1]$ $\Gamma(a, u) = \gamma_0(a)$ и $\Gamma(b, u) = \gamma_0(b)$.
         
@@ -303,7 +305,7 @@
     
     \section{Односвязная область}
     
-        $O \subset \RM$~--- односвязная область, если $O$~--- область и любой замкнутый путь гомотопен постоянному.
+        $O \subset \RM$~--- \textit{односвязная область}, если $O$~--- область и любой замкнутый путь гомотопен постоянному.
         
     \newpage
     
@@ -335,7 +337,7 @@
         
             $\forall A_1$, $A_2$, $A_3$, $\ldots \in \mathcal{A} \Rightarrow \bigcup\limits_{i = 1}^{+\infty} A_i \in \mathcal{A}$.
             
-        \textit{Можно вместо объединения потребовать пересечение, поскольку из одного следует другое}
+        \textbf{Можно вместо объединения потребовать пересечение, поскольку из одного следует другое.}
         
     \newpage
     
@@ -359,7 +361,7 @@
         
             \item $\mu : \mathcal{P} \rightarrow \overline{\mathbb{R}}$;
             
-            \item $\mu \geq 0$;
+            \item $\mu \geqslant 0$;
             
             \item $\mu$~--- аддитивная.
             
@@ -369,7 +371,7 @@
     
     \section{Ячейка}
     
-        $a, b \in \RM$, $[a, b) = \left\{ x \in \RM : \forall i : a_i \leq x_i < b_i \right\}$~--- ячейка.
+        $a, b \in \RM$, $[a, b) = \left\{ x \in \RM : \forall i : a_i \leqslant x_i < b_i \right\}$~--- \textit{ячейка}.
         
     \newpage
     
@@ -403,7 +405,95 @@
     
     \section{Дискретная мера}
     
-        $X$~--- множество, $A_1$, $A_2$, $\ldots$~--- точки множества $X$, $h_1$, $h_2$, $\ldots \geq 0$, $\mathcal{P} = 2^X$, и для любого $B \subset \mathcal{P}$ $\mu B = \sum\limits_{i : A_i \in B} h_i$.
+        $X$~--- множество, $A_1$, $A_2$, $\ldots$~--- точки множества $X$, $h_1$, $h_2$, $\ldots \geqslant 0$~--- их веса, $\mathcal{P} = 2^X$, и для любого $B \subset \mathcal{P}$ $\mu B = \sum\limits_{i : A_i \in B} h_i$.
+        
+    \newpage
+    
+    \section{Формулировка теоремы о лебеговском продолжении меры}
+    
+        $(X, \mathcal{P}, \mu_0)$, $\mu_0$~--- $\sigma$-конечный объём. Тогда
+        
+        существует $\sigma$-алгебра $\mathcal{A}$ и мера $\mu : \mathcal{A} \rightarrow \overline{\R}$ и выполняются следующие свойства:
+        
+        \begin{enumerate}
+        
+            \item $\mathcal{P} \subset \mathcal{A}$ и $\mu \big|_{\mathcal{P}} = \mu_0$;
+            
+            \item $\mu$~--- полная мера;
+            
+            \item Если $\mathcal{P} \subset \mathcal{A}'$ и $\mu' \big|_{\mathcal{A}} = \mu_0$, $\mu'$~--- полная, то $\mathcal{A} \subset \mathcal{A}'$ и $\mu' \big|_{\mathcal{A}} = \mu$;
+            
+            \item $\mathcal{P} \subset \mathcal{P}'$~--- полукольцо и $\mathcal{P}' \subset \mathcal{A}$, $\mu'$~--- мера на $\mathcal{P}' \Rightarrow \mu' = \mu \big|_{\mathcal{P}'}$;
+            
+            \item $\forall A \in \mathcal{A}$ $\mu A = \inf \left( \sum \mu_0 \left( P_k \right) : A \subset \bigcup\limits^{+\infty}_{k = 1} P_k, P_k \in \mathcal{P} \right)$.
+            
+        \end{enumerate}
+        
+    \newpage
+    
+    \section{Мера Лебега, измеримое по Лебегу множество}
+    
+        \textit{Мера Лебега в $\RM$}~--- результат лебеговского продолжения классическое объёма. Обозначается $\lambda$ или $\lambda^m$.
+        
+        $\mathcal{M}^m$~--- $\sigma$-алгебра, на которой задана мера Лебега. Все множества из этой $\sigma$-алгебры \textit{измеримы по Лебегу}.
+        
+    \newpage
+    
+    \section{Борелевская сигма-алгебра}
+    
+        $\mathcal{B}$~--- \textit{борелевская $\sigma$-алгебра}~--- минимальная $\sigma$-алгебра (в $\RM$), содержащая все открытые множества.
+        
+    \newpage
+    
+    \section{Ступенчатая функция}
+    
+        $f : X \rightarrow \R$~--- \textit{ступенчатая} $\left( X, \mathcal{A}, \mu \right)$, если существует конечное разбиение $X = \bigsqcup e_i$, $e_i$~--- измеримы и $f \big|_{e_i} = \mathrm{const}$.
+        
+    \newpage
+    
+    \section{Разбиение, допустимое для ступенчатой функции}
+    
+        Разбиение $X = e_1 \sqcup e_2 \sqcup \ldots \sqcup e_n$~--- \textit{допустимо для ступенчатой функции} $f$, если $f \big|_{e_i} = \mathrm{const}$ для каждого $i \in [1, n]$.
+        
+    \newpage
+    
+    \section{Измеримая функция}
+    
+        $\left( X, \mathcal{A}, \mu \right)$, $f : X \rightarrow \overline{\R}$, $E \in \mathcal{A}$. Тогда
+        
+        $f$~--- \textit{измерима} на множестве $E$, если $\forall a \in \R : E \left(f < a \right)$~--- измерима.
+        
+    \newpage
+    
+    \section{Свойство, выполняющееся почти везде}
+    
+        $\left( X, \mathcal{A}, \mu \right)$, $E \in \mathcal{A}$, $w(x)$~--- высказывание, зависящее от точки пространства. Говорят, что
+        
+        $w(x)$ \textit{верно при почти всех $x$} (или \textit{почти везде}), если $\mu \left\{ x : w(x) - \text{ложно} \right\} = 0$.
+        
+    \newpage
+    
+    \section{Сходимость почти везде}
+    
+        $f, f_n : E \rightarrow \overline{\R}$~--- измеримы, тогда
+        
+        $f_n \xrightarrow[n \rightarrow +\infty]{} f$ \textit{почти везде}, если существует такое $e$, что $\mu e = 0$ и $\forall x \in E \setminus e : f_n(x) \rightarrow f(x)$.
+        
+    \newpage
+    
+    \section{Сходимость по мере}
+    
+        $f_n, f : X \rightarrow \overline{\R}$~--- измеримы, почти везде конечны, тогда
+        
+        $f_n$ \textit{сходится по мере} к $f$ если $\forall \varepsilon > 0 : \mu X \left( | f_n - f | \geqslant \varepsilon \right) \xrightarrow[n \rightarrow +\infty]{} 0$.
+        
+    \newpage
+    
+    \section{Теорема Егорова о сходимости почти везде и почти равномерной сходимости}
+    
+        $\left( X, \mathcal{A}, \mu \right), \mu X < +\infty$, $f_n, f : X \rightarrow \overline{\R}$~--- измеримы, почти везде конечны, $f_n \rightarrow f$~--- почти везде. Тогда
+        
+        $\forall \varepsilon > 0 : \exists e : \mu e < \varepsilon : f_n \rightrightarrows f$ на $X \setminus e$.
         
 \newpage
 
