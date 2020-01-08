@@ -26,7 +26,7 @@
 
 \newcommand{\R}[0]{\mathbb{R}}
 \newcommand{\RM}[0]{\mathbb{R}^m}
-\newcommand{\dist}[0]{\mathrm{dist} $\ $}
+\newcommand{\dist}[0]{\mathrm{dist}}
 \newcommand{\rang}[0]{\mathrm{rang} $\ $}
 \newcommand{\grad}[0]{\mathrm{grad} $\ $}
 \newcommand{\Lin}[0]{\mathrm{Lin} $\ $}
@@ -517,15 +517,13 @@
     
     \section{Теорема о сохранении области}
     
-        $F : O \subset \RM \rightarrow \RM$, где $O$~--- открыто,
-        
-        для любого $x \in O$ выполняется $\det F'(x) \neq 0$. Тогда $F(O)$~--- открыто.
+        $F : \underset{\text{откр.}}{O} \subset \RM \rightarrow \RM$, $\forall x \in O : \det F'(x) \neq 0$. Тогда $F(O)$~--- открыто.
         
         \subsection{Доказательство}
         
             Пусть $x_0 \in O$ и $y_0 = F(x_0) \in F(O)$, необходимо проверить, что $y_0$~--- внутренняя точка $F(O)$.
             
-            По лемме о ''почти локальной инъективности'' существуют такие $c$ и $\delta$, что для любого $h \in \overline{B(0, \delta)}$ верно $\left| F(x_0 + h) - F(x_0) \right| \geq c | h |$ (и в частности $F(x_0 + h) \neq F(x_0)$ при $| h | = \delta$).
+            По лемме о ''почти локальной инъективности'' существуют такие $c$ и $\delta$, что для любого $h \in \overline{B(0, \delta)}$ верно $\left| F(x_0 + h) - F(x_0) \right| \geqslant c | h |$ (и в частности $F(x_0 + h) \neq F(x_0)$ при $| h | = \delta$).
             
             $r := \frac{1}{2} \dist \left( y_0, F(S(x_0, \delta)) \right) > 0$
             
@@ -533,15 +531,15 @@
             
             \begin{enumerate}
             
-                \item На $S(x_0, \delta)$ верно, что $\left| F(x) - y \right| \geq r$
+                \item На $S(x_0, \delta)$ верно, что $\left| F(x) - y \right| \geqslant r$
                 
-                \item При $x = x_0$ выполняется, что $\left| F(x_0) - y \right| = | y_0 - y | < r$, по теореме Вейерштрасса $g$ достигается минимума внутри шара $B(x_0, \delta)$.
+                \item При $x = x_0$ выполняется, что $\left| F(x_0) - y \right| = | y_0 - y | < r$, по теореме Вейерштрасса $g$ достигает минимума внутри шара $B(x_0, \delta)$.
                 
             \end{enumerate}
             
             Пусть $l : x \mapsto \left| F(x) - y \right|^2$~--- достигает минимума таким же образом.
             
-            Найдём минимум с помощью необходимого условию экстремума, т.е. производная должна быть равна $0$.
+            Найдём минимум с помощью необходимого условия экстремума, т.е. производная должна быть равна $0$.
             
             \begin{equation*}
                 \begin{cases}
@@ -555,39 +553,39 @@
                 \end{cases}
             \end{equation*}
             
-            Поскольку матрица $F'(x)$ невырожденная по условию, то получаем, что $f_i(x) - y = 0$ для всех $i$.
+            Поскольку матрица $F'(x)$ невырожденная по условию, то получаем, что $f_i(x) - y_i = 0$ для всех $i$ и $g(x) = 0$, т.е. для любого $y \in B(y_0, r)$ существует такой $x \in O$, что $F(x) = y$.
             
     \newpage
     
     \section{Следствие о сохранении области для отображений в пространство меньшей размерности}
     
-        $F : O \subset \RM \rightarrow \mathbb{R}^l$, где $l < m$ и $F \in C^1(O)$,
+        $F : \underset{\text{откр.}}{O} \subset \RM \rightarrow \mathbb{R}^l$, где $l < m$ и $F \in C^1(O)$, $\rang F'(x) = l$ при всех $x \in O$. Тогда 
         
-        $\rang F'(x) = l$ при всех $x \in O$.
-        
-        Тогда $F(O)$~--- открыто.
+        $F(O)$~--- открыто.
         
         \subsection{Доказательство}
         
-            В точке $x_0$ и в окрестности ранг реализован на первых $l$ столбцах. 
+            В точке $x_0$ и в её окрестности ранг реализован на первых $l$ столбцах. 
             
-            Пусть $\widetilde{F} = \begin{pmatrix} F \\ x_{l + 1} \\ \ldots \\ x_{m} \end{pmatrix} : O \rightarrow \RM$
+            Пусть $\widetilde{F} = \begin{pmatrix} F \\ x_{l + 1} \\ \ldots \\ x_{m} \end{pmatrix} : O \rightarrow \RM$ или $(x_1, \ldots, x_m) \mapsto \left( F(x_1, \ldots, x_m), x_{l + 1}, \ldots, x_m \right)$
             
-            $(x_1, \ldots, x_m) \mapsto \left( F(x_1, \ldots, x_m), x_{l + 1}, \ldots, x_m \right)$
-            
-            $\det \widetilde{F}(x_0) = \det F(x_0) \neq 0$, а также $\forall x \in U(x_0)$. 
-            
-            Значит $\widetilde{F}(U(x_0))$ открыто в $\RM$, а $F(U(x_0))$~--- проекция на $\mathbb{R}^l$.
+            $\det \widetilde{F}(x_0) = \det F(x_0) \neq 0$ также $\forall x \in U(x_0)$, значит $\widetilde{F}(U(x_0))$ открыто в $\RM$, значит и $F(U(x_0))$ открыто в $\R^l$.
             
     \newpage
     
     \section{Теорема о гладкости обратного отображения}
     
-        $T \in C^r \left( O, \RM \right)$ ($r = 1$, $2$, $\ldots$, $+\infty$).
+        $T \in C^r \left( \underset{\text{откр.}}{O} \subset \RM, \RM \right)$ ($r = 1$, $2$, $\ldots$, $+\infty$).
         
-        Пусть $T$~--- обратимо, $\det T'(x) \neq 0$ при $x \in O$. Тогда
+        $T$~--- обратимо и $\det T'(x) \neq 0$ при $x \in O$. Тогда
         
-        $T^{-1} \in C^r$ и при этом $\left( T^{-1} \right)'(y_0) = \left( T'(x_0) \right)^{-1}$ при $y_0 = T(x_0)$.
+        \begin{enumerate}
+        
+            \item $T^{-1} \in C^r$;
+            
+            \item $\left( T^{-1} \right)'(y_0) = \left( T'(x_0) \right)^{-1}$ при $y_0 = T(x_0)$.
+        
+        \end{enumerate}
         
         \subsection{Доказательство}
         
@@ -599,11 +597,9 @@
                 
                     $S = T^{-1}$~--- обратное отображение, $S$~--- непрерывно (по теореме о сохранении области).
                     
-                    $O$~--- открытое $\Rightarrow$ $T(O)$~--- открытое, значит $T: \RM_{(1)} \rightarrow \RM_{(2)}$, а $S : \RM_{(2)} \rightarrow \RM_{(1)}$, значит и $S^{-1}$~--- тоже открытое.
+                    $T(O) = O_1$, $y_0 \in O_1$, проверим дифференцируемость $S$ в $y_0$. Обозначим $A = T'(x_0)$.
                     
-                    $T(O) = O_1$, $y_0 \in O_1$, верно ли, что $S$~--- дифференцируема в $y_0$? Обозначим $A = T'(x_0)$.
-                    
-                    По лемме о почти локальной инъективности $\exists c, \delta : x \in B(x_0, \delta)$, что $\left| T(x) - T(x_0) \right| \geq c | x - x_0 |$
+                    По лемме о почти локальной инъективности $\exists c, \delta : x \in B(x_0, \delta) : \left| T(x) - T(x_0) \right| \geqslant c | x - x_0 |$
                     
                     По определению дифференцирования $T(x) - T(x_0) = A(x - x_0) + \alpha(x) | x - x_0 |$
                     
@@ -611,17 +607,19 @@
                     
                     Пусть $\beta = A^{-1} \alpha \left( S(y) \right) \left| S(y) - S(y_0) \right|$
                     
-                    Пусть $y$ близко к $y_0$ : $| x - x_0 | = \left| S(y) - S(y_0) \right| < \delta$~--- по непрерывности $S'$.
+                    Пусть $y$ близко к $y_0$ : $| x - x_0 | = \left| S(y) - S(y_0) \right| < \delta$.
                     
-                    $| \beta(y) | = |x - x_0| \cdot \left| A^{-1} \alpha \left( S(y) \right) \right| \leq \frac{1}{c} \left| T(x) - T(x_0) \right| \cdot \| A^{-1} \| \alpha \left( S(y) \right) | = \dfrac{\| A^{-1} \|}{c} \left| \alpha \left( S(y) \right) \right| |y - y_0| = o(|y - y_0|)$ при $y \rightarrow y_0$.
-                    
-                    $\left| T(x) - T(x_0) \right| \geq c | x - x_0 | \Rightarrow | x - x_0 | \leq \frac{1}{c} \left| T(x) - T(x_0) \right|$.
-                    
-                    $S' : y \xrightarrow{C^1} T^{-1} (y) = x \xrightarrow{C^1} T'(x) \xrightarrow{C^{\infty}} \left(T'(x)\right)^{-1} = S'$.
-                    
-                \item Индукционный переход без доказательства:
+                    $| \beta(y) | = |x - x_0| \cdot \left| A^{-1} \alpha \left( S(y) \right) \right| \leqslant \frac{1}{c} \left| T(x) - T(x_0) \right| \| A^{-1} \|  | \alpha \left( S(y) \right) | = \dfrac{\| A^{-1} \|}{c} \left| \alpha \left( S(y) \right) \right| |y - y_0| = o(|y - y_0|)$ при $y \rightarrow y_0$. $\left( \left| T(x) - T(x_0) \right| \geqslant c | x - x_0 | \Rightarrow | x - x_0 | \leqslant \frac{1}{c} \left| T(x) - T(x_0) \right| \right)$.
                 
-                    $r = 1 \Rightarrow r = 2$, т.е. $T \in C^2 \Rightarrow S \in C^2$, т.е. $S' \in C^1$, а также $T \in C^1$ и $S \in C^1$.
+                    $y \xrightarrow{C^1} T^{-1} (y) = x \xrightarrow{C^1} T'(x) \xrightarrow{C^{\infty}} \left(T'(x)\right)^{-1} = S'$.
+                    
+                    Таким образом, $S'$~--- непрерывно и к тому же, $\left( T^{-1} \right)'(y_0) = \left( T'(x_0) \right)^{-1}$ при $y_0 = T(x_0)$.
+                
+                \item Индукционный переход (без доказательства):
+                
+                    $r = n \Rightarrow r = n + 1$:
+                    
+                    $T \in C^{n + 1} \Rightarrow S \in C^{n + 1} \Longleftrightarrow S' \in C^n$, но $T' \in C^n$, значит и $\left( T' \right)^{-1} \in C^n \Rightarrow S' \in C^n$.
                     
             \end{itemize}
             
@@ -629,19 +627,19 @@
     
     \section{Лемма о приближении отображения его линеаризацией}
     
-        $T \in C^1 \left( O, \RM \right)$, $x_0 \in O$.
+        $T \in C^1 \left( O, \RM \right)$, $x_0 \in O$. Тогда 
         
-        Тогда для любого $h$ $\left| T(x_0 + h) - T(x_0) - T'(x_0) h \right| \leq M \cdot |h|$, где $M = \sup\limits_{z \in [x_0, x_0 + h]} \| T'(z) - T'(x_0) \|$.
+        $\forall h : \left| T(x_0 + h) - T(x_0) - T'(x_0) h \right| \leqslant M \cdot |h|$, где $M = \sup\limits_{z \in [x_0, x_0 + h]} \| T'(z) - T'(x_0) \|$.
         
         \subsection{Доказательство}
         
-            $\left| F(x) - F(x_0) \right| \leq \sup\limits_{z \in [x_0, x]} \| F^{-1} (z) \| \cdot | x - x_0 |$~--- по теореме Лагранжа.
+            $\left| F(x) - F(x_0) \right| \leqslant \sup\limits_{z \in [x_0, x]} \| F' (z) \| \cdot | x - x_0 |$~--- по теореме Лагранжа.
             
-            $F(x) = T(x) - T'(x_0) \cdot X$
+            $F(x) = T(x) - T'(x_0) \cdot x$,
             
-            $F'(x) = T'(x) - T'(x_0)$
+            $F'(x) = T'(x) - T'(x_0)$.
             
-            $\left| T(x_0 + h) - T(x_0) - T'(x_0) h \right| = \left| F(x_0 + h) - F(x_0) \right| \leq \sup\limits_{z \in [x_0, x_0 + h]} \| F'(z) \| |h|$.
+            $\left| T(x_0 + h) - T(x_0) - T'(x_0) h \right| = \left| F(x_0 + h) - F(x_0) \right| \leqslant \sup\limits_{z \in [x_0, x_0 + h]} \| F'(z) \| |h|$.
             
     \newpage
     
@@ -655,35 +653,33 @@
         
             Достаточно доказать, что $\exists U(x_0)$, что $T \big|_{U(x_0)}$~--- обратимо (и для любого $x \in U(x_0)$ $\det T'(x) \neq 0$).
             
-            $T'(x_0)$~--- обратимо, значит $\exists c > 0 : \forall h$ $\left| T'(x_0) h \right| \geq c |h|$, где $c = \dfrac{1}{\| T'(x_0)^{-1} \|}$.
+            $T'(x_0)$~--- обратимо, значит $\exists c > 0 : \forall h : \left| T'(x_0) h \right| \geqslant c |h|$, где $c = \dfrac{1}{\| T'(x_0)^{-1} \|}$.
             
             Возьмём $U = B(x_0, r) \subset O$ так, что при $x \in U$ и было верным:
             
                 $\det T'(x) \neq 0$ и $\| T'(x) - T'(x_0) \| < \frac{c}{4}$.
                 
-            Проверим, что $T \big|_U$~--- взаимно-однозначное отображение.
+            Проверим, что $T \big|_{U(x_0)}$~--- взаимно-однозначное отображение.
             
-            $x, y \in U$ и $y = x + h$
+            $x, y \in U(x_0)$ и $y = x + h$
             
             $T(y) - T(x) = \left( T(x + h) - T(x) - T'(x) h \right) + \left( T'(x)h - T'(x_0)h \right) + T'(x_0)h$
         
             (Здесь и ниже римскими цифрами отображается номер скобки в выражении сверху)
             
-            $\left| T(y) - T(x) \right| \geq \left| T'(x_0) h \right| - | \mathrm{I} | - | \mathrm{II} | \geq c |h| - \frac{c}{2} |h| - \frac{c}{4} |h| = \frac{c}{4} |h| \neq 0$.
+            $\left| T(y) - T(x) \right| \geqslant \left| T'(x_0) h \right| - | \mathrm{I} | - | \mathrm{II} | \geqslant c |h| - \frac{c}{2} |h| - \frac{c}{4} |h| = \frac{c}{4} |h| \neq 0$.
             
-            $| \mathrm{I} | \geq M |h|$
+            $| \mathrm{I} | \leqslant M |h|$
             
-            $\left| T(x_0 + h) - T(x_0) - T'(x_0) h     \right| \leq M |h|$
+            $\left| T(x + h) - T(x) - T'(x) h \right| \leqslant M |h|$
             
-            $M = \sup \| T'(z) - T'(x_0) \|$, $z \in [x_0, x_0 + h]$
-            
-            $M \leq \frac{c}{2}$.
+            $M = \sup\limits_{z \in [x_0, x_0 + h]} \| T'(z) - T'(x) \| \leqslant \frac{c}{2}$.
             
     \newpage
     
     \section{Теорема о неявном отображении}
     
-        $F : O \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}^n$, $F \in C^r \left( O, \mathbb{R}^n \right)$,
+        $F : \underset{\text{откр.}}{O} \subset \mathbb{R}^{m + n} \rightarrow \mathbb{R}^n$, $F \in C^r \left( O, \mathbb{R}^n \right)$,
         
         $(a, b) \in O$ и $F(a, b) = 0$,
         
@@ -727,11 +723,11 @@
                             
                         \item ''ось $x$'' и ''ось $u$'' одно и то же $\RM$,
                         
-                            $P := \left( \RM \times \left\{ O_n \right\} \right) \cap \widetilde{V}$~--- открыто в $\RM$;
+                            $P := \left( \RM \times \left\{ \mathbf{0}_n \right\} \right) \cap \widetilde{V}$~--- открыто в $\RM$;
                             
-                        \item $\psi (x) := H(x, 0) : P \rightarrow Q : F(x, \psi(x) ) = 0$~--- единственно,
+                        \item $\varphi (x) := H(x, 0) : P \rightarrow Q : F(x, \varphi(x) ) = 0$~--- единственно,
                         
-                            $x \in P$, $y \in Q$ $F(x, y) = 0$, $(x, y) = \psi \left( \Phi (x, Y) \right) = \psi(x, 0) = (x, H(x, 0))$.
+                            $x \in P$, $y \in Q : F(x, y) = 0$, $(x, y) = \varphi \left( \Phi (x, y) \right) = \varphi(x, 0) = (x, H(x, 0))$.
                             
                     \end{enumerate}
                     
@@ -749,7 +745,7 @@
     
     \section{Теорема о задании гладкого многообразия системой уравнений}
             
-            $M \subset \RM$, зафиксируем $1 \leq k < m$ и $1 \leq r \leq +\infty$.
+            $M \subset \RM$, зафиксируем $1 \leqslant k < m$ и $1 \leqslant r \leqslant +\infty$.
             
             Тогда $\forall p \in M$ эквивалентны следующие два утверждения:
             
@@ -797,7 +793,7 @@
                         
                         $f_j : \widetilde{U} \rightarrow \mathbb{R}$, $f_j(x) = H_j \left( L(x) \right) - x_{k + j}$, если $x \in \widetilde{U} \cap M \Leftrightarrow$ все $f_j(x) = 0$.
                         
-                        $\begin{pmatrix} \dfrac{\partial H_1}{\partial x_1} & \ldots & \dfrac{\partial H_1}{\partial x_k} & -1 & 0 & \ldots & 0 \\ \dfrac{\partial H_2}{\partial x_1} & \ldots & \dfrac{\partial H_2}{\partial x_k} & 0 & -1 & \ldots & 0 \\ \ldots \\ \dfrac{\partial H_{m - k}}{\partial x_1} & \ldots & \dfrac{\partial X_{m - k}}{x_k} & 0 & 0 & \ldots & -1 \end{pmatrix}$, где $m - k$ строчек и все они ЛНЗ.
+                        $\begin{pmatrix} \frac{\partial H_1}{\partial x_1} & \ldots & \frac{\partial H_1}{\partial x_k} & -1 & 0 & \ldots & 0 \\ \frac{\partial H_2}{\partial x_1} & \ldots & \frac{\partial H_2}{\partial x_k} & 0 & -1 & \ldots & 0 \\ \ldots \\ \frac{\partial H_{m - k}}{\partial x_1} & \ldots & \frac{\partial X_{m - k}}{x_k} & 0 & 0 & \ldots & -1 \end{pmatrix}$, где $m - k$ строчек и все они ЛНЗ.
                         
                     \item $2 \Rightarrow 1$:
                     
@@ -827,11 +823,13 @@
         
         \subsection{Доказательство}
         
-            Для случая, когда $\rang \Phi'_1(p)$ и $\rang \Phi'_2(p)$ на одном и том же наборе столбцов (во всех точках $O_1$ и $O_2$).
+            Допустим, что $\rang \Phi'_1(p)$ и $\rang \Phi'_2(p)$ на одном и том же наборе столбцов (во всех точках $O_1$ и $O_2$).
             
-            Тогда $\Phi_1 \circ L$ и $\Phi_2 \circ L$~--- тоже диффеоморфизмы.
+            Возьмём $L \circ \Phi_1 : O_1 \rightarrow V_1$, и $L \circ \Phi_2 : O_2 \rightarrow V_2$, но можно добиться того, что и $L \circ \Phi_2 : O_2 \rightarrow V_1$, таким образом,
             
-            Дальше всё очевидно, что $\Phi_1 = \Phi_2 \circ \left( L \circ \Phi_2 \right)^{-1} \circ \left( L \circ \Phi_1 \right)$.
+            $L \circ \Phi_1$ и $L \circ \Phi_2$~--- тоже диффеоморфизмы, тогда
+            
+            $\Phi_1 = \Phi_2 \circ \left( L \circ \Phi_2 \right)^{-1} \circ \left( L \circ \Phi_1 \right)$.
             
     \newpage
     
@@ -841,7 +839,7 @@
         
         \subsection{Доказательство}
         
-            $\Phi$~--- параметризация, значит $\rang \Phi' = k$, значит образ $k$-мерный. Если есть параметризацция $\Phi_2$, можно считать, что существует диффеоморфизм $\psi$, что $\Phi_2 = \Phi \circ \psi$, и при этом $\Phi'_2 = \Phi' \cdot \psi'$, где $\psi'$~--- невырожденный, значит $\Phi'_2$ совпадает с $\Phi'$.
+            $\Phi$~--- параметризация, значит $\rang \Phi' = k$, значит образ $k$-мерный. Если есть параметризацция $\Phi_2$, можно считать, что существует диффеоморфизм $\psi$, что $\Phi_2 = \Phi \circ \psi$, и при этом $\Phi'_2 = \Phi' \cdot \psi'$, где $\psi'$~--- невырожденный, значит образ $\Phi'_2$ совпадает с $\Phi'$.
             
     \newpage
     
@@ -909,7 +907,7 @@
             
             $a = (a_1, \ldots, a_m, a_{m + 1}, \ldots, a_{m + n}) = (a_x, a_y)$ и $\left( \frac{\partial \Phi}{\partial y} \right)$~--- невырожденная матрица $n \times n$.
             
-            По теореме о неявном отображении $\varphi : U(a_x) \rightarrow V(a_y)$ и $\forall x \in U(a_x)$ $\Phi (X, \varphi(X) ) = 0$. Кстати, $U(x) \cap M_{\Phi}$~--- простое $m$-мерное многообразие. Тогда $a_x = (a_1, \ldots, a_m)$~--- точка локального экстремума для функции $g(x) = f(x, \varphi(x))$. Тогда
+            По теореме о неявном отображении $\varphi : U(a_x) \rightarrow V(a_y)$ и $\forall x \in U(a_x) : \Phi (X, \varphi(X) ) = 0$. Кстати, $U(x) \cap M_{\Phi}$~--- простое $m$-мерное многообразие. Тогда $a_x = (a_1, \ldots, a_m)$~--- точка локального экстремума для функции $g(x) = f(x, \varphi(x))$. Тогда
             
             \begin{equation*}
                 \begin{cases}
@@ -939,67 +937,56 @@
     
     \section{Теорема Стокса--Зайдля о непрерывности предельной функций. Следствие для рядов}
     
-        $f_n$, $f_0 : X \rightarrow \mathbb{R}$, $X$~--- метрическое пространство, $c \in X$, $f_n$~--- непрерывно в точке $c$. $f_n \rightrightarrows f_0$ на $X$. Тогда $f_0$~--- непрерывна в точке $c$.
+        $f_n$, $f_0 : \underset{\text{м.п.}}{X} \rightarrow \mathbb{R}$, $c \in X$, $f_n$~--- непрерывно в точке $c$. $f_n \rightrightarrows f_0$ на $X$. Тогда $f_0$~--- непрерывна в точке $c$.
         
         \subsection{Доказательство}
         
-            $| f_0(x) - f_0(c) | \leq | f_0(x) - f_n(x) | + | f_n(x) - f_n(c) | + | f_n(c) - f_0(c) | < 3 \varepsilon$ (китайский эпсилон), поскольку по непрерывности из условия
+            $| f_0(x) - f_0(c) | \leqslant | f_0(x) - f_n(x) | + | f_n(x) - f_n(c) | + | f_n(c) - f_0(c) | < 3 \varepsilon$ (китайский эпсилон)~--- следует из непрерывности по условию.
             
-            $\forall \varepsilon > 0 : \exists U(c) : \forall x \in U(c) : | f_0(x) - f_0(c) | < \varepsilon$.
+            $\forall \varepsilon > 0 : \exists U(c) : \forall x \in U(c) : | f_n(x) - f_n(c) | < \varepsilon$.
             
         \subsection{Следствие для рядов}
         
-            $u_n : X \rightarrow \mathbb{R}$ непрерывно в $x_0 \in X$, где $X$~--- метрическое пространство/
+            $u_n : \underset{\text{м.п.}}{X} \rightarrow \mathbb{R}$ непрерывно в $x_0 \in X$.
             
             $\sum u_n(x)$~--- равномерно сходится на $X$, $S(x) = \sum u_n(x)$. Тогда $S(x)$ непрерывно в $x_0$.
             
             \subsubsection{Доказательство}
         
-                $S_n(x) \rightrightarrows S(x) \Rightarrow S(x)$~--- непрерывно в $x_0)$.
+                $S_n(x) \rightrightarrows S(x) \Rightarrow S(x)$~--- непрерывно в $x_0$.
             
     \newpage
     
     \section{Метрика в пространстве непрерывных функций на компакте, его полнота}
     
-        $X$~--- метрическое пространство, комактен. $f_1$, $f_2 : X \rightarrow \mathbb{R}$, $f_1$, $f_2$~--- непрерывен на $X$.
+        $\underset{\text{м.п.}}{X}$~--- компакт. $f_1$, $f_2 : X \rightarrow \mathbb{R}$, $f_1$, $f_2$~--- непрерывны на $X$.
         
-        $\rho(f_1, f_2) = \max\limits_{x \in X} | f_1(x) - f_2(x) |$~--- метрика в $C(x)$, тогда пространство $(C(x), \rho)$~--- полное.
+        $\rho(f_1, f_2) = \max\limits_{x \in X} | f_1(x) - f_2(x) |$~--- метрика в $C(X)$, тогда пространство $(C(X), \rho)$~--- полное.
         
         \subsection{Доказательство}
         
-            $f_n \in C(x)$~--- фундаментальная последовательность
-        
-            $\forall \varepsilon > 0 : \exists N : \forall n, m > N : \max\limits_{x \in X} \left| f_n(x) - f_m(x) \right| < \varepsilon \Rightarrow \forall x \in X$.
-            
-            $f_n(x)$~--- фундаментальная вещественна последовательность, значит $\forall x \in X : \exists \lim\limits_{n \rightarrow +\infty} f_n(x) = f(x)$.
-            
-            $\forall \varepsilon > 0 : \exists N : \forall m, n > N : \forall x | f_n(x) - f_m(x) | < \varepsilon \Rightarrow | f_n - f(x) | < \varepsilon$
-            
+                        
     \newpage
     
     \section{Теорема о предельном переходе под знаком интеграла. Следствие для рядов}
     
-        $f_n \in C[a, b]$
-        
-        $f_n \rightrightarrows f$ на $[a, b]$.
+        $f_n \in C[a, b]$ и $f_n \rightrightarrows f$ на $[a, b]$.
         
         Тогда $\int\limits^b_a f_n \rightarrow \int\limits^b_a f$
         
         \subsection{Доказательство}
         
-            $\left| \int\limits^b_a f_n - \int\limits^b_a f \right| \leq \int\limits^b_a | f_n - f | \leq \max\limits_{x \in [a, b]} | f_n(x) - f(x) | \cdot (b - a) \rightarrow 0$ ($a, b \in \mathbb{R}$, не в $\overline{\mathbb{R}}$)
+            $\left| \int\limits^b_a f_n - \int\limits^b_a f \right| \leqslant \int\limits^b_a | f_n - f | \leqslant \max\limits_{x \in [a, b]} | f_n(x) - f(x) | \cdot (b - a) \rightarrow 0$ ($a, b \in \mathbb{R}$, не в $\overline{\mathbb{R}}$)
             
         \subsection{Следствие для рядов}
         
-            $u_n \in C[a, b]$
+            $u_n \in C[a, b]$ и $\sum u_n(x)$ равномерно сходится на $[a, b]$,
             
-            $\sum u_n(x)$ равномерно сходится на $[a, b]$
+            $S(x) = \sum\limits^{+\infty}_{n = 1} u_n(x)$, $x \in [a, b]$, Тогда 
             
-            $S(x) = \sum\limits^{+\infty}_{n = 1} u_n(x)$, $x \in [a, b]$
+            $\int\limits^b_a S(x) dx = \sum\limits^{+\infty}_{n = 1} \int\limits^b_a u_n(x) dx$
             
-            Тогда $\int\limits^b_a S(x) dx = \sum\limits^{+\infty}_{n = 1} \int\limits^b_a u_n(x) dx$
-            
-            ($\sum u_n$~--- равномерно сходится, $u_n$~--- непрерывно $\Rightarrow$ $S(x)$ непрерывно $\Rightarrow \int S(x)$ имеет смысл)
+            ($\sum u_n$~--- равномерно сходится, $u_n$~--- непрерывно $\Rightarrow$ $S(x)$ непрерывно $\Rightarrow \int S(x)$ имеет смысл).
             
             \subsubsection{Доказательство}
             
@@ -1011,19 +998,17 @@
     
     \section{Правило Лейбница дифференцирования интеграла по параметру}
     
-        $f : [a, b] \times [c, d] \rightarrow \mathbb{R}$
-            
-        $f$, $f'_y$~--- непрерывны на $[a, b] \times [c, d]$, $\Phi(y) = \int\limits^b_a f(x, y) dx$
+        $f : [a, b] \times [c, d] \rightarrow \mathbb{R}$, $f$, $f'_y$~--- непрерывны на $[a, b] \times [c, d]$, $\Phi(y) = \int\limits^b_a f(x, y) dx$
             
         Тогда $\Phi$~--- дифференцируема на $[c, d]$ и $\Phi'(y) = \int\limits^b_a f'_y (x, y) dx$
             
         \subsection{Доказательство} 
             
-            $\dfrac{\Phi \left( Y + \frac{1}{n} \right) - \Phi(y)}{\frac{1}{n}} = \int\limits^b_a \dfrac{f \left( x, y + \frac{1}{n} \right) - f(x, y)}{\frac{1}{n}} dx = \int\limits^b_a f'_y \left(x, y + \frac{\Theta}{n} \right) dx$, что есть $\int\limits^b_a g_n dx$.
+            $\Phi'(y) = \dfrac{\Phi \left( y + \frac{1}{n} \right) - \Phi(y)}{\frac{1}{n}} = \int\limits^b_a \dfrac{f \left( x, y + \frac{1}{n} \right) - f(x, y)}{\frac{1}{n}} dx = \int\limits^b_a f'_y \left(x, y + \frac{\Theta}{n} \right) dx$ (производная в средней точке), обозначим как $\int\limits^b_a g_n dx$.
             
-            $g_n(x, y) \rightrightarrows f'_y (x, y)$ для $x \in [a, b]$.
+            $0 \leqslant \Theta \leqslant 1$, докажем $g_n(x, y) \rightrightarrows f'_y (x, y)$ для $x \in [a, b]$.
             
-            $\Theta = a_x$, $0 \leq a_x \leq 1$.
+            $f'_y$ непрерывна на компакте, поэтому по теореме Кантора $\forall \varepsilon : \exists \delta : \forall n : \delta < \frac{1}{n} : \forall x \in [a, b] : \left| f'_y \left( x, y + \frac{1}{n} \right) - f'_y(x, y) \right| < \varepsilon$, отсюда следует, что $g_n \rightrightarrows f'_y(x, y)$, тогда по теореме о предельном переходе под знаком интеграла получаем, что $\int\limits^b_a g_n \rightarrow \int\limits^b_a f'_y (x, y) dx$.
             
     \newpage
     
@@ -1087,7 +1072,7 @@
         
         \begin{enumerate}
         
-            \item $| u_n(x) | \leq c_n$ $\forall x \in X$;
+            \item $| u_n(x) | \leqslant c_n$ $\forall x \in X$;
             
             \item $\sum c_n$ сходится.
             
@@ -1099,13 +1084,13 @@
         
             Равномерно сходится тогда и только тогда $R_n \rightrightarrows 0$
             
-            $\sup\limits_{x \in X} \left| \sum\limits^{+\infty}_{k = n} u_k(x) \right| \leq \sum\limits^{+\infty}_{k = n} c_k \xrightarrow[n \rightarrow +\infty]{} 0$ как остаток сходящегося ряда.
+            $\sup\limits_{x \in X} \left| \sum\limits^{+\infty}_{k = n} u_k(x) \right| \leqslant \sum\limits^{+\infty}_{k = n} c_k \xrightarrow[n \rightarrow +\infty]{} 0$ как остаток сходящегося ряда.
         
     \newpage
     
     \section{Дифференцируемость гамма функции}
     
-        $\Gamma(x)$ бесконечно дифференцируется на $(0, +\infty)$.
+        $\Gamma(x)$ дифференцируется на $(0, +\infty)$.
         
         \subsection{Доказательство}
         
@@ -1115,7 +1100,7 @@
             
             $u'_k(x) = \frac{1}{x + k} - \frac{1}{k} = -\frac{x}{k(k + x)}$.
             
-            $| u'_k(x) | \leq \frac{M}{k (k + M)}$, $\sum \frac{M}{k (k + M)}$~--- сходится по признаку Вейерштрасса.
+            $| u'_k(x) | \leqslant \frac{M}{k (k + M)}$, $\sum \frac{M}{k (k + M)}$~--- сходится по признаку Вейерштрасса.
             
             $\sum u'_k(x)$ равномерно сходится при $x \in (0, M)$, где $M$~--- какое угодно.
             
@@ -1125,7 +1110,7 @@
     
     \section{Теорема о предельном переходе в суммах}
     
-        $u_n : E \subset X \rightarrow \mathbb{R}$, $x_0$~--- предельная точка $E$, $X$~--- метрическое пространство.
+        $u_n : E \subset \underset{\text{м.п.}}{X} \rightarrow \mathbb{R}$, $x_0$~--- предельная точка $E$.
         
         \begin{enumerate}
         
@@ -1155,21 +1140,23 @@
                     
                     Достаточно проверить, что последовательность $S^a_n$ фундаментальная.
                     
-                    $\left| S^a_{n + p} - S^a_n \right| \leq \left| S^a_{n + p} - S_{n + p} (x) \right| + \left| S_{n + p}(x) - S_n(x) \right| + \left| S_n(x) - S^a_n \right| < \varepsilon$
+                    $\left| S^a_{n + p} - S^a_n \right| \leqslant \left| S^a_{n + p} - S_{n + p} (x) \right| + \left| S_{n + p}(x) - S_n(x) \right| + \left| S_n(x) - S^a_n \right| < \varepsilon$
                     
-                \item Сводим к предыдущей теореме
+                \item 
                 
                     $\widetilde{u_n}(x)$ := $\left[
                         \begin{gathered} 
-                            u_n(x), x \neq x_0, x \in E 
+                            u_n(x) \ x \neq x_0, x \in E 
                             \\ 
-                            a_n, x = x_0 \hfill
+                            a_n \ x = x_0 \hfill
                         \end{gathered}
                         \right.$
                     
                     $\widetilde{u_n}$~--- непрерывна в точке $x_0$. Остаётся только проверить, что $\sum \widetilde{u_n}(x)$ равномерно сходится в $E \cup \left\{ x_0 \right\}$
                     
-                    $\sup\limits_{x \in E \cup \left\{ x_0 \right\}} \left| \sum\limits^{+\infty}_{k = n} \widetilde{u_k}(x) \right| \leq \sup\limits_{x \in E} \left| \sum\limits^{+\infty}_{k = n} u_k(x) \right| \rightarrow 0$
+                    $\sup\limits_{x \in E \cup \left\{ x_0 \right\}} \left| \sum\limits^{+\infty}_{k = N} \widetilde{u_k}(x) \right| \leqslant \sup\limits_{x \in E} \left| \sum\limits^{+\infty}_{k = N} u_k(x) \right| + \left| \sum\limits_{k = N}^{+\infty} a_n \right| \rightarrow 0$
+                    
+                    $\widetilde{u_n}$ непрерывна в $x_0$ и равномерно сходится, значит $\lim\limits_{x \rightarrow x_0} = a_n$.
                     
             \end{enumerate}
         
@@ -1177,7 +1164,7 @@
     
     \section{Теорема о перестановке двух предельных переходов}
     
-        $f_n : E \subset X \rightarrow \mathbb{R}$, $x_0$~--- предельная точка $E$, и
+        $f_n : E \subset \underset{\text{м.п.}}{X} \rightarrow \mathbb{R}$, $x_0$~--- предельная точка $E$, и
         
         \begin{enumerate}
         
@@ -1199,13 +1186,19 @@
         
         \subsection{Доказательство}
         
-            $\sum\limits^n_{k = 1} u_k = f_n$, $a_k := A_k - A_{k - 1}$
+            \begin{enumerate}
             
-            Тогда $\sum a_n$~--- сходится $\Rightarrow \exists \sum \left( A_k - A_{k - 1} \right) \Leftrightarrow \exists \lim\limits_{n \rightarrow +\infty} A_n$
+                \item Пусть $u_1 = f_1$, $u_2 = f_2 - f_1$, $\ldots$, $u_k = f_k - f_{k - 1}$, тогда $\sum\limits^n_{k = 1} u_k = f_n$;
             
-            $f(x, y) \rightrightarrows f(x)$ при $y \rightarrow y_0$ на множестве $E$, т.е.
+                    Тогда $\sum u_k$ сходится к $A_k$, т.к. $f_n$ сходится к $A_n$, а также просто равномерно сходится, поскольку $f_n$ равномерно сходится к $S(x)$.
             
-            $\forall \varepsilon > 0 : \exists > 0 : \forall y : 0 < | y - y_0 | < \delta : \forall x \in E : | f(x, y) - f(x, y_0) | < \varepsilon$
+                    $a_1 = A_1$, $a_2 = A_2 - A_1$, $\ldots$, $a_k = A_k - A_{k - 1}$.
+            
+                    Тогда $\lim\limits_{x \rightarrow x_0} u_k(x) = a_k$, отсюда $\sum a_n$ сходится (из предыдущей теоремы).
+            
+                \item $A = \sum a_n = \sum \lim\limits_{x \rightarrow x_0} u_k = \lim\limits_{x \rightarrow x_0} S(x)$.
+                
+            \end{enumerate}
             
     \newpage
     
@@ -1215,7 +1208,7 @@
         
         \begin{enumerate}
         
-            \item $\exists C_a : \forall N : \forall x \in X : \left| \sum\limits^N_{n = 1} a_n(x) \right| \leq C_a$, 
+            \item $\exists C_a : \forall N : \forall x \in X : \left| \sum\limits^N_{n = 1} a_n(x) \right| \leqslant C_a$, 
             
                 частичные суммы ряда $\sum a_n(x)$ равномерно ограничены.
             
@@ -1257,17 +1250,17 @@
         
             Изучим $\sum a_n (z - z_0)^n$ на абсолютная сходимость.
             
-            $\overline{\lim\limits_{n \rightarrow +\infty}} \sqrt[n]{|a_n||z - z_0|^n} = \overline{\lim} |z - z_0| \sqrt[n]{|a_n|} = |z - z_0| \sqrt[n]{|a_n|}$
+            $\overline{\lim\limits_{n \rightarrow +\infty}} \sqrt[n]{|a_n||z - z_0|^n} = |z - z_0| \overline{\lim} \sqrt[n]{|a_n|}$
             
             \begin{enumerate}
             
-                \item $\overline{\lim} \sqrt[n]{a_n} = +\infty$, тогда при $z = z_0$ ряд абсолютно сходится, при $z \neq z_0$ ряд расходится;
+                \item $\overline{\lim} \sqrt[n]{|a_n|} = +\infty$, тогда при $z = z_0$ ряд абсолютно сходится, при $z \neq z_0$ ряд расходится;
                 
-                \item $\overline{\lim} \sqrt[n]{a_n} = 0$, тогда при любых $z$ ряд сходится абсолютно;
+                \item $\overline{\lim} \sqrt[n]{|a_n|} = 0$, тогда при любых $z$ ряд сходится абсолютно;
                 
-                \item $\overline{\lim} \sqrt[n]{a_n}$ конечен, тогда при $|z - z_0| < \dfrac{1}{\overline{\lim}\sqrt[n]{a_n}}$~--- сходится, при $|z - z_0| > \dfrac{1}{\overline{\lim}\sqrt[n]{a_n}}$~--- расходится.
+                \item $\overline{\lim} \sqrt[n]{|a_n|}$ конечен, тогда при $|z - z_0| < \dfrac{1}{\overline{\lim}\sqrt[n]{|a_n|}}$~--- сходится, при $|z - z_0| > \dfrac{1}{\overline{\lim}\sqrt[n]{|a_n|}}$~--- расходится.
                 
-                    Тогда обозначим $R = \dfrac{1}{\overline{\lim}\sqrt[n]{|a_n|}}$~--- формула Адомара.
+                    Тогда обозначим $R = \dfrac{1}{\overline{\lim}\sqrt[n]{|a_n|}}$~--- формула Адамара.
                 
             \end{enumerate}
             
@@ -1277,7 +1270,7 @@
     
     \section{Теорема о непрерывности степенного ряда}
     
-        $\sum a_n(z - z_0)^n$, $0 < R \leq +\infty$. Тогда 
+        $\sum a_n(z - z_0)^n$, $0 < R \leqslant +\infty$. Тогда 
         
         \begin{enumerate}
         
@@ -1291,9 +1284,9 @@
         
             \begin{enumerate}
             
-                \item По признаку Вейерштрасса $\left| a_n (z - z_0)^n \right| \leq | a_n | \cdot r^n$, ряд $\sum | a_n | r^n$~--- абсолютно сходится;
+                \item По признаку Вейерштрасса: $\left| a_n (z - z_0)^n \right| \leqslant | a_n | \cdot r^n$~--- абсолютно сходится из предыдущей теоремы;
                 
-                \item Очевидно из предыдущего пункта.
+                \item По теореме Стокса-Зайдля: $\forall z \in B(z_0, R)$ функция $f(z) = \sum a_n (z - z_0)^n$~--- непрерывна в точке $z$, поскольку каждый из её слагаемых непрерывен в точке $z$, а сам ряд равномерно сходится по определению радиуса сходимости.
                 
             \end{enumerate}
             
@@ -1357,7 +1350,7 @@
             
             \item $(\exp z)' = \exp z$
             
-                $\lim\limits_{z \rightarrow 0} \frac{e^z - 1}{z} = (e^z)' \bigg|_{z = 0} = 1$;
+                $(\exp(z))' = \sum\limits^{+\infty}_{n = 1} \frac{z^{n - 1}}{(n - 1)!} = \sum\limits^{+\infty}_{n = 0} \frac{z^n}{n!} = \exp(z)$;
                 
             \item $\overline{\exp(z)} = \exp(\overline{z})$ комплексное, $\overline{\sum \frac{z^n}{n!}} = \sum \frac{\overline{z}^n}{n!}$;
             
@@ -1366,10 +1359,6 @@
                 $\exp (z + w) = \sum\limits^{+\infty}_{n = 0} \frac{(z + w)^n}{n!} = \sum\limits^{+\infty}_{n = 0} \left( \sum\limits^n_{k = 0} \frac{z^k}{k!} \frac{w^{n - 1}}{(n - k)!} \right) = \left( \sum \frac{z^k}{k!} \right) \left( \sum \frac{w^k}{k!} \right)$
                 
         \end{enumerate}
-        
-        \subsection{Следствие}
-        
-            $\forall z \in \mathbb{C}$ $\exp(z) \neq 0$.
             
     \newpage
     
@@ -1407,7 +1396,7 @@
             
             $f(x) = a_0 + a_1(x - x_0) + a_2(x - x_0)^2 + \ldots \Rightarrow f \in C^{+\infty} \left( U(x_0) \right)$.
             
-            $x := x_0 \Rightarrow a_0 = f(x_0)$.
+            $x = x_0 \Rightarrow a_0 = f(x_0)$.
             
             $f'(x) = a_1 + 2 a_2 (x - x_0) + 3 a_3 (x - x_0)^2 + \ldots$, $x := x_0 \Rightarrow a_1 = f'(x_0)$ и $a_2 = \frac{f''(x_0)}{2!}$ и т.д.
             
@@ -1421,11 +1410,13 @@
         
         \subsection{Доказательство}
         
+            Пусть $S(x) = 1 + \sigma x + \frac{\sigma (\sigma - 1)}{2} x^ 2 + \ldots$, тогда $S'(x) = \sigma \left( 1 + (\sigma - 1) x + \frac{(\sigma -1 ) (\sigma - 2)}{2} x^2 + \ldots \right)$.
+            
             $S'(x)(1 + x) = \sigma S(x)$
             
-            $f(x) = \dfrac{S(x)}{(1 + x)^{\sigma}} = const$
+            Проверим, что $f(x) = \dfrac{S(x)}{(1 + x)^{\sigma}} = \mathrm{const}$
             
-            $f' = \dfrac{S'(x)}{(1 + x)^{\sigma}} - \dfrac{\sigma S(x)}{(1 + x)^{\sigma + 1}} = \dfrac{0}{(1 + x)^{\sigma + 1}} \Rightarrow \dfrac{S(x)}{(1 + x)^{\sigma}} = const$
+            $f' = \dfrac{S'(x)}{(1 + x)^{\sigma}} - \dfrac{\sigma S(x)}{(1 + x)^{\sigma + 1}} = \dfrac{0}{(1 + x)^{\sigma + 1}} = 0 \Rightarrow \dfrac{S(x)}{(1 + x)^{\sigma}} = \mathrm{const}$
             
             $f(0) = 1 \rightarrow S(x) = (1 + x)^{\sigma}$.
             
@@ -1451,21 +1442,21 @@
                 
                     Оценим остаток в форме Лагранжа $f(x) = \sum\limits^{n - 1}_{k = 0} \dfrac{f^{(k)}(x_0)}{k!} (x - x_0)^k + \dfrac{f^{(n)}(\overline{x})}{n!} (x - x_0)^n$
                     
-                    $\left| \dfrac{f^{(n)}(\overline{x})}{n!} (x - x_0)^n \right| \leq \dfrac{C A^n n!}{n!} |x - x_0|^n \rightarrow 0$ при $|A(x - x_0)| < 1$ и $|x - x_0| < \frac{1}{n}$. 
+                    $\left| \dfrac{f^{(n)}(\overline{x})}{n!} (x - x_0)^n \right| \leqslant \dfrac{C A^n n!}{n!} |x - x_0|^n \rightarrow 0$ при $|A(x - x_0)| < 1$ и $|x - x_0| < \frac{1}{A}$. 
                     
-                    Таким образом, $|x - x_0| < \min \left( \frac{1}{A}, \delta \right)$, $r_n \rightarrow 0$.
+                    Таким образом, $|x - x_0| < \min \left( \frac{1}{A}, \delta \right)$, $R_n \rightarrow 0$.
                     
                 \item $1 \Rightarrow 2$
                 
                     $f(x) = \sum\limits^{+\infty}_{n = 0} \dfrac{f^{(n)}(x_0)}{n!} (x - x_0)^n$. Пусть при $x = x_1 \neq x_0$ ряд сходится.
                     
-                    $\dfrac{f^{(n)}(x_0)}{n!} (x_1 - x_0)^n \rightarrow 0$, т.е. меньше $C_1$ по модулю.
+                    $\dfrac{f^{(n)}(x_0)}{n!} (x_1 - x_0)^n \rightarrow 0$, т.е. меньше какого-то $C_1$ по модулю.
                     
-                    $\left| f^{(n)}(x_0) \right| \leq C_1 \cdot n! \cdot \dfrac{1}{| x_1 - x_0 |^n} B^n$
+                    $\left| f^{(n)}(x_0) \right| \leqslant C_1 \cdot n! \cdot \dfrac{1}{| x_1 - x_0 |^n} B^n$
                     
-                    $f^{(m)}(x) = \sum\limits^{+\infty}_{n = m} \dfrac{f^{(n)}(x_0)}{(n - m)!} (x_0) (x - x_0)^{n - m}$
+                    $f^{(m)}(x) = \sum\limits^{+\infty}_{n = m} \dfrac{f^{(n)}(x_0)}{(n - m)!} (x - x_0)^{n - m}$
                     
-                    $\left| f^{(m)}(x) \right| \leq \sum\limits^{+\infty}_{n = m} \dfrac{|f^{(n)}(x_0)}{(n - m)!} |x - x_0|^{n - m} \leq \sum \dfrac{C_1 B^n n!}{(n - m)!} |x - x_0|^{n - m} = C_1 B^n \sum\limits^{+\infty}_{n = m} n (n - 1) \ldots (n - m + 1) \left| B(x - x_0) \right|^{n - m} = C_1 \cdot \dfrac{m! B^m}{| 1 - \left( B(x - x_0) \right)}^{(m + 1)} \leq C_1 m! B^m 2^{m + 1} = (2 C_1) m! (2 B)^m$.
+                    $\left| f^{(m)}(x) \right| \leqslant \sum\limits^{+\infty}_{n = m} \dfrac{|f^{(n)}(x_0)|}{(n - m)!} |x - x_0|^{n - m} \leqslant \sum \dfrac{C_1 B^n n!}{(n - m)!} |x - x_0|^{n - m} = C_1 B^m \sum\limits^{+\infty}_{n = m} \frac{n!}{(n - m)!} \left| B(x - x_0) \right|^{n - m} = C_1 \cdot \dfrac{m! B^m}{| 1 - \left( B(x - x_0) \right)} \leqslant C_1 m! B^m 2^{m + 1} = (2 C_1) m! (2 B)^m$.
                     
             \end{itemize}
             
@@ -1489,7 +1480,9 @@
         
             $\forall \varepsilon > 0 : \exists N_1 > 0 : \forall n > N_1 : \left| S_n - S \right| < \varepsilon$
             
-            $\sigma_n - S = \frac{1}{n + 1} \sum\limits^n_{i = 0} \left( S_i - S \right)$, $\left| \sigma_n - S \right| \leq \frac{1}{n + 1} \sum\limits^n_{i = 0} \left| S_i - S \right| = \dfrac{\sum\limits^{N_1}_{i = 0} \left( S_i - S \right)}{n + 1} + \dfrac{\sum\limits^n_{i = N_1 + 1} \left| S_i - S \right|}{n + 1} < 2 \varepsilon$.
+            $\sigma_n - S = \frac{1}{n + 1} \sum\limits^n_{i = 0} \left( S_i - S \right)$ 
+            
+            $\left| \sigma_n - S \right| \leqslant \frac{1}{n + 1} \sum\limits^n_{i = 0} \left| S_i - S \right| = \dfrac{\sum\limits^{N_1}_{i = 0} \left( S_i - S \right)}{n + 1} + \dfrac{\sum\limits^n_{i = N_1 + 1} \left| S_i - S \right|}{n + 1} < 2 \varepsilon$.
             
     \newpage
     
@@ -1538,7 +1531,7 @@
             
                 $\gamma : [a, b] \rightarrow \RM$, $L := \gamma \left( [a, b] \right)$~--- носитель пути. Тогда
                 
-                $\left| I \left( V, \gamma \right) \right| \leq \max\limits_{x \in L} \left| V(x) \right| \cdot l (\gamma)$.
+                $\left| I \left( V, \gamma \right) \right| \leqslant \max\limits_{x \in L} \left| V(x) \right| \cdot l (\gamma)$.
                 
         \end{enumerate}
         
@@ -1556,7 +1549,7 @@
                 
                 \item $I \left(V, \gamma^- \right) = \int\limits^b_a \langle V \left( \gamma(a + b - t) \right) \cdot \left( - \gamma'(a + b - t) \right) \rangle dt = - \int\limits^b_a \langle V, \left( \gamma(\tau) \right), \gamma'(\tau) (-d \tau) \rangle = -I \left(v, \gamma \right)$;
                 
-                \item $\left| \int\limits^b_a \langle V(\gamma), \gamma' \rangle dt \right| \leq \int\limits^b_a \left| \langle V, \gamma' \rangle \right| dt \leq \int\limits^b_a \left| V \left( \gamma(t) \right) \right| | \gamma'(t) | dt \leq \max\limits-{x \in L} \left| V(x) \right| \cdot \int\limits^b_a | \gamma'(t) | dt$.
+                \item $\left| \int\limits^b_a \langle V(\gamma), \gamma' \rangle dt \right| \leqslant \int\limits^b_a \left| \langle V, \gamma' \rangle \right| dt \leqslant \int\limits^b_a \left| V \left( \gamma(t) \right) \right| | \gamma'(t) | dt \leqslant \max\limits_{x \in L} \left| V(x) \right| \cdot \int\limits^b_a | \gamma'(t) | dt = \max\limits_{x \in L} \left| V(x) \right| \cdot l(\gamma)$.
                 
             \end{enumerate}
             
@@ -1572,9 +1565,13 @@
         
             \begin{enumerate}
             
-                \item $\gamma$~--- гладкий, $\phi(t) = f(\gamma(t))$, $\phi' = f' \gamma' = \langle \grad f, \gamma' \rangle = \langle V \left( \gamma(t) \right), \gamma'(t) \rangle = f(B) - f(A)$.
+                \item $\gamma$~--- гладкий, 
                 
-                \item кусочно-гладкий
+                    $\phi(t) = f(\gamma(t))$, $\phi' = f' \gamma' = \langle \grad f, \gamma' \rangle = \langle V \left( \gamma(t) \right), \gamma'(t) \rangle$.
+                    
+                    $\int\limits^b_a V_1 (\gamma(t)) \gamma'_1(t) + \ldots + V_m (\gamma(t)) \gamma'_m(t) = \int\limits^b_a f'_1 (\gamma(t)) \gamma'_1(t) + \ldots + f'_m (\gamma(t)) \gamma'_m(t) dt = f(\gamma(t)) \bigg|^b_a = f(B) - f(A)$.
+                
+                \item кусочно-гладкий,
                 
                     $I \left( V, \gamma \right) = \sum\limits^n_{k = 1} \int\limits^{t_k}_{t_{k - 1}} \ldots = \sum\limits^n_{k = 1} f \left( \gamma (t_k) \right) - f \left( \gamma ( t_{k - 1} ) \right) = f(\gamma(t_n)) - f(\gamma(t_0)) = f(B) - f(A)$.
                     
@@ -1612,7 +1609,7 @@
                     
                     $\gamma'_0 = (h, 0, \ldots, 0)$
                     
-                    $f(x + he_1) - f(x) = \int\limits_{\gamma_0} V_ dx_1 + \ldots + V_m dx_m = \int\limits^1_0 V_1(x_1 + th, \ldots, x_m) h dt = V_1(x_1 + \alpha h, x_2, \ldots, x_m) h (1 - \alpha) \rightarrow V_1(x_1, \ldots, x_m)$.
+                    $f(x + he_1) - f(x) = \int\limits_{\gamma_0} V_ dx_1 + \ldots + V_m dx_m = \int\limits^1_0 V_1(x_1 + th, \ldots, x_m) h dt = V_1(x_1 + \alpha h, x_2, \ldots, x_m) h 1 \Rightarrow V_1(x_1, \ldots, x_m) = f'_{x_1}$.
                     
             \end{itemize}
             
@@ -1647,21 +1644,21 @@
     
     \section{Лемма о гусенице}
     
-        $O \subset \RM$, $\forall x \in O$ задана окрестность $U(x)$ и $\gamma : [a, b] \rightarrow O$~--- непрерывный путь. Тогда существует дробление $a = t_0 < t_1 < t_2 < \ldots < t_n = b$ и шары $B_k \subset O$, $\forall k \in [1, n] : \gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$.
+        $O \subset \RM$, $\forall x \in O$ задана окрестность $U(x)$, и $\gamma : [a, b] \rightarrow O$~--- непрерывный путь. Тогда существует дробление $a = t_0 < t_1 < t_2 < \ldots < t_n = b$ и шары $B_k \subset O$, $\forall k \in [1, n] : \gamma \big|_{[t_{k - 1}, t_k]} \subset B_k$.
         
         \subsection{Доказательство}
         
             $\forall c \in [a, b]$ фиксируем $B_c = B \left( \gamma(c), r_c \right) \subset U \left( \gamma (c) \right)$.
             
-            $\overline{\alpha}_c = \inf \left( \alpha \in [a, b] : \gamma \bigg|_{[a, c]} \subset B_c \right)$,
+            $\overline{\alpha}_c = \inf \left( \alpha \in [a, b] : \gamma \bigg|_{[\alpha, c]} \subset B_c \right)$,
             
-            $\overline{\beta}_c = \sup \left( \beta \in [a, b] : \gamma \bigg|_{[c, b]} \subset B_c \right)$.
+            $\overline{\beta}_c = \sup \left( \beta \in [a, b] : \gamma \bigg|_{[c, \beta]} \subset B_c \right)$.
             
             Заузим $\overline{\alpha}_c < \alpha_c < c < \beta_c < \overline{\beta}_c$, $\bigcup ( \alpha_c, \beta_c )$~--- открытое покрытие $[a, b]$.
             
-            В точке $c = a$ $\alpha_c = a$, в точке $c = b$ $\beta_c = b$, $[a, b] \subset \bigcup\limits_{finite} \left( \alpha_c, \beta_c \right)$. 
+            В точках $c = a$ $\alpha_c = a$ и $c = b$ $\beta_c = b$, $[a, b] \subset \bigcup\limits_{\text{кон.}} \left( \alpha_c, \beta_c \right)$. 
             
-            Удалим лишние наложение, т.е. удалим такие пары $(\alpha_i, \beta_i) \subset \bigcup\limits_{i \neq j} (\alpha_j, \beta_j)$. Тогда $\forall (\alpha_c, \beta_c)$ существует уникальная точка $d_c \in (\alpha_c, \beta_c$ и $\gamma \bigg|_{[t_{k - 1}, t_k]} \subset B_{C_k}$.
+            Удалим лишние наложение, т.е. удалим такие пары $(\alpha_i, \beta_i) \subset \bigcup\limits_{i \neq j} (\alpha_j, \beta_j)$. Тогда $\forall (\alpha_c, \beta_c)$ существует уникальная точка $d_c \in (\alpha_c, \beta_c)$ и $\gamma \bigg|_{[t_{k - 1}, t_k]} \subset B_{C_k}$.
             
     \newpage
     
@@ -1713,9 +1710,11 @@
         
         \subsection{Доказательство}
         
-            $V(x, y) := \left( \dfrac{-y}{x^2 + y^2}, \dfrac{x}{x^2 + y^2} \right)$, $\dfrac{\partial v_1}{x} = \dfrac{\partial v^2}{y} \rightarrow V$~--- локально потенциальное,
+            $V(x, y) := \left( \dfrac{-y}{x^2 + y^2}, \dfrac{x}{x^2 + y^2} \right)$ 
             
-            $I(V, \gamma) = \int\limits^{2 \pi}_0 \dfrac{-\sin{t}}{\cos^2{t} + \sin^2{t}} (-\sin{t}) + V_1(\gamma(t))\gamma'_1(t) + \dfrac{\cos{t}}{1} \cos{t}dt = 2 \pi \neq 0$.
+            $(x, y) \neq (0, 0)$, $\dfrac{\partial v_1}{x} = \dfrac{\partial v_2}{y} \Rightarrow V$~--- непрерывное локально потенциальное,
+            
+            $I(V, \gamma) = \int\limits^{2 \pi}_0 v_1 dx + v2 dy = \int\limits^{2 \pi}_0 \left( \frac{-\sin t}{\sin^2 t + \cos^2 t} (-\sin t) + \frac{\cos t}{\sin^2 t + \cos^2 t} \cos t \right) dt = 2 \pi \neq 0$.
             
     \newpage
     
@@ -1725,7 +1724,7 @@
         
         \subsection{Доказательство}
         
-            $\gamma_0$~--- кусочно-гладкий замкнутый путь, значит гомотопен постоянному пути, значит $I(V, \gamma_0) = I(V,$ постоянному пути $) = 0$. т.е. выполняется критерий потенциальности вектроного поля.
+            $\gamma_0$~--- кусочно-гладкий замкнутый путь, значит гомотопен постоянному пути, значит $I(V, \gamma_0) = 0$ постоянному пути. т.е. выполняется критерий потенциальности вектроного поля.
             
     \newpage
     
@@ -1737,13 +1736,13 @@
         
             \item Усиленная монотонность: $\forall A$, $A_1$, $A_2$, $\ldots$, $A_n \in \mathcal{P}$, все $A_i$~--- дизъюнкты и $\bigcup\limits^n_{i = 1}A_i \subset A$, тогда
             
-                $\sum\limits^n_{i = 1} \mu A_i \leq \mu A$;
+                $\sum\limits^n_{i = 1} \mu A_i \leqslant \mu A$;
                 
             \item Конечная полуаддитивность: $\forall A$, $A_1$, $A_2$, $\ldots$, $A_n \in \mathcal{P}$, все $A_i$~--- дизъюнкты и $A \subset \bigcup\limits^n_{i = 1} A_i$, тогда
             
-                $\mu A \leq \sum\limits^n_{i = 1} \mu A_i$;
+                $\mu A \leqslant \sum\limits^n_{i = 1} \mu A_i$;
                 
-            \item $A$, $B$, $\left( A \setminus B \right) \in \mathcal{P}$, $\mu B < +\infty \Rightarrow \mu \left( A \setminus B \right) \geq \mu A - \mu B$.
+            \item $A$, $B$, $\left( A \setminus B \right) \in \mathcal{P}$, $\mu B < +\infty \Rightarrow \mu \left( A \setminus B \right) \geqslant \mu A - \mu B$.
             
         \end{enumerate}
         
@@ -1751,9 +1750,9 @@
         
             \begin{enumerate}
             
-                \item $A \setminus \bigsqcup\limits^n_{i = 1} A_i = \bigsqcup\limits_{finite} B_l$, $B_l \in \mathcal{P}$, $A = \bigsqcup\limits^n_{i = 1} A_i \sqcup \bigsqcup\limits_{finite} B_k$, $\mu A = \sum \mu A_i + \sum \mu B_l \geq \sum \mu A_i$.
+                \item $A \setminus \bigsqcup\limits^n_{i = 1} A_i = \bigsqcup\limits_{\text{кон.}} B_l$, $B_l \in \mathcal{P}$, $A = \bigsqcup\limits^n_{i = 1} A_i \sqcup \bigsqcup\limits_{\text{кон.}} B_k$, $\mu A = \sum \mu A_i + \sum \mu B_l \geqslant \sum \mu A_i$.
                 
-                \item $B_k = A \cap A_k \in \mathcal{P}$, $A = \bigcup\limits^n_{k = 1} B_k$~--- сделаем это объединением дизъюнктов, $C_1 := B_1$, $C_2 := B_2 \setminus B_1$ и т.д., $A = \bigsqcup\limits_{k, j} D_{kj}$, $\mu A = \sum \mu D_{kj}$, фиксируем $k$ и получаем $\sum \mu D_{kj} = \mu C_k \leq \mu B_k \leq \mu A_k$ и получаем $\mu A \leq \sum \mu A_k$;
+                \item $B_k = A \cap A_k \in \mathcal{P}$, $A = \bigcup\limits^n_{k = 1} B_k$~--- сделаем это объединением дизъюнктов, $C_1 := B_1$, $C_2 := B_2 \setminus B_1$ и т.д., $A = \bigsqcup\limits_{k, j} D_{kj}$, $\mu A = \sum \mu D_{kj}$, фиксируем $k$ и получаем $\sum \mu D_{kj} = \mu C_k \leqslant \mu B_k \leqslant \mu A_k$ и получаем $\mu A \leqslant \sum \mu A_k$;
                 
                 \item
                     
@@ -1763,7 +1762,7 @@
                         
                         \item $B \not\subset A$, $A \setminus B = A \setminus (A \cap B)$, причём $A \cap B \in \mathcal{P}$, и
                         
-                            $\mu \left( A \setminus B \right) = \mu A - \mu \left( A \cap B \right) \geq \mu A - \mu B$.
+                            $\mu \left( A \setminus B \right) = \mu A - \mu \left( A \cap B \right) \geqslant \mu A - \mu B$.
                             
                     \end{itemize}
                     
@@ -1817,13 +1816,13 @@
             
                 \item $1 \Rightarrow 2$
                     
-                    $B_1 := A_1$, $\ldots$, $B_k = := A_k \setminus \bigcup\limits^{k - 1}_{i = 1} A_i$, тогда $B_i$~--- дизъюнкты, тогда $A_k = \bigsqcup\limits^k_{i = 1} B_i$ и $a = \bigsqcup\limits^{+\infty}_{i = 1} B_i$, $\mu A = \sum\limits^{+\infty}_{i = 1} \mu B_i = \lim\limits_{n \rightarrow +\infty} \sum\limits^n_{i = 1} \mu B_i$.
+                    $B_1 := A_1$, $\ldots$, $B_k := A_k \setminus \bigcup\limits^{k - 1}_{i = 1} A_i$, тогда $B_i$~--- дизъюнкты, тогда $A_k = \bigsqcup\limits^k_{i = 1} B_i$ и $A = \bigsqcup\limits^{+\infty}_{i = 1} B_i$, $\mu A = \sum\limits^{+\infty}_{i = 1} \mu B_i = \lim\limits_{n \rightarrow +\infty} \sum\limits^n_{i = 1} \mu B_i = \lim\limits_{n \rightarrow +\infty} A_n$.
                     
                 \item $2 \Rightarrow 1$
                 
-                    $C = \bigsqcup C_i$, верно ли, что $\mu C = \sum\limits^{+\infty}_{i = 1} \mu C_i$, $A_k = \bigsqcup\limits^k_{i = 1} C_i$, $A_1 \subset A_2 \subset A_3 \subset \ldots$ и $\bigcup A_i = A$,
+                    $C = \bigsqcup C_i$, проверим, что $\mu C = \sum\limits^{+\infty}_{i = 1} \mu C_i$, $A_k = \bigsqcup\limits^k_{i = 1} C_i$, $A_1 \subset A_2 \subset A_3 \subset \ldots$ и $\bigcup A_i = A$,
                     
-                    $\mu A = \lim\limits_{N \rightarrow +\infty} \mu A_N = \lim \sum\limits^N_{i = 1} \mu C_i = \sum\limits^{+\infty}_{i = 1} \mu C_i$.
+                    $\mu A = \lim\limits_{N \rightarrow +\infty} \mu A_N = \lim\limits_{N \rightarrow +\infty} \sum\limits^N_{i = 1} \mu C_i = \sum\limits^{+\infty}_{i = 1} \mu C_i$.
                     
             \end{itemize}
             
@@ -1862,5 +1861,339 @@
                     $\bigcap A_k = \varnothing \Rightarrow \mu A_k \rightarrow 0$, $C = \bigsqcup\limits^k_{i = 1} C_i \sqcup A_k$ и $\mu C = \sum\limits^k_{i = 1} \mu C_i + \mu A_k$, $k \rightarrow +\infty \Rightarrow \mu C = \sum \mu C_i$.
                     
             \end{itemize}
+            
+    \newpage
+    
+    \section{Счетная аддитивность классического объема}
+    
+        Классический объём в $\RM$~--- есть $\sigma$-конечная мера.
+        
+        \subsection{Доказательство}
+        
+            $\sigma$-конечность: смотреть на клеточки.
+            
+            Проверим, что $\mu$~--- счетна аддитивная, для этого достаточно проверить счетную полуаддитивность, т.е.:
+            
+            $P = [a, b)$, $P_n = [a_n, b_n)$ и $P \in \bigcup\limits^{+\infty}_{n = 1} P_n$, проверим, что
+            
+            $\mu P \leqslant \sum \mu P_i$, можно считать $P \neq \varnothing$.
+            
+            Возьмём $b'$ чуть меньше, чем $b$, тогда $\mu \left( P \setminus [a, b'] \right) < \varepsilon > 0$.
+            
+            Возьмём $a'$ чуть меньше, чем $a$, тогда $\mu \left( [a'_n, b_n] \setminus [a_n, b_n) \right) < \frac{c}{2^n}$.
+            
+            $[a, b'] \subset \bigcup\limits_{\text{кон.}} [a'_n, b_n)$, 
+            
+            $[a, b') \subset \bigcup\limits_{\text{кон.}} [a'_n, b_n)$,
+            
+            $\mu P - \varepsilon < \mu [a, b') \leqslant \sum\limits_{i = 1}^n \mu [a_i', b_i) < \sum\limits_{i = 1}^n \mu P_i + \frac{c}{2^n} \leqslant \sum\limits^{+\infty}_{i = 1} \mu P_i + \frac{c}{2^n} \leqslant \sum\limits^n_{i = 1} \mu P_i + \varepsilon$.
+            
+            Тогда $\mu P \leqslant \sum\limits^{+\infty}_{i = 1} \mu P_i + 2 \varepsilon \leqslant \sum\limits^{+\infty}_{i = 1} \mu P_i$.
+            
+    \newpage
+    
+    \section{Лемма о структуре открытых множеств и множеств меры 0}
+        
+        \begin{enumerate}
+        
+            \item $O \subset \RM$~--- открытое, тогда $\exists Q_i$~--- ячейки и $O = \bigsqcup Q_i$, причем можно также считать, что:
+            
+                \begin{itemize}
+                
+                    \item $Q_i$~--- ячейки с рациональными координатными вершинами (или двоично-рациональные);
+                    
+                    \item $\overline{Q_i} \subset O$;
+                    
+                    \item $Q_i$~--- кубы.
+                    
+                \end{itemize}
+                
+            \item $E$~--- измеримо в $\RM$, $\lambda E = 0$, тогда $\forall \varepsilon : \exists Q_i$~--- ячейки: $E \subset \bigcup Q_i$ и $\sum \lambda Q_i < \varepsilon$.
+            
+        \end{enumerate}
+            
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $\forall x \in O$ возьмём $Q(x) \in O$~--- какая-нибудь ячейка из $O$, можно взять куб. двоичную-рациональную или $\overline{Q(x)} \subset O$.
+            
+                    $O = \bigcup\limits_{x \in O} Q(x)$~--- на самом деле это счётное объединение ячеек, надо сделать их всего-лишь дизъюнктными.
+            
+                \item $\mu E = \inf \left( \sum \mu P_i, E \subset \bigcup P_i, P_i \in \mathcal{P} \right)$, $E \subset \bigcup P_i$ и $\underset{\text{откр.}}{\widetilde{P_i}} \supset P_i$.
+                
+                    $E \subset \bigcup \widetilde{P_i}$, где $\widetilde{P_i} = \bigsqcup\limits^{+\infty}_{j = 1} Q_{ij}$ (двоично-рациональные кубы).
+                    
+                    $\lambda ( \widetilde{P_i} ) < \lambda P_i + \frac{\varepsilon}{2^{i + 1}}$.
+                    
+                    $\sum \lambda P_i < \frac{\varepsilon}{2}$ и $\sum \lambda \left( \widetilde{P_i} \right) < \sum \lambda P_i + \frac{\varepsilon}{2}$.
+                
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Пример неизмеримого по Лебегу множества}
+    
+        $x, y \in \R$, $x \sim y \Longleftrightarrow x - y \in \mathbb{Q}$.
+        
+        $A = [0, 1] \setminus \mathbb{Q} = A$~--- множество классов представителей $C[0, 1]$.
+        
+        $\bigcup\limits_{q \in \mathbb{Q}} (A + q) = \bigsqcup\limits_{q \in \mathbb{Q}} (A + q) = \R$.
+        
+        $A = [0, 1] \setminus \mathbb{Q}$, и $B = \bigsqcup\limits_{q \in [-1, 1]} A + q \subset [-1, 2]$. Допустим, что $A$~--- измеримо, тогда
+        
+        $\forall q : \lambda A = \lambda (A + q) \Rightarrow B$~--- измеримо и $\lambda B = \sum\limits_{q} \lambda (A + q)$, и это равно или $+\infty$ или $0$, но $\lambda B < 3 (\lambda B \in [-1, 2])$, но и $[0, 1] \subset B \Rightarrow \lambda B \neq 0$.
+        
+    \newpage
+    
+    \section{Регулярность меры Лебега}
+    
+        $A$~--- измеримо по Лебегу, тогда
+        
+        $\lambda A = \inf\limits_{\underset{\text{откр.}}{G} : A \subset G} \lambda G = \sup\limits_{\underset{\text{замкн.}}{F} : F \subset A} = \sup\limits_{\underset{\text{комп.}}{K} : K \subset A} \lambda K$.
+        
+        \subsection{Доказательство}
+        
+            Если $A$~--- ограничено, то очевидно.
+            
+            Если $A$~--- неограничено $\RM = \bigcup\limits_{n} B(0, n)$, $A_n = \bigcap A \cap B(0, n)$ и $A_1 \subset A_2 \subset \ldots \subset A$, тогда $\lim \lambda A_n = \lambda A$.
+            
+            $\lambda A$ конечно: $A_n : \lambda A_n > \lambda A - \varepsilon$, $K \subset A_n \subset A$ и $A \setminus K = (A \setminus A_n) \bigcup (A_n \setminus K)$ и $K \subset A_n$ и $\lambda K > \lambda a_n - \varepsilon$, $\lambda (A \setminus K) = \lambda (A \setminus A_n) + \lambda (A_k \setminus K) < 2 \varepsilon$.
+            
+            $\lambda A$ бесконечно: $\forall R : \exists A_n : \lambda A_n > R$ и $\exists K \in A_n : \lambda K > R$.
+            
+    \newpage
+    
+    \section{Лемма о сохранении измеримости при непрерывном отображении}
+    
+        $T : \RM \rightarrow \R^n$~--- непрерывное, $\forall E \in \mathcal{M}^m$ и $\lambda E = 0$ выполняется, что $\lambda (T(E)) = 0$. Тогда $\forall A \in \mathcal{M}^m$ $T(A) \in \mathcal{M}^m$.
+        
+        \subsection{Доказательство}
+        
+            $\lambda A = \sum\limits_{\underset{\text{комп.}}{K} \subset A} \lambda K$, $A = \bigcup\limits^{+\infty}_{i = 1} K_i \cup \mathcal{N}$, где $\mathcal{N}$~--- множество меры 0.
+            
+            $T(A) = \bigcup T(K_i) \cup T(\mathcal{N})$, где объединение компактов~--- компакт, а $T(\mathcal{N})$ имеет меру 0.
+            
+    \newpage
+    
+    \section{Лемма о сохранении измеримости при гладком отображении. Инвариантность меры Лебега относительно сдвигов}
+    
+        $\Phi : \underset{\text{откр.}}{O} \subset \RM \rightarrow \RM$, $\Phi \in C^1$. Тогда $\forall A \in \mathcal{M}^m$ $\Phi(A) \in \mathcal{M}^m$.
+        
+        \subsection{Доказательство}
+        
+            Нужно проверить, что $\forall E : \lambda_m E = 0 \Rightarrow \lambda_M \left( \Phi(E) \right) = 0$.
+            
+            $O = \bigsqcup Q_i$, где $Q_i$~--- ячейки, а также $\overline{Q_i} \subset O$.
+            
+            Достаточно разобрать случай, где $E \subset Q_i$, где $E = \bigsqcup E \cap Q_i$.
+            
+            $L = \max\limits_{x \in \overline{Q_i}} \| \Phi'(x) \| < +\infty$, тогда $\forall x, y \in Q_i : \left| \Phi(x) - \Phi(y) \right| \leqslant L |x - y|$.
+            
+            $\forall \varepsilon > 0 : E \subset \bigcup (x_i, r_i)$, $\sum \lambda_m(K_i) < \varepsilon$, где $K_i$~--- кубы, $\Rightarrow \Phi(E) \subset \bigcup \Phi(K_i) \subset B(\Phi(x_i), L \sqrt{m} r_i) \subset \bigcup K \left( \Phi(x_i), L \sqrt{m} r_i \right)$.
+            
+            Мера $\lambda_m$ этого куба $\left( 2 L \sqrt{m} r_i \right)^m = (L \sqrt{m})^m \lambda (K_i)$.
+            
+            $\sum \left( L \sqrt{m} \right)^m \lambda(K_i) = (L \sqrt{m})^m \cdot \sum \lambda_m (K_i) < (L \sqrt{m})^m \varepsilon$.
+            
+        \subsection{Следствие}
+        
+            $\lambda_m$~--- инвариантна относительно сдвига, т.е. $\forall E \in \mathcal{M}^m : \forall a \in \R^m : E + a$~--- измеримо и $\lambda E = \lambda (E + a)$.
+            
+            \subsubsection{Доказательство}
+            
+                $\lambda E = \inf \left( \sum \lambda(P_i) \right)$, где $E \subset \bigcup P_i$~--- ячейки, тогда $\lambda (E + a) = \inf \left( \sum \lambda (P_i) \right)$, где $E \subset \bigcup \left( P_i + a \right)$.
+                
+    \newpage
+    
+    \section{Инвариантность меры Лебега при ортогональном преобразовании}
+    
+        $T : \RM \rightarrow \RM$, $T$~--- ортогональное преобразование, тогда
+        
+        $\forall a \in \mathcal{M}^m$ $T(A) \in \mathcal{M}^m$ и $\lambda_m(T(A)) = \lambda(A)$.
+        
+        \subsection{Доказательство}
+        
+            $T$~--- гладкое, значит сохраняет измеримость.
+            
+            $\mu : \mathcal{M}^m \rightarrow \overline{\R}$, $\mu(A) = \lambda_m(T(A))$.
+            
+            $\mu$~--- мера (потому что $T$~--- биекция) и инвариантна относительно сдвига, значит $\mu = k \lambda_m$.
+            
+            Рассмотрим шар, тогда $\mu(B(0, 1)) = \lambda (T (B(0, 1)))$, но $\mu (B(0, 1)) = \lambda(B(0, 1))$, значит $k = 1$.
+            
+    \newpage
+    
+    \section{Лемма о структуре компактного оператора}
+    
+        $V : \RM \rightarrow \RM$~--- линейный, $\det V \neq 0$. Тогда существуют ортонормированные базисы $(g_1, \ldots, g_m)$ и $(h_1, \ldots, h_m)$, а также существует числа $s_i > 0$, что $\forall x \in \RM$ верно, что $V(x) = \sum s_i \langle x, g_i \rangle h_i$.
+        
+        \subsection{Доказательство}
+        
+            $W = V^T V$~--- симметричная матрица, тогда для неё существует базис из собственных векторов: $g_1, \ldots, g_m : \exists c_1, \ldots, c_m$, что $Wg_i = c_i g_i$.
+            
+            $\langle W g_i, g_i \rangle = c_i | g_i |^2$ и $\langle V^T V g_i, g_i \rangle = \langle V g_i, V g_i \rangle = \| V g_i \| > 0 \Rightarrow c_i > 0$, значит возьмём $s_i = \sqrt{c_i}$ и $h_i = \frac{1}{s_i} Vg_i$.
+            
+            $\langle h_k, h_i \rangle = \dfrac{1}{s_k s_i} \langle V g_k, V g_i \rangle = \dfrac{1}{s_k s_i} \langle V^T V g_k, g_i \rangle = \dfrac{1}{s_k s_i} \langle Wg_k, g_i \rangle = \dfrac{c_k}{s_k s_i} \langle g_k, g_i \rangle$.
+            
+            $x \in \RM$ и $x = \sum \langle x, g_i \rangle g_i$, и $Vx = \sum s_i \langle x, g_i \rangle h_i$.
+            
+    \newpage
+    
+    \section{Теорема о преобразовании меры Лебега при линейном отображении}
+    
+        $T : \RM \rightarrow \RM$, $T$~--- линейное отображение. Тогда
+        
+        $\forall A \in \mathcal{A}^m$ $T(A) \in \mathcal{M}^m$ и $\lambda_m(T(A)) = | \det T | \lambda_m(A)$.
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $\det T = 0$, значит образ $T$~--- подпространство в $\RM$, значит он имеет меру 0;
+                
+                \item $\det T \neq 0$, значит $T$~--- невырожденный, тогда $\mu E = \lambda T(E)$~--- инвариантна относительно сдвигов.
+                
+                    $T(\text{огр.}) = \text{огр.} \Rightarrow \mu (\text{огр.}) < +\infty \Rightarrow \exists k : \mu = k \lambda_m$.
+                    
+                    $Q = \text{ед. куб на векторах} g_i = \left\{ \sum d_i g_i, d_i \in [0, 1] \right\}$.
+                    
+                    $T(g_0) = s_i h_i$, где $T(Q)$~--- параллелепипед на векторах $h_i$.
+                    
+                    $\lambda (T Q) = \prod\limits_i | s_i h_i | = \prod s_i = | \det T |$.
+                    
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Эквивалентность определений измеримости с разными множествами Лебега}
+    
+        \begin{enumerate}
+        
+            \item $f$~--- измерима, значит $\forall a : E (f = a)$~--- измерима;
+        
+            \item $f$~--- измерима, значит $\forall \alpha > 0 : \alpha_f$, $-f$~--- измеримы:
+            
+                $E(\alpha f < a) = E \left( f < \frac{a}{\alpha} \right)$;
+                
+                $E(-f < a) = E(f > -a)$.
+                
+            \item $f$~--- измерима на $E_1$ и $E_2$, $\ldots$, тогда $f$~--- измерима на $\bigcup E_k = E$:
+            
+                $E(f < a) = \bigcup\limits_k E_k (f < a)$;
+                
+            \item $\underset{\text{изм.}}{E'} \subset \underset{\text{изм.}}{E}$, тогда если $f$~--- измерима на $E \Rightarrow f$~--- измерима на $E'$:
+            
+                $E'(f < a) = E(f < a) \cap E'$;
+                
+            \item $f \neq 0$~--- измерима на $E$, тогда $\frac{1}{f}$~--- измерима и $E \left( \frac{1}{f} < a \right) = \left(E \left(\frac{1}{f} < a \right) \cap E (f > 0) \right) \bigcup \left( E \left( \frac{1}{f} < a \right) cap E(f < 0) \right) = \left( E \left(f > \frac{1}{a} \right) \cap E (f > 0) \right) \cup \left( E \left( f < \frac{1}{a}\right) \cap E (f < 0) \right)$;
+            
+            \item $f \geqslant 0$~--- измерима и $\alpha > 0 \Rightarrow f^{\alpha}$~--- измерима.
+            
+        \end{enumerate}
+        
+    \newpage
+    
+    \section{Теорема об измеримости пределов и супремумов}
+        
+        $f_n$~--- измерима на $X$. Тогда
+        
+        \begin{enumerate}
+        
+            \item $\sum\limits_n f_n(x)$, $\inf\limits_n f_n(x)$~--- измеримы;
+            
+            \item $\overline{\lim\limits_{n \rightarrow +\infty}} f_n(x)$, $\underline{\lim} f_n(x)$~--- измеримы:
+            
+            \item Если $\forall x : \exists \lim\limits_{n \rightarrow +\infty} f_n(x) = f(x)$, то $f$~--- измерима;
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            \begin{enumerate}
+            
+                \item $g(x) = \sum\limits_n f_n(x)$, тогда $X(g > a) = \bigcup X (f_n > a)$;
+                
+                \item $\overline{\lim\limits_{n \rightarrow +\infty}} f_n(x) = \inf\limits_n \left( \sum\limits_{k \geqslant 0} f_{n + k}(x) \right)$;
+                
+                \item $\lim _n = \overline{\lim} f_n$.
+                
+            \end{enumerate}
+            
+    \newpage
+    
+    \section{Характеризация измеримых функций с помощью ступенчатых}
+    
+        $(X, \mathcal{A}, \mu )$, $f : X \rightarrow \overline{\R}$, $f \geqslant 0$, измерима. Тогда
+        
+        $\exists f_n$~--- ступенчатая функция, что:
+        
+        \begin{enumerate}
+        
+            \item $0 \leqslant f_1 \leqslant \ldots \leqslant f_n \leqslant f_{n + 1} \leqslant f(x)$;
+            
+            \item $f(x) = \lim\limits_{n \rightarrow +\infty} f_n(x)$.
+            
+        \end{enumerate}
+        
+        \subsection{Доказательство}
+        
+            $e^{(n)}_k = X \left( \frac{k}{n} \leqslant f < \frac{k + 1}{n} \right)$, при $k = 0, 1, \ldots, n^2 - 1$.
+            
+            $e^{(n)}_{n^2} = X (f \geqslant n)$.
+            
+            $g_n = \sum \frac{k}{n}$ при $x \in e^{(n)}_k$.
+            
+            $\forall x : \lim\limits_{n \rightarrow +\infty} g_n(x) = f(x)$, тогда $f_n(x) = \max (g_1(x), \ldots, g_n(x) )$.
+            
+    \newpage
+    
+    \section{Измеримость монотонной функции}
+    
+    \newpage
+    
+    \section{Теорема Лебега о сходимости почти везде и сходимости по мере}
+    
+        $\mu X < +\infty$, $f_n, f : X \rightarrow \overline{\R}$~--- измерима, почти везде конечна, тогда $f_n \rightarrow f$ почти везде. Тогда $f_n \rightrightarrows f$ на мере.
+        
+        \subsection{Доказательство}
+        
+            $f_n \rightarrow f$ на $X \setminus e$. Пусть $f_n(t) = f(t) = 0, t \in e$. Тогда есть сходимость повсюду.
+            
+            Частный случай. $f_n \rightarrow 0$ и $\forall x : f_n(x)$~--- монотонная. Тогда $X \left( | f_n | \geqslant \varepsilon \right) \supset X \left( | f_{n + 1} | \geqslant \varepsilon \right)$.
+            
+            $\bigcap\limits^{+\infty}_{n = 1} X \left( | f_n | \geqslant \varepsilon \right) = \varnothing \Rightarrow X \left( | f_n | \geqslant \varepsilon \right) \rightarrow 0$.
+            
+            Общий случай. $f_n \rightarrow f$, и $\varphi_n(x) = \sum\limits_{k \geqslant n} | f_k(x) - f(x) |$, тогда $\varphi_n(x) \rightarrow 0$ и $\varphi_n$~--- монотонная.
+            
+            $X \left( | fn - f| \geqslant \varepsilon \right) \subset X \left( \varphi_n \geqslant \varepsilon \right)$.
+            
+    \newpage
+    
+    \section{Теорема Рисса о сходимости по мере и сходимости почти везде}
+    
+        $(X, \mathcal{A}, \mu)$, $f_n$, $f : X \rightarrow \overline{\R}$~--- измерима почти везде и конечно, $f_n \rightrightarrows f$ по мере. Тогда $\exists n_k : f_{n_k} \rightarrow f$ почти везде.
+        
+        \subsection{Доказательство}
+        
+            $\forall k : \mu X \left( | f_n - f| \geqslant \frac{1}{k} \right) \rightarrow 0$.
+            
+            $|exists n_k$: при $n > n_k : \mu X \left( | f_n - f | \geqslant \frac{1}{k} \right) < \frac{1}{2^k}$.
+            
+            Можно считать, что $n_1 < n_2 < \ldots$.
+            
+            Проверим, что $f_{n_k} \rightarrow f$ почти везде.
+            
+            $E_k := \bigcup\limits^{+\infty}_{j = k} X \left( | f_{n_j} - f | \geqslant \frac{1}{j} \right)$.
+            
+            $E_1 \supset E_2 \supset \ldots$, и $E_0 = \bigcap E_k$.
+            
+            $\mu E_k = \sum\limits^{+\infty}_{j = 1} \frac{1}{2^j} \leqslant \frac{2}{2^k}$ и $\mu E_k \rightarrow \mu E_0 \Rightarrow \mu E_0 = 0$, $x \notin E_0 : f_{n_k}(x) \rightarrow f(x)$.
+            
+            $\exists N : x \in E_n$ и всем следующим: 
+            
+            $|f_{n_N} (x) - f(x) | \leqslant \frac{1}{N}$;
+            
+            $|f_{n_{N + 1}} (x) - f(x) | < \frac{1}{N + 1}$, т.е. $f_{n_k}(x) \xrightarrow[k \rightarrow +\infty]{} f(x)$.
             
 \end{document}
